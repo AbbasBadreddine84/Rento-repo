@@ -189,7 +189,7 @@ text-align:justify;
   text-align: center;
   justify-content: center;
   align-self: center;
-  margin-left: 10rem;
+  margin-left: 13rem;
 }
 .left1 a:hover{
   transition: all .2s ease;
@@ -198,9 +198,9 @@ text-align:justify;
 }
 .right1 {
   width: 50%;
-  padding-left: 700px;
+  padding-left: 800px;
   height: 600px;
-  background: url(./images/gathering.png) 
+  background: url(./images/listYourProperty.png) 
     no-repeat center / cover;
   border-radius: 8px;
 }
@@ -249,10 +249,10 @@ a {
     margin-top: 200px;
   }
   
-  .left1.content .btn{
-    margin-left: -200px;
-}
-
+  /* .left1 > .content > .btn{
+    margin-right: 200px;
+} */
+ 
   .section-container
 {
 flex-flow:row wrap;
