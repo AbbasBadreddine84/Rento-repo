@@ -1,0 +1,119 @@
+
+#profile{
+width: 100px;
+height: 100px;
+}
+
+#propdet{
+margin-left: 1rem;
+}
+
+#propdVilla{
+margin-right: 3.8rem;
+}
+#propApp{
+margin-right: 1rem;
+}
+#menu-toggle {
+  cursor: pointer;
+}
+
+#spanT{
+    font-size: small;
+}
+
+
+#Property{
+margin-right: 1rem;
+}
+#proplist{
+    margin-right: 0.2rem;
+}
+#allcustomer{
+    margin-left: 0.5rem;
+}
+#tenants{
+    margin-right: 2.2rem;
+}
+#buyer {
+    margin-right: 3.2rem;
+}
+#profit{
+    margin-left: 0.7rem;
+}
+#Ptenants{
+    margin-right: 2.3rem;
+}
+
+#Pbuyer{
+    margin-right: 3.2rem;
+}
+.list-group-item.active {
+    background-color: transparent;
+    color: var(--main-text-color);
+    font-weight: bold;
+    border: none;
+    
+}
+
+.list-group-item {
+    border: none;
+    padding: 20px 30px;
+    font-weight: bold;
+}
+
+.second-text {
+    color: var(--second-text-color);
+}
+
+
+.rounded-full {
+    border-radius: 100%;
+}
+#wrapper {
+    overflow-x: hidden;
+}
+#sidebar-wrapper {
+    min-height: 100vh;
+    margin-left: -1rem;
+    -webkit-transition: margin 0.25s ease-out;
+    -moz-transition: margin 0.25s ease-out;
+    -o-transition: margin 0.25s ease-out;
+    transition: margin 0.25s ease-out;
+}
+#sidebar-wrapper .sidebar-heading {
+    padding: 0.875rem 1.25rem;
+    font-size: 1.2rem;
+}
+#sidebar-wrapper .list-group {
+    width: 15rem;
+}
+#wrapper.toggled #sidebar-wrapper {
+    margin-left: 0;
+}
+#page-content-wrapper {
+    min-width: 100vw;
+}
+.list-group-item.active {
+    background-color: transparent;
+    color: var(--main-text-color);
+    font-weight: bold;
+    border: none;
+}
+#wrapper.toggled #sidebar-wrapper {
+    margin-left: 0;
+}
+@media (min-width:400px) {
+    #sidebar-wrapper {
+        margin-left: 0;
+    }
+
+    #page-content-wrapper {
+        min-width: 0;
+        width: 100%;
+    }
+
+    #wrapper.toggled #sidebar-wrapper {
+        margin-left: -18rem;
+    }
+}
