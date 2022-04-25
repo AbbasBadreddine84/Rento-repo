@@ -1,0 +1,212 @@
+#profile{
+width: 100px;
+height: 100px;
+}
+
+#propdet{
+margin-left: 1rem;
+}
+
+#propdVilla{
+margin-right: 3.8rem;
+}
+#propApp{
+margin-right: 1rem;
+}
+#menu-toggle {
+  cursor: pointer;
+}
+
+#spanT{
+    font-size: small;
+}
+
+
+#Property{
+margin-right: 1rem;
+}
+#proplist{
+    margin-right: 0.2rem;
+}
+#allcustomer{
+    margin-left: 0.5rem;
+}
+#tenants{
+    margin-right: 2.2rem;
+}
+#buyer {
+    margin-right: 3.2rem;
+}
+#profit{
+    margin-left: 0.7rem;
+}
+#Ptenants{
+    margin-right: 2.3rem;
+}
+
+#Pbuyer{
+    margin-right: 3.2rem;
+}
+.list-group-item.active {
+    background-color: transparent;
+    color: var(--main-text-color);
+    font-weight: bold;
+    border: none;
+    
+}
+
+.list-group-item {
+    border: none;
+    padding: 20px 30px;
+    font-weight: bold;
+}
+
+.second-text {
+    color: var(--second-text-color);
+}
+
+
+.rounded-full {
+    border-radius: 100%;
+}
+#wrapper {
+    overflow-x: hidden;
+}
+#sidebar-wrapper {
+    min-height: 100vh;
+    margin-left: -16rem;
+    -webkit-transition: margin 0.25s ease-out;
+    -moz-transition: margin 0.25s ease-out;
+    -o-transition: margin 0.25s ease-out;
+    transition: margin 0.25s ease-out;
+}
+
+
+
+#sidebar-wrapper .sidebar-heading {
+    padding: 0.875rem 1.25rem;
+    font-size: 1.2rem;
+}
+#sidebar-wrapper .list-group  {
+    width: 15rem;
+}
+#wrapper.toggled #sidebar-wrapper {
+    margin-left: 0;
+}
+#page-content-wrapper {
+    min-width: 100vw;
+}
+.list-group-item.active  {
+    background-color: transparent;
+    color: var(--main-text-color);
+    font-weight: bold;
+    border: none;
+}
+#wrapper.toggled #sidebar-wrapper {
+    margin-left: 0;
+}
+@media (min-width:400px) {
+    #sidebar-wrapper {
+        margin-left: 0;
+       
+    }
+
+    #page-content-wrapper {
+        min-width: 0;
+        width: 100%;
+    }
+
+    #wrapper.toggled #sidebar-wrapper {
+        margin-left: -18rem;
+    }
+}
+
+.dropdown-list{
+
+                 max-height: 467.087px;
+                  overflow: hidden;
+                  min-height: 2px;
+                  position: absolute;
+                  will-change: transform;
+                  top: 0px;
+                  left: 0px;
+                  transform: translate3d(1px, 45px, 0px);
+}
+
+
+.img-thumbnail{
+padding: 0.25rem;
+background-color: #fff;
+border: 1px solid #dee2e6;
+border-radius: 0.25rem;
+max-width: 100%;
+height: auto;
+}
+.image-class{
+    vertical-align: middle;
+    max-width: 100%;
+    border-radius: 1px;
+}
+.img-fluid{
+max-width: 100%;
+height: auto;
+}
+.card .body {
+    font-size: 14px;
+    color:#424242;
+    font-weight: 400;
+    line-height: 1.5;
+    text-align: left;
+}
+.card{
+      word-wrap: break-word;
+    flex-direction: column;
+    position: relative;
+    display: flex;
+    background-color: #e9ecef;
+    -webkit-font-smoothing:antialiased;
+    box-sizing: border-box;
+}
+.property_list .property_image .badge {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    text-transform: uppercase;
+ display: inline-block;
+text-align: center;
+}
+.badge_Sale{
+ display: inline-block;
+text-align: center;
+background:#ff0000;
+white-space: nowrap;
+vertical-align:baseline ;
+text-transform: uppercase;
+border: 1px solid;
+margin-bottom: 5px;
+}
+
+.badge_Rent{
+ display: inline-block;
+text-align: center;
+background:#ED8135;
+white-space: nowrap;
+vertical-align:baseline ;
+text-transform: uppercase;
+border: 1px solid;
+margin-bottom: 5px;
+}
+
+.property_list .property-icon a{
+    padding: 10px 0px;
+    background: #f7f7f7;
+outline: none !important;
+display: inline-block;
+}
+.text-muted{
+    font-weight: bold;
+}
+
+.text-primary{
+font-weight: bold;
+}

@@ -127,14 +127,9 @@ margin-right: 1rem;
   display: inline-block;
   text-align: center;
   background:#FF0000;
- vertical-align:baseline ;
-  white-space: nowrap;
-  position: absolute;
-top: 10px;
-right: 10px;
 vertical-align:baseline ;
-  white-space: nowrap;
-  position: absolute;
+white-space: nowrap;
+position: absolute;
 top: 10px;
 right: 10px;
 text-transform: uppercase;
@@ -143,17 +138,12 @@ margin-bottom: 5px;
 }
 
 .badge_Rent{
-  display: inline-block;
-  text-align: center;
-  background:#ED8135;
- vertical-align:baseline ;
-  white-space: nowrap;
-  position: absolute;
-top: 10px;
-right: 10px;
+display: inline-block;
+text-align: center;
+background:#ED8135;
 vertical-align:baseline ;
-  white-space: nowrap;
-  position: absolute;
+white-space: nowrap;
+position: absolute;
 top: 10px;
 right: 10px;
 text-transform: uppercase;
@@ -193,6 +183,7 @@ font-size: small;
 font-weight: bold;
 }
 
+
 .card-1{
     display: flex;
     flex-wrap: wrap;
@@ -221,4 +212,5 @@ font-size: small;
 }
 
 }
+
 
