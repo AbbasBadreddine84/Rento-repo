@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="contact-page.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+</head>
+
+<body>
+
+    <div class="container-lg position-relative p-0">
+
+        <nav class="navbar navbar-expand-lg navbar-light px-4 px-lg-5 py-3 py-lg-0">
+          <a href="" class="navbar-brand p-0">
+            <img src="Resources/Rento.png" alt="Logo">
+          </a>
+          <button class="navbar-toggler collapsed d-flex d-lg-none flex-column justify-content-around" type="button"
+            data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-expanded="false" aria-controls="navbarNav"
+            aria-label="Toggle-navigation">
+            <span class="toggler-icon top-bar"></span>
+            <span class="toggler-icon mid-bar"></span>
+            <span class="toggler-icon bot-bar"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <div class="navbar-nav ms-auto py-0" id="navbar-items">
+              <a href="home.html" class="nav-item nav-link active">Home</a>
+              <a href="about.html" class="nav-item nav-link">About</a>
+              <a href="rental.html" class="nav-item nav-link">Apartments</a>
+              <a href="listing.html" class="nav-item nav-link">List a property</a>
+            </div>
+            <a href="signIn.html" class="btn btn-primary text-light rounded-pill py-2 px-4 m-3 ">Sign in</a>
+          </div>
+        </nav>
+      </div>
+      <br><br>
+
+    <Div class="container" id="allcontainer">
+        <div class="row">
+            <div class="col-xl-7">
+                <br><br><br><br>
+                <h2>Casa Elena
+</h2>
+                <br>
+                <h2>Vila Chã | House</h2>
+                <br><br>
+                <p id="desc-text">The house in Beirut has 1 bedroom and has capacity for 4 people (max. 1 adults).
+                    The house is 180 m².
+                    The accommodation is equipped with the following items: garden, garden furniture, barbecue,
+                    fireplace, iron, internet (Wi-Fi), balcony, childrens area, alarm, private swimming pool, garage the
+                    same building, 1 TV, tv satellite.
+                    In the independent kitchen, refrigerator, microwave, oven, freezer, washing machine, dryer,
+                    dishwasher, dishes/cutlery, kitchen utensils, coffee machine, frying pan, toaster, kettle and juicer
+                    are provided.
+                </p>
+            </div>
+            <div class="col-xl-5" id="contact-box">
+                
+                <div id="box">
+                    <a href=""></a>
+                    <p> Dates: <span style="color: orange;">(change)</span></p>
+                    <br>
+                    <div>
+                        <form action="">
+                            <label for="date">check in : </label>
+                            <input type="date" id="date" value="08/05/2022" >
+                        </form>
+
+                    </div>
+                    <br>
+                    <div>
+                        <form action="">
+                            <label for="date">check out :</label>
+                            <input type="date" id="date" value="21/05/2022">
+                        </form>
+
+                    </div>
+                    <br>
+                    <a href=""></a>
+                    <p>Guests: <span style="color: orange;">(change)</span></p>
+                    <br>
+                    <p>Adults : &ensp;<input type="number" id="quantity" name="quantity" min="1" max="6"></p>
+                    <br>
+                    <p>Children: <input type="number" id="quantity" name="quantity" min="0" max="5"></p>
+
+                    <hr style="border:2px solid whitesmoke ;">
+                    <br>
+                    <p>Accommodation <span style="float: right;">€0</span></p>
+                    <p>extra fees<span style="float: right;">€0</span></p>
+                    <p> Total<span style="float: right;">€0</span></p>
+                </div>
+            </div>
+        </div>
+        <br>
+        <br>
+
+        <div class="row">
+            <h2>contact</h2>
+            <hr>
+            <div class="col-xl-6" id="left-part">
+                <ul>
+                    <li>
+                        <form action="">
+                            <label for="text">FIRST NAME:*</label>
+                            <br><br><br>
+                            <input type="text" name="fname" id="fname">
+                            <hr>
+                        </form>
+                    </li>
+                    <li>
+                        <form action="">
+                            <label for="text">
+                                SECOND SURNAME:*
+                            </label>
+                            <br><br><br>
+                            <input type="text" name="ssname" id="fname">
+                            <hr>
+                        </form>
+                    </li>
+                    <li>
+                        <form action="">
+                            <label for="text">
+                                CITY:*
+                            </label>
+                            <br><br><br>
+                            <input type="text" name="city" id="fname">
+                            <hr>
+                        </form>
+                    </li>
+                    <li>
+                        <form action="">
+                            <label for="text">PROVINCE/COUNTY:*</label>
+                            <br><br><br>
+                            <input type="text" name="county" id="fname">
+                            <hr>
+                        </form>
+                    </li>
+                    <li>
+                        <form action="">
+                            <label for="text">
+                                COUNTRY:*
+                            </label>
+                            <br><br><br>
+                            <input type="text" name="country" id="fname">
+                            <hr>
+                        </form>
+                    </li>
+                    <li>
+                        <form action="">
+                            <label for="text">
+                                E-MAIL:*
+                            </label>
+                            <br><br><br>
+                            <input type="text" name="email" id="fname">
+                            <hr>
+                        </form>
+                    </li>
+                </ul>
+
+
+
+            </div>
+            
+            <div class="col-xl-6" id="right-part">
+                <ul>
+                    <li>
+                        <form action="">
+                            <label for="text">SURNAME:*</label>
+                            <br><br><br>
+                            <input type="text" name="sname" id="fname">
+                            <hr>
+                        </form>
+                    </li>
+                    <li>
+                        <form action="">
+                            <label for="text">
+                                ADDRESS:*
+                            </label>
+                            <br><br><br>
+                            <input type="text" name="co" id="fname">
+                            <hr>
+                        </form>
+                    </li>
+                    <li>
+                        <form action="">
+                            <label for="text">
+                                POSTAL CODE:*
+                            </label>
+                            <br><br><br>
+                            <input type="text" name="code" id="fname">
+                            <hr>
+                        </form>
+                    </li>
+                    <li>
+                        <form action="">
+                            <label for="text">
+                                PASSPORT/ID NUMBER:
+                            </label>
+                            <br><br><br>
+                            <input type="text" name="id" id="fname">
+                            <hr>
+                        </form>
+                    </li>
+                    <li>
+                        <form action="">
+                            <label for="text">
+                                PHONE:*
+                            </label>
+                            <br><br><br>
+                            <input type="text" name="phone" id="fname">
+                            <hr>
+                        </form>
+                    </li>
+                    
+                    
+                </ul>
+
+
+
+            </div>
+            <div>
+                 <h3 style="margin-left:2% ;">Comments</h3>
+
+                
+                <form action="">
+                    <input type="text" name="phone" id="comment">
+                </form><hr>
+            </div>
+               
+
+           
+
+
+
+        </div>
+        <div class="row3">
+            <div>
+                <form action="">
+                    <input type="checkbox" name="cb" id="cb">
+                    <label for="checkbox">I have read and accept the<span id="sp">general terms</span>  and <span id="sp">the data protection</span> 
+                        policy</label>
+                </form>
+            </div>
+            <br>
+            <div>
+                <form action="">
+                    <input type="checkbox" name="cb" id="cb">
+                    <label for="checkbox">Send me special offers and promotions</label>
+
+                </form>
+            </div>
+            <br>
+            <br>
+            <div>
+                <button type="button" class="btn btn-primary btn-block">Send</button>
+            </div>
+            <br><br><br><br><br>
+
+
+
+
+        </div>
+    </Div>
+    
+    <footer id="footer">
+        <div class="footer-newsletter">
+          <div class="container">
+            <div class="row">
+              <div class="col-lg-6">
+                <h4>Our Newsletter</h4>
+                <p>Subscribe to our newsletter to check our latest news and offers</p>
+              </div>
+              <div class="col-lg-6">
+                <form action="" method="post"> <input type="email" name="email" placeholder="enter your email here"><input
+                    type="submit" value="Subscribe"> </form>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="footer-top">
+          <div class="container">
+            <div class="row">
+              <div class="col-lg-3 col-md-6 footer-links">
+                <h4>Useful Links</h4>
+                <ul>
+                  <li><i class="bx bx-chevron-right"></i> <a href="home.html">Home</a></li>
+                  <li><i class="bx bx-chevron-right"></i> <a href="about.html">About us</a></li>
+                  <li><i class="bx bx-chevron-right"></i> <a href="rental.html">Apartments</a></li>
+                  <li><i class="bx bx-chevron-right"></i> <a href="termsOfService.html">Terms of service</a></li>
+                  <li><i class="bx bx-chevron-right"></i> <a href="privacyPolicy.html">Privacy policy</a></li>
+                </ul>
+              </div>
+              <div class="col-lg-3 col-md-6 footer-links">
+                <h4>Quick links</h4>
+                <ul>
+                  <li><i class="bx bx-chevron-right"></i> <a href="#">Villa</a></li>
+                  <li><i class="bx bx-chevron-right"></i> <a href="#">Apartment</a></li>
+                  <li><i class="bx bx-chevron-right"></i> <a href="#">Tokyo</a></li>
+                  <li><i class="bx bx-chevron-right"></i> <a href="#">Lebanon</a></li>
+                  <li><i class="bx bx-chevron-right"></i> <a href="listing.html">List a property</a></li>
+                </ul>
+              </div>
+              <div class="col-lg-3 col-md-6 footer-contact">
+                <h4>Contact Us</h4>
+                <p> A108 Adam Street <br> New York, NY 535022<br> United States <br><br> <strong>Phone:</strong> +1 5589
+                  55488 55<br> <strong>Email:</strong> Travolta@example.com<br> </p>
+              </div>
+              <div class="col-lg-3 col-md-6 footer-info">
+                <h3>About Rento</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt placeat iste culpa repellat velit
+                  ducimus repudiandae asperiores aperiam quis officia.</p>
+                <div class="social-links mt-3"> <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a> <a href="#"
+                    class="facebook"><i class="bx bxl-facebook"></i></a> <a href="#" class="instagram"><i
+                      class="bx bxl-instagram"></i></a> <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="container">
+          <div class="copyright"> © Copyright <strong><span>Rento</span></strong>. All Rights Reserved Designed by <a
+              href="about.html">Rento</a> </div>
+          <div class="credits"> </div>
+        </div>
+      </footer>
+</body>
+
+</html>
