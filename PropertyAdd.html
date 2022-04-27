@@ -12,7 +12,7 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
     />
-    <link rel="stylesheet" href="css/adminDashboard.css">
+    <link rel="stylesheet" href="css/PropertyAdd.css">
     <link
       rel="stylesheet"
       href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap"
@@ -49,7 +49,7 @@
     <a href="PropertyList.html" class="text-reset"><i class="fas fa-arrow-circle-right me-1"></i> <span >Property List</span></a>
   </li>
   <li class="list-group-item py-1 bg-primary text-white text-center">
-    <a href="PropertyAdd.html" class="text-reset"><i class="fas fa-arrow-circle-right me-1"></i> <span>Add Property</span></a>
+    <a href="#" class="text-reset"><i class="fas fa-arrow-circle-right me-1"></i> <span>Add Property</span></a>
   </li>
 
   <li class="list-group-item py-1 bg-primary text-white text-center" id="propdet">
@@ -138,84 +138,210 @@
 
 
 <div class="container-fluid px-5">
-<div class="row">
-  <div class="col-lg-4 col-md-4 col-sm-12 ">
-    <div class="card card-1 rounded-pill g-4 mt-3 bg-primary">
-      <div class="card-body d-flex align-items-center">
-        <div class="me-auto text-white">
-          <h2 class="text-white">100</h2>
-          <span class="tittle">Property For Rent</span>
+<div class="row clearfix mt-5">
+    <form>
+<div class="col-lg-12">
+    <div class="card">
+<div class="header">
+    <h2 class="fs-3">
+        <strong class="text-primary fw-bolder">Basic</strong>
+        Information
+    </h2>
+</div>
+<div class="body">
+    <div class="row clearfix">
+        <div class="col-sm-4">
+            <div class="form-group">
+                <input type="text" class="form-control" placeholder="Property Name">
+            </div>
         </div>
-      <i class="logo fas fa-home fa-2x"></i></a>
-      </div>
-    </div>
-  </div>
+            <div class="col-sm-4">
+            <div class="form-group">
+                <input type="text" class="form-control" placeholder="Property Location">
+            </div>
+        </div>
+         <div class="col-sm-4">
+            <div class="form-group form-floating">
+              <input type="date" class="form-control">
+  <label for="floatingSelect">Year Built</label>
+            </div>
+        </div>
+          <div class="col-sm-4 mt-5">
+            <div class="form-group form-floating">
+                <textarea class="form-control" id="floatingTextarea"></textarea>
+                      <label for="Description">Description</label>
+            </div>
+        </div>
+  <div class="col-sm-4 mt-5">
+            <div class="form-group form-floating">
+              <select class="form-select form-control" id="floatingSelect" aria-label="Floating label select example">
+   
+    <option value="Villa">Villa</option>
+    <option value="Apartment">Apartment</option>
+  </select>
+  <label for="floatingSelect">Property Type</label>
+            </div>
+        </div>
 
-  <div class="col-lg-4 col-md-4 col-sm-12">
-    <div class="card card-1 rounded-pill g-4 mt-3 bg-warning">
-      <div class="card-body d-flex align-items-center">
-        <div class="me-auto text-white">
-          <h2 class="text-white">50</h2>
-          <span class="tittle">Number of Tenants</span>
+<div class="col-sm-4 mt-5">
+            <div class="form-group form-floating">
+              <input type="file" class="form-control">
+  <label for="Property Image">Property Image</label>
+            </div>
         </div>
-      <i class="logo fas fa-users fa-2x"></i></a>
-      </div>
-    </div>
-  </div>
-    <div class="col-lg-4 col-md-4 col-sm-12">
-    <div class="card card-1 rounded-pill g-4 mt-3 bg-primary">
-      <div class="card-body d-flex align-items-center">
-        <div class="me-auto text-white">
-          <h2 class="text-white">52</h2>
-          <span class="tittle">Property For Sale</span>
-        </div>
-      <i class="logo fas fa-home fa-2x"></i></a>
-      </div>
-    </div>
-  </div>
 
+
+    </div>
+</div>
+    </div>
+
+     <div class="card mt-4">
+<div class="header">
+    <h2 class="fs-3">
+        <strong class="text-primary fw-bolder">Property</strong>
+        For
+    </h2>
+</div>
+<div class="body">
+    <div class="row clearfix">
+        <div class="col-sm-6">
+   <div class="form-check">
+  <input class="form-check-input" type="radio" name="formGroupExampleInput" id="formGroupExampleInput1">
+  <label class="form-check-label" for="formGroupExampleInput1">
+   For Rent
+  </label>
+</div>
+<div class="form-check">
+  <input class="form-check-input" type="radio" name="formGroupExampleInput" id="formGroupExampleInput2" checked>
+  <label class="form-check-label" for="formGroupExampleInput2">
+For Sale
+  </label>
+</div>
+        </div>
+<div class="col-sm-6">
+<div class="form-group">
+    <input type="number" class="form-control" placeholder="Sqaure Ft">
+</div>
+</div>
+<div class="col-sm-12">
+    <div class="form-group">
+        <textarea class="form-control txtarrea" rows="2" placeholder="Property Address"></textarea>
+    </div>
+</div>
+
+    </div>
+
+
+
+
+    
+</div>
+</div>
+
+
+ <div class="card mt-4">
+<div class="header">
+    <h2 class="fs-3">
+        <strong class="text-primary fw-bolder">Dimension</strong>
+        
+    </h2>
+</div>
+<div class="body">
+    <div class="row clearfix">
+        <div class="col-sm-3">
+   <div class="form-group">
+    <input type="number" class="form-control" placeholder="Number of bedroom">
+</div>
+        </div>
+
+    <div class="col-sm-3">
+   <div class="form-group">
+    <input type="number" class="form-control" placeholder="Number of Kitchen">
+</div>
+        </div>
+
+    <div class="col-sm-3">
+   <div class="form-group">
+    <input type="number" class="form-control" placeholder="Number of Living Room">
+</div>
+        </div>
+
+   <div class="col-sm-3">
+   <div class="form-group">
+    <input type="number" class="form-control" placeholder="Number of Bathroom">
+</div>
+        </div>
+
+    </div>
 
 
 </div>
-<div class="row">
-  <div class="col-lg-4 col-md-4 col-sm-12">
-    <div class="card card-1 rounded-pill g-4 mt-3 bg-warning">
-      <div class="card-body d-flex align-items-center">
-        <div class="me-auto text-white">
-          <h2 class="text-white">29</h2>
-          <span class="tittle">Number of Buyers</span>
-        </div>
-      <i class="logo fas fa-users fa-2x"></i></a>
-      </div>
-    </div>
-  </div>
-
-  <div class="col-lg-4 col-md-4 col-sm-12">
-    <div class="card card-1 rounded-pill g-4 mt-3 bg-success">
-      <div class="card-body d-flex align-items-center">
-        <div class="me-auto text-white">
-          <h2 class="text-white">80000<i class="fas fa-dollar"></i></h2>
-          <span class="tittle">Total Income For Sale</span>
-        </div>
-      <i class="logo fas fa-bank fa-2x"></i></a>
-      </div>
-    </div>
-  </div>
-    <div class="col-lg-4 col-md-4 col-sm-12">
-    <div class="card card-1 rounded-pill g-4 mt-3 bg-success">
-      <div class="card-body d-flex align-items-center">
-        <div class="me-auto text-white">
-         <h2 class="text-white">70000<i class="fas fa-dollar"></i></h2>
-          <span class="tittle">Total Income For Rent</span>
-        </div>
-      <i class="logo fas fa-bank fa-2x"></i></a>
-      </div>
-    </div>
-  </div>
-
-
-
 </div>
+
+
+
+
+ <div class="card mt-4">
+<div class="header">
+    <h2 class="fs-3">
+        <strong class="text-primary fw-bolder">Property</strong>
+        Details
+    </h2>
+</div>
+<div class="body">
+    <div class="row">
+        <div class="col-sm-12">
+<div class="form-check  form-check-inline">
+  <input class="form-check-input" type="checkbox" id="checkboxPool" value="option1">
+  <label class="form-check-label" for="checkboxPool">Pool</label>
+</div>
+
+<div class="form-check  form-check-inline">
+  <input class="form-check-input" type="checkbox" id="checkboGarden" value="option2">
+  <label class="form-check-label" for="checkboGarden">Garden</label>
+</div>
+
+<div class="form-check  form-check-inline">
+  <input class="form-check-input" type="checkbox" id="checkboxParking" value="option3">
+  <label class="form-check-label" for="checkboxParking">Car Parking</label>
+</div>
+
+<div class="form-check  form-check-inline">
+  <input class="form-check-input" type="checkbox" id="checkboxBalcony" value="option4">
+  <label class="form-check-label" for="checkboxBalcony">Balcony</label>
+</div>
+
+<div class="form-check  form-check-inline">
+  <input class="form-check-input" type="checkbox" id="checkboxTerrace" value="option5">
+  <label class="form-check-label" for="checkboxTerrace">Terrace</label>
+</div>
+        </div>
+
+
+ <div class="col-sm-12">
+<div class="d-grid gap-2 d-md-flex justify-content-sm-end"> 
+<button class="btn btn-primary me-md-2 btn-Submit" type="button">Submit</button>
+<button class="btn btn-primary me-md-2 btn-Cancle" type="button">Cancle</button>
+</div>
+
+ </div>
+
+
+
+    </div>
+
+    
+</div>
+</div>
+
+
+
+
+
+
+    </form>
+</div>
+
 
 
 

@@ -1,0 +1,208 @@
+
+#profile{
+width: 100px;
+height: 100px;
+}
+
+#propdet{
+margin-left: 1rem;
+}
+
+#propdVilla{
+margin-right: 3.8rem;
+}
+#propApp{
+margin-right: 1rem;
+}
+#menu-toggle {
+  cursor: pointer;
+}
+
+#spanT{
+    font-size: small;
+}
+
+
+#Property{
+margin-right: 1rem;
+}
+#proplist{
+    margin-right: 0.2rem;
+}
+#allcustomer{
+    margin-left: 0.5rem;
+}
+#tenants{
+    margin-right: 2.2rem;
+}
+#buyer {
+    margin-right: 3.2rem;
+}
+#profit{
+    margin-left: 0.7rem;
+}
+#Ptenants{
+    margin-right: 2.3rem;
+}
+
+#Pbuyer{
+    margin-right: 3.2rem;
+}
+.list-group-item.active {
+    background-color: transparent;
+    color: var(--main-text-color);
+    font-weight: bold;
+    border: none;
+    
+}
+
+.list-group-item {
+    border: none;
+    padding: 20px 30px;
+    font-weight: bold;
+}
+
+.second-text {
+    color: var(--second-text-color);
+}
+
+
+.rounded-full {
+    border-radius: 100%;
+}
+#wrapper {
+    overflow-x: hidden;
+}
+#sidebar-wrapper {
+    min-height: 100vh;
+    margin-left: -16rem;
+    -webkit-transition: margin 0.25s ease-out;
+    -moz-transition: margin 0.25s ease-out;
+    -o-transition: margin 0.25s ease-out;
+    transition: margin 0.25s ease-out;
+}
+
+
+
+#sidebar-wrapper .sidebar-heading {
+    padding: 0.875rem 1.25rem;
+    font-size: 1.2rem;
+}
+#sidebar-wrapper .list-group  {
+    width: 15rem;
+}
+#wrapper.toggled #sidebar-wrapper {
+    margin-left: 0;
+}
+#page-content-wrapper {
+    min-width: 100vw;
+}
+.list-group-item.active  {
+    background-color: transparent;
+    color: var(--main-text-color);
+    font-weight: bold;
+    border: none;
+}
+#wrapper.toggled #sidebar-wrapper {
+    margin-left: 0;
+}
+@media (min-width:400px) {
+    #sidebar-wrapper {
+        margin-left: 0;
+       
+    }
+
+    #page-content-wrapper {
+        min-width: 0;
+        width: 100%;
+    }
+
+    #wrapper.toggled #sidebar-wrapper {
+        margin-left: -18rem;
+    }
+}
+
+.card{
+    transition: all 0.5s;
+    background: #fff;
+    border-radius: 0.1875rem;
+    position: relative;
+    box-shadow: none;
+    width: 100%;
+    border:initial
+}
+.card .header{
+    color:#424242;
+    padding: 20px;
+    position: relative;
+    box-shadow: none;
+}
+.card .body{
+    font-size: 14px;
+    color: #424242;
+    padding: 20px;
+    font-weight: 400;
+}
+.form-group{
+    position: relative;
+}
+.input-group,.form-group{
+    margin-bottom: 10px;
+}
+.form-group .form-control{
+    padding: 10px 10px 10px 10px;
+}
+.form-control{
+    transition: color 0.3s ease-in-out;
+    box-shadow: none;
+    height: auto;
+    background-color: rgba(19, 18, 18, 0);
+    border: 1px solid #E3E3E3;
+    border-radius: 25.25rem !important;
+    color: #2c2c2c;
+    line-height: normal;
+    position: relative;
+}
+.radioS{
+    display: inline-block;
+}
+.radioS{
+    display: inline-block;
+}
+.radio{
+    margin-bottom: 12px;
+    cursor: pointer;
+}
+.radio label{
+    padding-left: 28px;
+    display: inline-block;
+    position: relative;
+    cursor: pointer;
+}
+#formGroupExampleInput1{
+background: #EAFEF1;
+border: 1px solid #038C8C;
+box-sizing: border-box;
+border-radius: 10px;
+}
+#formGroupExampleInput2{
+background: #EAFEF1;
+border: 1px solid #038C8C;
+box-sizing: border-box;
+border-radius: 10px;
+}
+.txtarrea.form-control{
+    max-width: 100%;
+    resize: none;
+    line-height: 2;
+    border-bottom: 1px solid #E3E3E3;
+}
+
+
+.btn-Submit{
+border-radius: 35px !important;
+}
+
+.btn-Cancle{
+border-radius: 35px !important;
+}

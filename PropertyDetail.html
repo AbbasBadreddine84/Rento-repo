@@ -12,7 +12,7 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
     />
-    <link rel="stylesheet" href="css/propertyDetail.css">
+    <link rel="stylesheet" href="css/PropertyDetail.css">
     <link
       rel="stylesheet"
       href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap"
@@ -49,7 +49,7 @@
     <a href="PropertyList.html" class="text-reset" ><i class="fas fa-arrow-circle-right me-1"></i> <span >Property List</span></a>
   </li>
   <li class="list-group-item py-1 bg-primary text-white text-center">
-    <a href="#" class="text-reset"><i class="fas fa-arrow-circle-right me-1"></i> <span>Add Property</span></a>
+    <a href="PropertyAdd.html" class="text-reset"><i class="fas fa-arrow-circle-right me-1"></i> <span>Add Property</span></a>
   </li>
 
   <li class="list-group-item py-1 bg-primary text-white text-center" id="propdet">
@@ -267,8 +267,8 @@ For Sale
       <td class="center">2/25/2021</td>
       <td class="center">Japan</td>
       <td class="center"><a href="" class="btn btn_status btn-light btn-xs" role="button"><label class="text-danger" for="">For Rent</label></a></td>
-    <td class="center" ><a href="" class="btn btn-tbl-edit btn-xs"><i class="fa fa-pencil"></i></a>
-    <a href="" class="btn btn-tbl-delete btn-xs"><i class="fa fa-trash"></i>
+     <td class="center" ><a href="" class="btn btn-tbl-edit btn-xs" data-bs-toggle="modal" data-bs-target="#exampleModal" ><i class="fa fa-pencil"></i></a>
+    <a href="" class="btn btn-tbl-delete btn-xs" role="button" onclick="DeleteRow()"><i class="fa fa-trash"></i>
     </td>
     </tr>
         <tr>
@@ -279,8 +279,8 @@ For Sale
       <td class="center">3/25/2021</td>
       <td class="center">England</td>
       <td class="center"><a href="" class="btn btn_status btn-light btn-xs" role="button"><label class="text-success" for="">For Sale</label></a></td>
-    <td class="center" ><a href="" class="btn btn-tbl-edit btn-xs"><i class="fa fa-pencil"></i></a>
-    <a href="" class="btn btn-tbl-delete btn-xs"><i class="fa fa-trash"></i>
+    <td class="center" ><a href="" class="btn btn-tbl-edit btn-xs" data-bs-toggle="modal" data-bs-target="#exampleModal" ><i class="fa fa-pencil"></i></a>
+    <a href="" class="btn btn-tbl-delete btn-xs" role="button" onclick="DeleteRow()"><i class="fa fa-trash"></i>
     </td>
     </tr>
          <tr>
@@ -291,8 +291,8 @@ For Sale
       <td class="center">3/22/2022</td>
       <td class="center">Lebanon</td>
       <td class="center"><a href="" class="btn btn_status btn-light btn-xs" role="button"><label class="text-danger" for="">For Rent</label></a></td>
-    <td class="center" ><a href="" class="btn btn-tbl-edit btn-xs"><i class="fa fa-pencil"></i></a>
-    <a href="" class="btn btn-tbl-delete btn-xs"><i class="fa fa-trash"></i>
+      <td class="center" ><a href="" class="btn btn-tbl-edit btn-xs" data-bs-toggle="modal" data-bs-target="#exampleModal" ><i class="fa fa-pencil"></i></a>
+    <a href="" class="btn btn-tbl-delete btn-xs" role="button" onclick="DeleteRow()"><i class="fa fa-trash"></i>
     </td>
     </tr>
   </tbody>
@@ -310,11 +310,11 @@ For Sale
 
       <script>
             function previewImage() {
-                frame.src = URL.createObjectURL(event.target.files[0]);
+                ImageClear.src = URL.createObjectURL(EventTarget.files[0]);
             }
             function clearImage() {
                 document.getElementById('formFile').value = null;
-                frame.src = "";
+                ImageClear.src = "";
             }
         </script>
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
