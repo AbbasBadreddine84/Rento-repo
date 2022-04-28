@@ -122,87 +122,68 @@ margin-right: 1rem;
     }
 }
 
-.card{
-    transition: all 0.5s;
-    background: #fff;
-    border-radius: 0.1875rem;
-    position: relative;
-    box-shadow: none;
-    width: 100%;
-    border:initial
+
+
+.badge_Sale{
+  display: inline-block;
+  text-align: center;
+  background:#FF0000;
+vertical-align:baseline ;
+white-space: nowrap;
+position: absolute;
+top: 10px;
+right: 10px;
+text-transform: uppercase;
+border: 1px solid;
+margin-bottom: 5px;
 }
-.card .header{
-    color:#424242;
-    padding: 20px;
-    position: relative;
-    box-shadow: none;
+
+.badge_Rent{
+display: inline-block;
+text-align: center;
+background:#ED8135;
+vertical-align:baseline ;
+white-space: nowrap;
+position: absolute;
+top: 10px;
+right: 10px;
+text-transform: uppercase;
+border: 1px solid;
+margin-bottom: 5px;
 }
-.card .body{
-    font-size: 14px;
-    color: #424242;
-    padding: 20px;
-    font-weight: 400;
-}
-.form-group{
-    position: relative;
-}
-.input-group,.form-group{
-    margin-bottom: 10px ;
-}
-.form-group .form-control{
-    padding: 10px 10px 10px 10px ;
-}
-.form-control{
-    transition: color 0.3s ease-in-out ;
-    box-shadow: none;
-    height: auto;
-    background-color: rgba(19, 18, 18, 0);
-    border: 1px solid #E3E3E3;
-    border-radius: 25.25rem !important;
-    color: #2c2c2c;
-    line-height: normal ;
-    position: relative;
-}
-.radioS{
-    display: inline-block;
-}
-.radioS{
-    display: inline-block;
-}
-.radio{
-    margin-bottom: 12px;
-    cursor: pointer;
-}
-.radio label{
-    padding-left: 28px;
-    display: inline-block;
-    position: relative;
-    cursor: pointer;
-}
-#formGroupExampleInput1{
-background: #EAFEF1;
-border: 1px solid #038C8C;
-box-sizing: border-box;
-border-radius: 10px;
-}
-#formGroupExampleInput2{
-background: #EAFEF1;
-border: 1px solid #038C8C;
-box-sizing: border-box;
-border-radius: 10px;
-}
-.txtarrea.form-control{
-    max-width: 100%;
-    resize: none;
-    line-height: 2;
-    border-bottom: 1px solid #E3E3E3;
+
+.property_list .property-icon a{
+      padding: 10px 4px;
+    margin-left: 5px;
+    font-size:16px;
+    box-sizing: border-box;
+    display: flex;
+    
 }
 
 
-.btn-Submit{
-border-radius: 35px !important;
+
+@media screen and (min-width: 701px) {
+.contentText{
+    font-weight: bold;
+font-size: small;
+
+
+}
+}
+@media screen and (max-width: 700px) {
+.contentText{
+    font-weight: bold;
+ font-size: small;
 }
 
-.btn-Cancle{
-border-radius: 35px !important;
 }
+
+.Location{
+    font-size: medium;
+font-weight: bold;
+}
+
+
+
+

@@ -65,6 +65,12 @@ function sortName(n) {
 }
 
 
+
+
+
+
+
+
 function DeleteRow(){
 
 document.getElementById("Table").DeleteRow(0)
