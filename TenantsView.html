@@ -38,83 +38,70 @@
                     class="list-group-item list-group-item-action bg-primary second-text active">
                     <i class="fas fa-home me-3"></i> <span>Home</span>
                 </a>
-                <a class="list-group-item list-group-item-action mt-5 bg-primary second-text active" id="Property"
-                    aria-current="true" data-mdb-toggle="collapse" href="#property" aria-expanded="true"
-                    aria-controls="property">
-                    <i class="fas fa-building fa-fw me-3"></i><span>Property</span>
-                </a>
+              <a class="list-group-item list-group-item-action mt-5 bg-primary hover-shadow second-text active" id="Property" aria-current="true" data-mdb-toggle="collapse"
+  href="#property" aria-expanded="true" aria-controls="property">
+  <i class="fas fa-building fa-fw me-3"></i><span>Property</span>
+</a>
+<!-- Collapsed content -->
+<ul id="property"  class="collapse show list-group hover-shadow  list-group-flush">
+  <li class="list-group-item py-1 bg-primary text-white text-center" id="proplist">
+    <a href="PropertyList.html" class="text-reset"><i class="fas fa-arrow-circle-right me-1"></i> <span >Property List</span></a>
+  </li>
+  <li class="list-group-item py-1 bg-primary text-white text-center">
+    <a href="PropertyAdd.html" class="text-reset"><i class="fas fa-arrow-circle-right me-1"></i> <span>Add Property</span></a>
+  </li>
 
-                <ul id="property" class="collapse show list-group list-group-flush">
-                    <li class="list-group-item py-1 bg-primary text-white text-center" id="proplist">
-                        <a href="PropertyList.html" class="text-reset"><i class="fas fa-arrow-circle-right me-1"></i>
-                            <span>Property List</span></a>
-                    </li>
-                    <li class="list-group-item py-1 bg-primary text-white text-center">
-                        <a href="PropertyAdd.html" class="text-reset"><i class="fas fa-arrow-circle-right me-1"></i>
-                            <span>Add Property</span></a>
-                    </li>
+  <li class="list-group-item py-1 bg-primary text-white text-center" id="propdet">
+    <a href="PropertyDetail.html" class="text-reset"><i class="fas fa-arrow-circle-right m-1"></i> <span>Property Details<span></a>
+  </li>
+</ul>
 
-                    <li class="list-group-item py-1 bg-primary text-white text-center" id="propdet">
-                        <a href="#" class="text-reset"><i class="fas fa-arrow-circle-right m-1"></i> <span>Property
-                                Details<span></a>
-                    </li>
-                </ul>
+<a class="list-group-item list-group-item-action mt-5 hover-shadow bg-primary second-text active" aria-current="true"
+  data-mdb-toggle="collapse" href="#propertyCategory" aria-expanded="true" aria-controls="propertyCategory">
+<i class="fas fa-list me-3"></i><span>Property Category</span>
+</a>
+<!-- Collapsed content -->
+<ul id="propertyCategory" class="collapse hover-shadow show list-group list-group-flush">
+  <li class="list-group-item py-1 bg-primary text-white text-center" id="propdVilla">
+    <a href="PropertyCVilla.html" class="text-reset"><i class="fas fa-arrow-circle-right me-1"></i> <span>Villa</span></a>
+  </li>
+  <li class="list-group-item py-1 bg-primary text-white text-center" id="propApp">
+    <a href="PropertyCAp.html" class="text-reset"><i class="fas fa-arrow-circle-right me-1"></i> <span>Apartment</span></a>
+  </li>
 
-                <a class="list-group-item list-group-item-action mt-5  bg-primary second-text active"
-                    aria-current="true" data-mdb-toggle="collapse" href="#propertyCategory" aria-expanded="true"
-                    aria-controls="propertyCategory">
-                    <i class="fas fa-list me-3"></i><span>Property Category</span>
-                </a>
+</ul>
 
-                <ul id="propertyCategory" class="collapse show list-group list-group-flush">
-                    <li class="list-group-item py-1 bg-primary text-white text-center" id="propdVilla">
-                        <a href="PropertyCVilla.html" class="text-reset"><i class="fas fa-arrow-circle-right me-1"></i>
-                            <span>Villa</span></a>
-                    </li>
-                    <li class="list-group-item py-1 bg-primary text-white text-center" id="propApp">
-                        <a href="#" class="text-reset"><i class="fas fa-arrow-circle-right me-1"></i>
-                            <span>Apartment</span></a>
-                    </li>
+<a class="list-group-item list-group-item-action hover-shadow  mt-5 bg-primary second-text active" aria-current="true"
+  data-mdb-toggle="collapse" href="#Customers" aria-expanded="true" aria-controls="Customers">
+<i class="fas fa-users me-3"></i><span>Customers</span>
+</a>
+<!-- Collapsed content -->
+<ul id="Customers" class="collapse show hover-shadow list-group list-group-flush">
+  <li class="list-group-item py-1 bg-primary text-white text-center" id="allcustomer">
+    <a href="#" class="text-reset"><i class="fas fa-arrow-circle-right me-1"></i> <span>All Customers</span></a>
+  </li>
+  <li class="list-group-item py-1 bg-primary text-white text-center" id="tenants">
+    <a href="TenantsView.html" class="text-reset"><i class="fas fa-arrow-circle-right me-1"></i> <span>Tenants</span></a>
+  </li>
+  <li class="list-group-item py-1 bg-primary text-white text-center" id="buyer">
+    <a href="BuyerView.html" class="text-reset"><i class="fas fa-arrow-circle-right me-1" ></i> <span>Buyer</span></a>
+  </li>
 
-                </ul>
+</ul>
 
-                <a class="list-group-item list-group-item-action  mt-5 bg-primary second-text active"
-                    aria-current="true" data-mdb-toggle="collapse" href="#Customers" aria-expanded="true"
-                    aria-controls="Customers">
-                    <i class="fas fa-users me-3"></i><span>Customers</span>
-                </a>
-
-                <ul id="Customers" class="collapse show list-group list-group-flush">
-                    <li class="list-group-item py-1 bg-primary text-white text-center" id="allcustomer">
-                        <a href="#" class="text-reset"><i class="fas fa-arrow-circle-right me-1"></i> <span>All
-                                Customers</span></a>
-                    </li>
-                    <li class="list-group-item py-1 bg-primary text-white text-center" id="tenants">
-                        <a href="#" class="text-reset"><i class="fas fa-arrow-circle-right me-1"></i>
-                            <span>Tenants</span></a>
-                    </li>
-                    <li class="list-group-item py-1 bg-primary text-white text-center" id="buyer">
-                        <a href="#" class="text-reset"><i class="fas fa-arrow-circle-right me-1"></i>
-                            <span>Buyer</span></a>
-                    </li>
-
-                </ul>
-
-                <a class="list-group-item list-group-item-action mt-5 bg-primary second-text active" aria-current="true"
-                    data-mdb-toggle="collapse" href="#Profit" aria-expanded="true" aria-controls="Profit">
-                    <i class="fas fa-dollar-sign me-3"></i><span id="profit">Profit</span>
-                </a>
-
-                <ul id="Profit" class="collapse show list-group list-group-flush">
-                    <li class="list-group-item py-1 bg-primary text-white text-center" id="Ptenants">
-                        <a href="#" class="text-reset"><i class="fas fa-arrow-circle-right me-1"></i>
-                            <span>Tenants</span></a>
-                    </li>
-                    <li class="list-group-item py-1 bg-primary text-white text-center" id="Pbuyer">
-                        <a href="#" class="text-reset"><i class="fas fa-arrow-circle-right me-1"></i>
-                            <span>Buyer</span></a>
-                    </li>
-                </ul>
+<a class="list-group-item list-group-item-action  hover-shadow mt-5 bg-primary second-text active" aria-current="true"
+  data-mdb-toggle="collapse" href="#Profit" aria-expanded="true" aria-controls="Profit">
+    <i class="fas fa-dollar-sign me-3"></i><span id="profit">Profit</span>
+</a>
+<!-- Collapsed content -->
+<ul id="Profit" class="collapse show hover-shadow list-group list-group-flush">
+  <li class="list-group-item py-1 bg-primary text-white text-center" id="Ptenants">
+    <a href="TenantProfit.html" class="text-reset"><i class="fas fa-arrow-circle-right me-1"></i> <span>Tenants</span></a>
+  </li>
+  <li class="list-group-item py-1 bg-primary text-white text-center" id="Pbuyer">
+    <a href="BuyerProfit.html" class="text-reset"><i class="fas fa-arrow-circle-right me-1"></i> <span>Buyer</span></a>
+  </li>
+</ul>
             </div>
         </div>
 
@@ -237,13 +224,13 @@
                             <thead class="table-primary">
                                 <tr>
 
-                                    <th onclick="sortName(0)" scope="col" class="centerName">Name<i class="fas fa-sort"></i></th>
-                                    <th onclick="sortName(2)" scope="col" class="centerName">PropertyID<i
+                                    <th scope="col" class="centerName">Name<i class="fas fa-sort"></i></th>
+                                    <th  scope="col" class="centerName">PropertyID<i
                                             class="fas fa-sort d-inline"></i></th>
                                   
                                     <th scope="col" class="centerName">Arrive</i></th>
                                     <th scope="col" class="centerName">Depart</th>
-                                    <th onclick="sortName(1)" scope="col" class="centerName">Location<i
+                                    <th scope="col" class="centerName">Location<i
                                             class="fas fa-sort d-inline"></i></th>
                                              <th scope="col" class="center">Mobile</th>
                                     <th scope="col" class="center">Payment</th>
@@ -360,16 +347,7 @@
 
     <script src="/JS/app.js"></script>
 
-    <script>
-        function previewImage() {
-            ImageClear.src = URL.createObjectURL(EventTarget.files[0]);
-        }
 
-        function clearImage() {
-            document.getElementById('formFile').value = null;
-            ImageClear.src = "";
-        }
-    </script>
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
         integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous">
     </script>
