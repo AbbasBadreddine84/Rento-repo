@@ -3,7 +3,7 @@ function myFunction() {
   input = document.getElementById("SearchInput");
   filter = input.value.toUpperCase();
   table = document.getElementById("Table");
-  tr = table.getElementsByTagName("tr"); 
+  tr = table.getElementsByTagName("tr");
 
   for (i = 0; i < tr.length; i++) {
     td = tr[i].getElementsByTagName("td")[0];
@@ -18,10 +18,16 @@ function myFunction() {
   }
 }
 
-
-
 function sortName(n) {
-  var table,rows,switching,i,x,y,shouldSwitch,dir,switchcount = 0;
+  var table,
+    rows,
+    switching,
+    i,
+    x,
+    y,
+    shouldSwitch,
+    dir,
+    switchcount = 0;
   table = document.getElementById("Table");
   switching = true;
   dir = "asc";
@@ -34,24 +40,20 @@ function sortName(n) {
       y = rows[i + 1].getElementsByTagName("TD")[n];
       if (dir == "asc") {
         if (x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase()) {
-       
           shouldSwitch = true;
           break;
         }
       } else if (dir == "desc") {
         if (x.innerHTML.toLowerCase() < y.innerHTML.toLowerCase()) {
-          
           shouldSwitch = true;
           break;
         }
-      }
-      else if (Number(x.innerHTML) > Number(y.innerHTML)) {
+      } else if (Number(x.innerHTML) > Number(y.innerHTML)) {
         shouldSwitch = true;
         break;
       }
     }
     if (shouldSwitch) {
-    
       rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
       switching = true;
       switchcount++;
@@ -64,16 +66,7 @@ function sortName(n) {
   }
 }
 
-
-
-
-
-
-
-
-function DeleteRow(){
-
-document.getElementById("Table").DeleteRow(0)
+function DeleteRow() {
+  document.getElementById("Table").DeleteRow(0);
 }
-
 

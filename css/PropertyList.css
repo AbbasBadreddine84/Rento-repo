@@ -154,6 +154,14 @@ height: auto;
     font-weight: 400;
     line-height: 1.5;
     text-align: left;
+    padding: 20px;
+}
+
+.card .header{
+    color:#424242;
+    padding: 20px;
+    position: relative;
+    box-shadow: none;
 }
 .card{
       word-wrap: break-word;
@@ -163,11 +171,13 @@ height: auto;
     background-color: #e9ecef;
     -webkit-font-smoothing:antialiased;
     box-sizing: border-box;
+    
 }
+
+
 .property_list .property_image .badge {
     position: absolute;
-    top: 10px;
-    left: 10px;
+    left: 12px;
     text-transform: uppercase;
  display: inline-block;
 text-align: center;
@@ -181,6 +191,7 @@ vertical-align:baseline ;
 text-transform: uppercase;
 border: 1px solid;
 margin-bottom: 5px;
+position: absolute;
 }
 
 .badge_Rent{
@@ -192,6 +203,7 @@ vertical-align:baseline ;
 text-transform: uppercase;
 border: 1px solid;
 margin-bottom: 5px;
+position: absolute;
 }
 
 .property_list .property-icon a{

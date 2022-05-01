@@ -131,11 +131,10 @@ margin-right: 1rem;
 vertical-align:baseline ;
 white-space: nowrap;
 position: absolute;
-top: 10px;
-right: 10px;
 text-transform: uppercase;
 border: 1px solid;
 margin-bottom: 5px;
+left: 0px;
 }
 
 .badge_Rent{
@@ -145,8 +144,7 @@ background:#ED8135;
 vertical-align:baseline ;
 white-space: nowrap;
 position: absolute;
-top: 10px;
-right: 10px;
+left: 0px;
 text-transform: uppercase;
 border: 1px solid;
 margin-bottom: 5px;
