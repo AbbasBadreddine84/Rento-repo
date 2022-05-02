@@ -24,117 +24,112 @@
 
         <div class="bg-primary" id="sidebar-wrapper">
 
-            <div class="sidebar-heading text-center py-4 primary-text fs-4 fw-bold border-bottom border-end">
-                <i class=""></i><span class="text-white">Rento</span><br>
-                <span class="fw-bold text-white" id="spanT">A home for every renter</span>
-                <img src="img/download.png" class="rounded-circle mt-5" id="profile" alt=""><br>
-                <span class="mt-2 primary-text text-white fs-5">Name</span>
+      <div class="sidebar-heading text-center py-4 fs-4 fw-bold border-bottom border-end">
+      <i class=""></i><span class="text-white">Rento</span><br>
+      <span class="fw-bold text-white" id="spanT">A home for every renter</span>
+    <img src="img/download.png" class="rounded-circle mt-5" id="profile" alt=""><br>
+    <span class="mt-2 text-white fs-5">Name</span>
+    
+    </div>
+    <!-- content -->
+    <div class="list-group list-group-flush mx-1 mt-3">
 
-            </div>
-
-            <div class="list-group list-group-flush mx-1 mt-3">
-
-                <a href="adminDashboard.html"
-                    class="list-group-item list-group-item-action bg-primary second-text active">
-                    <i class="fas fa-home me-3"></i> <span>Home</span>
-                </a>
-                <a class="list-group-item list-group-item-action mt-5 bg-primary hover-shadow second-text active" id="Property" aria-current="true" data-mdb-toggle="collapse"
+      <a href="adminDashboard.html" class="list-group-item list-group-item-action list-group-item-1  hover-shadow bg-primary">
+        <i class="fas fa-home fa-fw me-3"></i> <span>Home</span>  
+      </a>
+<a class="list-group-item list-group-item-action list-group-item-1  mt-5 bg-primary hover-shadow" id="Property" aria-current="true" data-mdb-toggle="collapse"
   href="#property" aria-expanded="true" aria-controls="property">
   <i class="fas fa-building fa-fw me-3"></i><span>Property</span>
 </a>
 <!-- Collapsed content -->
-<ul id="property"  class="collapse show list-group hover-shadow  list-group-flush">
-  <li class="list-group-item py-1 bg-primary text-white text-center" id="proplist">
+<ul id="property"  class="collapse show list-group hover-shadow bg-primary list-group-flush">
+  <li class="list-group-item list-group-item-2 py-1 bg-primary text-white text-center" id="proplist">
     <a href="PropertyList.html" class="text-reset"><i class="fas fa-arrow-circle-right me-1"></i> <span >Property List</span></a>
   </li>
-  <li class="list-group-item py-1 bg-primary text-white text-center">
+  <li class="list-group-item py-1 list-group-item-2 bg-primary text-white text-center">
     <a href="PropertyAdd.html" class="text-reset"><i class="fas fa-arrow-circle-right me-1"></i> <span>Add Property</span></a>
   </li>
 
-  <li class="list-group-item py-1 bg-primary text-white text-center" id="propdet">
-    <a href="PropertyDetail.html" class="text-reset"><i class="fas fa-arrow-circle-right m-1"></i> <span>Property Details<span></a>
+  <li class="list-group-item py-1 list-group-item-2 bg-primary text-white text-center" id="propdet">
+    <a href="PropertyDetail.html" class="text-reset"><i class="fas fa-arrow-circle-right me-1"></i> <span>Property Details<span></a>
   </li>
 </ul>
 
-<a class="list-group-item list-group-item-action mt-5 hover-shadow bg-primary second-text active" aria-current="true"
+<a class="list-group-item  list-group-item-action list-group-item-1  mt-5 hover-shadow bg-primary" aria-current="true"
   data-mdb-toggle="collapse" href="#propertyCategory" aria-expanded="true" aria-controls="propertyCategory">
-<i class="fas fa-list me-3"></i><span>Property Category</span>
+<i class="fas fa-list fa-fw me-3"></i><span>Property Category</span>
 </a>
 <!-- Collapsed content -->
 <ul id="propertyCategory" class="collapse hover-shadow show list-group list-group-flush">
-  <li class="list-group-item py-1 bg-primary text-white text-center" id="propdVilla">
+  <li class="list-group-item list-group-item-2 py-1 bg-primary text-white text-center" id="propdVilla">
     <a href="PropertyCVilla.html" class="text-reset"><i class="fas fa-arrow-circle-right me-1"></i> <span>Villa</span></a>
   </li>
-  <li class="list-group-item py-1 bg-primary text-white text-center" id="propApp">
+  <li class="list-group-item list-group-item-2 py-1 bg-primary text-white text-center" id="propApp">
     <a href="PropertyCAp.html" class="text-reset"><i class="fas fa-arrow-circle-right me-1"></i> <span>Apartment</span></a>
   </li>
 
 </ul>
 
-<a class="list-group-item list-group-item-action hover-shadow  mt-5 bg-primary second-text active" aria-current="true"
+<a class="list-group-item  list-group-item-action list-group-item-1 hover-shadow  mt-5 bg-primary" aria-current="true"
   data-mdb-toggle="collapse" href="#Customers" aria-expanded="true" aria-controls="Customers">
-<i class="fas fa-users me-3"></i><span>Customers</span>
+<i class="fas fa-users fa-fw me-3"></i><span>Customers</span>
 </a>
 <!-- Collapsed content -->
 <ul id="Customers" class="collapse show hover-shadow list-group list-group-flush">
-  <li class="list-group-item py-1 bg-primary text-white text-center" id="allcustomer">
-    <a href="#" class="text-reset"><i class="fas fa-arrow-circle-right me-1"></i> <span>All Customers</span></a>
-  </li>
-  <li class="list-group-item py-1 bg-primary text-white text-center" id="tenants">
+  <li class="list-group-item list-group-item-2 py-1 bg-primary text-white text-center" id="tenants">
     <a href="TenantsView.html" class="text-reset"><i class="fas fa-arrow-circle-right me-1"></i> <span>Tenants</span></a>
   </li>
-  <li class="list-group-item py-1 bg-primary text-white text-center" id="buyer">
+  <li class="list-group-item list-group-item-2 py-1 bg-primary text-white text-center" id="buyer">
     <a href="BuyerView.html" class="text-reset"><i class="fas fa-arrow-circle-right me-1" ></i> <span>Buyer</span></a>
   </li>
 
 </ul>
 
-<a class="list-group-item list-group-item-action  hover-shadow mt-5 bg-primary second-text active" aria-current="true"
+<a class="list-group-item list-group-item-action list-group-item-1  hover-shadow mt-5 bg-primary" aria-current="true"
   data-mdb-toggle="collapse" href="#Profit" aria-expanded="true" aria-controls="Profit">
-    <i class="fas fa-dollar-sign me-3"></i><span id="profit">Profit</span>
+    <i class="fas fa-dollar-sign fa-fw me-3"></i><label>Profit</label>
 </a>
 <!-- Collapsed content -->
 <ul id="Profit" class="collapse show hover-shadow list-group list-group-flush">
-  <li class="list-group-item py-1 bg-primary text-white text-center" id="Ptenants">
+  <li class="list-group-item list-group-item-2 py-1 bg-primary text-white text-center" id="Ptenants">
     <a href="TenantProfit.html" class="text-reset"><i class="fas fa-arrow-circle-right me-1"></i> <span>Tenants</span></a>
   </li>
-  <li class="list-group-item py-1 bg-primary text-white text-center" id="Pbuyer">
+  <li class="list-group-item list-group-item-2 py-1 bg-primary text-white text-center" id="Pbuyer">
     <a href="BuyerProfit.html" class="text-reset"><i class="fas fa-arrow-circle-right me-1"></i> <span>Buyer</span></a>
   </li>
 </ul>
-            </div>
-        </div>
+    </div>
+  </div>
+  <!-- sidebar end -->
 
-
-
+  
         <div id="page-content-wrapper">
-            <nav class="navbar navbar-expand-lg navbar-light bg-light py-4 px-4">
-                <div class="d-flex align-items-center">
-                    <i class="fas fa-align-left primary-text fs-4 me-3" id="menu-toggle"></i>
-                    <h2 class="fs-4 m-0">Buyer Profits</h2>
-                </div>
+          <nav class="navbar navbar-expand-lg navbar-light bg-light py-4 px-4">
+            <div class="d-flex align-items-center">
+              <i class="fas fa-align-left  fs-4 me-3" id="menu-toggle"></i>
+              <h2 class="fs-4 m-0">Home</h2>
+            </div>
+          
+            <button class="navbar-toggler collapsed" type="button" data-mdb-toggle="collapse" data-mdb-target="#navbarContent"
+              aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
+             <i class="fas fa-bars"></i>
+            </button>
 
-                <button class="navbar-toggler collapsed" type="button" data-mdb-toggle="collapse"
-                    data-mdb-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false"
-                    aria-label="Toggle navigation">
-                    <i class="fas fa-bars"></i>
-                </button>
-
-                <div class="collapse navbar-collapse" id="navbarContent">
-                    <ul class="navbar-nav ms-auto mb-lg-0">
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle second-text fw-bold" href="#" id="navbarDropdown"
-                                role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                <i class="fas fa-user me-2"></i>Name
-                            </a>
-                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <li><a class="dropdown-item" href="Profile.html">Profile</a></li>
-                                <li><a class="dropdown-item" href="#">Logout</a></li>
-                            </ul>
-                        </li>
-                    </ul>
-                </div>
-            </nav>
+            <div class="collapse navbar-collapse" id="navbarContent">
+              <ul class="navbar-nav ms-auto mb-lg-0">
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle fw-bold" href="#" id="navbarDropdown" role="button"
+                    data-bs-toggle="dropdown" aria-expanded="false">
+                     <i class="fas fa-user me-2"></i>Name
+                  </a>
+                  <ul class="dropdown-menu progress-bar-animated" aria-labelledby="navbarDropdown">
+                    <li><a class="dropdown-item" href="Profile.html">Profile</a></li>
+                    <li><a class="dropdown-item" href="#">Logout</a></li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
+          </nav>
 
 
 

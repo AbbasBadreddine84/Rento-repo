@@ -1,19 +1,10 @@
 
+
 #profile{
 width: 100px;
 height: 100px;
 }
 
-#propdet{
-margin-left: 1rem;
-}
-
-#propdVilla{
-margin-right: 3.8rem;
-}
-#propApp{
-margin-right: 1rem;
-}
 #menu-toggle {
   cursor: pointer;
 }
@@ -23,48 +14,19 @@ margin-right: 1rem;
 }
 
 
-#Property{
-margin-right: 1rem;
-}
-#proplist{
-    margin-right: 0.2rem;
-}
-#allcustomer{
-    margin-left: 0.5rem;
-}
-#tenants{
-    margin-right: 2.2rem;
-}
-#buyer {
-    margin-right: 3.2rem;
-}
-#profit{
-    margin-left: 0.7rem;
-}
-#Ptenants{
-    margin-right: 2.3rem;
-}
-
-#Pbuyer{
-    margin-right: 3.2rem;
-}
-.list-group-item.active {
-    background-color: transparent;
-    color: var(--main-text-color);
+.list-group-item-1  {
     font-weight: bold;
-    border: none;
-    
+    border: none !important;
+color: white !important;
+ display: inline-flex !important; 
 }
 
-.list-group-item {
-    border: none;
-    padding: 20px 30px;
+.list-group-item-2 {
+    border: none !important;
     font-weight: bold;
+ display: inline-flex !important; 
 }
 
-.second-text {
-    color: var(--second-text-color);
-}
 
 
 .rounded-full {
@@ -97,12 +59,8 @@ margin-right: 1rem;
 #page-content-wrapper {
     min-width: 100vw;
 }
-.list-group-item.active  {
-    background-color: transparent;
-    color: var(--main-text-color);
-    font-weight: bold;
-    border: none;
-}
+
+
 #wrapper.toggled #sidebar-wrapper {
     margin-left: 0;
 }
