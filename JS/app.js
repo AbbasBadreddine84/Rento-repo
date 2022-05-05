@@ -66,7 +66,11 @@ function sortName(n) {
   }
 }
 
-function DeleteRow() {
-  document.getElementById("Table").DeleteRow(0);
+
+
+function deleteR(r) {
+  var i = r.parentNode.parentNode.rowIndex;
+  document.getElementById("Table").deleteRow(i);
 }
+
 

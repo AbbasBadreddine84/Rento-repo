@@ -133,7 +133,7 @@
 
             <div class="container-fluid px-5">
                 <div class="row clearfix mt-5">
-                    <form>
+                    
 
                         <div class="card hover-shadow">
                             <div class="row">
@@ -148,7 +148,7 @@
                                             <li> <i class="fas fa-location fs-6"></i><label
                                                     class="fs-6 ms-2">London</label></li>
                                             <li> <i class="fas fa-mobile fs-6"></i><label
-                                                    class="fs-6 ms-2">(123)-3121</label></li>
+                                                    class="fs-6 ms-2">12-3124-1234</label></li>
                                             <li><i class="fas fa-envelope fs-6"></i><label
                                                     class="ms-2 fs-6">John@gmail.com</label></li>
                                         </ul>
@@ -173,7 +173,7 @@
                 </div>
 
                 <div class="row mt-5 mb-4">
-                    <div class="card hover-shadow">
+               <form id="form" action="#" class="card hover-shadow needs-validation" novalidate>
                         <div class="header">
                             <h2>
                                 <strong class="text-primary ms-2 fs-3">Details</strong><br>
@@ -184,9 +184,16 @@
                                 <div class="top">
                                     <a href=""><i class="fas fa-user"></i></a>
                                     <div class="form-group form-floating">
-                                        <input type="text" class="form-check form-control inputForm" id="floatingusername"
+                                        <input type="text" class="form-check form-control inputForm" name="usernameProfile" id="usernameProfile"
                                             aria-label="Floating label select example_1">
-                                        <label for="floatingusername">Username</label>
+                  <div class="valid-tooltip">
+             Looks Good!
+           </div>
+                <div class="invalid-tooltip">
+                  username cannot be blank or have space
+           </div>
+
+                                        <label for="usernameProfile">Username</label>
                                     </div>
 
                                 </div>
@@ -196,9 +203,15 @@
                             <div class="col-lg-4 col-md-4 col-sm-4">
                                 <a href=""><i class="fas fa-envelope"></i></a>
                                 <div class="form-group form-floating">
-                                    <input type="text" class="form-check form-control inputForm" id="floatingEmail"
+                                    <input type="text" class="form-check form-control inputForm" name="email" id="email"
                                         aria-label="Floating label select example_2">
-                                    <label for="floatingEmail">Email</label>
+                                    <label for="email">Email</label>
+                                    <div class="valid-tooltip">
+             Looks Good!
+           </div>
+                <div class="invalid-tooltip">
+                    Please Enter a valid email         
+  </div>
                                 </div>
                             </div>
                        
@@ -206,8 +219,15 @@
                             <div class="col-lg-4 col-md-4 col-sm-4">
                                 <a href=""><i class="fas fa-lock"></i></a>
                                 <div class="form-group form-floating">
-                                    <input type="password" class="form-check form-control inputForm" id="floatingPassword"
+                                    <input type="password" class="form-check form-control inputForm" name="password" id="password"
                                         aria-label="Floating label select example_3">
+      <div class="valid-tooltip">
+             Looks Good!
+           </div>
+                <div class="invalid-tooltip">
+                  Please make sure your password contains at least 8 character and (Capitalletter,number and a special charcter)with no spaces
+           </div>
+
                                     <label for="floatingPassword">Password</label>
                                 </div>
                             </div>
@@ -217,9 +237,15 @@
                             <div class="col-lg-4 col-md-4 col-sm-12 mt-4">
                                 <a href=""><i class="fas fa-user"></i></a>
                                 <div class="form-group form-floating">
-                                    <input type="text" class="form-check form-control inputForm" id="floatingName"
-                                        aria-label="Floating label select example_3">
-                                    <label for="floatingName">First Name</label>
+                                    <input type="text" class="form-check form-control inputForm" name="FirstName" id="FirstName"
+                                        aria-label="Floating label select example_3"> 
+                                          <div class="valid-tooltip">
+             Looks Good!
+           </div>
+                <div class="invalid-tooltip">
+                    first Name cannot be blank or more than 15 character        
+  </div>
+                                    <label for="FirstName">First Name</label>
                                 </div>
                             </div>
                         
@@ -227,9 +253,15 @@
                             <div class="col-lg-4 col-md-4 col-sm-12 mt-4">
                                 <a href=""><i class="fas fa-user"></i></a>
                                 <div class="form-group form-floating">
-                                    <input type="text" class="form-check form-control inputForm" id="floatingLastName"
+                                    <input type="text" class="form-check form-control inputForm" name="LastName" id="LastName"
                                         aria-label="Floating label select example_4">
-                                    <label for="floatingLastName">Last Name</label>
+                                          <div class="valid-tooltip">
+             Looks Good!
+           </div>
+                <div class="invalid-tooltip">
+                    Last Name cannot be blank or more than 15 character          
+  </div>
+                                    <label for="LastName">Last Name</label>
                                 </div>
                             </div>
                        
@@ -238,9 +270,9 @@
                             <div class="col-lg-4 col-md-4 col-sm-12 mt-4">
                                 <a href=""><i class="fas fa-calendar"></i></a>
                                 <div class="form-group form-floating">
-                                    <input type="date" class="form-check form-control inputForm" id="floatingbirth"
+                                    <input type="date" class="form-check form-control inputForm" name="DateOfbirth" id="DateOfbirth"
                                         aria-label="Floating label select example_5">
-                                    <label for="floatingbirth">Date of Birth</label>
+                                    <label for="DateOfbirth">Date of Birth</label>
                                 </div>
                             </div>
                         </div>
@@ -250,9 +282,15 @@
                             <div class="col-lg-4 col-md-4 col-sm-12 mt-4">
                                 <a href=""><i class="fas fa-phone"></i></a>
                                 <div class="form-group form-floating">
-                                    <input type="number" class="form-check form-control inputForm" id="floatingPhone"
+                                    <input type="text" class="form-check form-control inputForm" name="PhoneNumber" id="PhoneNumber"
                                         aria-label="Floating label select example_6">
-                                    <label for="floatingPhone">Phone Number</label>
+                                                      <div class="valid-tooltip">
+             Looks Good!
+           </div>
+                <div class="invalid-tooltip">
+                   Enter a valid Phone Number          
+  </div>
+                                    <label for="PhoneNumber">Phone Number</label>
                                 </div>
                             </div>
                         
@@ -261,9 +299,15 @@
                             <div class="col-lg-4 col-md-4 col-sm-12 mt-4">
                                 <a href=""><i class="fas fa-location"></i></a>
                                 <div class="form-group form-floating">
-                                    <input type="text" class="form-check form-control inputForm" id="floatingAdress"
+                                    <input type="text" class="form-check form-control inputForm" name="address" id="address"
                                         aria-label="Floating label select example_7">
-                                    <label for="floatingAdress">Adress</label>
+                                              <div class="valid-tooltip">
+             Looks Good!
+           </div>
+                <div class="invalid-tooltip">
+                    Address cannot be blank         
+  </div>
+                                    <label for="address">Address</label>
                                 </div>
                             </div>
                         
@@ -272,9 +316,15 @@
                             <div class="col-lg-4 col-md-4 col-sm-12 mt-4">
                                 <a href=""><i class="fas fa-flag"></i></a>
                                 <div class="form-group form-floating">
-                                    <input type="text" class="form-check form-control inputForm" id="floatingNationality"
+                                    <input type="text" class="form-check form-control inputForm" name="Nationality" id="Nationality"
                                         aria-label="Floating label select example_8">
-                                    <label for="floatingNationanlity">Nationality</label>
+                                           <div class="valid-tooltip">
+             Looks Good!
+           </div>
+                <div class="invalid-tooltip">
+                    Nationality cannot be blank         
+  </div>
+                                    <label for="Nationality">Nationality</label>
                                 </div>
                             </div>
                         </div>
@@ -288,12 +338,15 @@
 <button class="btn btn-primary me-md-2 btn-Submit" type="button">Submit</button>
 </div>
                     </div>
+                </form>
                 </div>
 
             </div>
         </div>
     </div>
 
+
+    <script src="JS/app4.js"></script>
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
         integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous">
     </script>
