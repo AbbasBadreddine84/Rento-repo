@@ -151,7 +151,7 @@
         <div class="col-sm-4">
           
             <div class="form-group">
-                <input type="text" class="form-control" placeholder="Property Name" name="pname" id="pname">
+                <input type="text" class="form-control" placeholder="Property Name" name="pname" id="pname" required>
      <div class="valid-tooltip">
              Looks Good!
            </div>
@@ -163,7 +163,7 @@
         </div>
             <div class="col-sm-4">
             <div class="form-group">
-                <input type="text" class="form-control" placeholder="Property Location" name="plocation" id="plocation">
+                <input type="text" class="form-control" placeholder="Property Location" name="plocation" id="plocation" required>
             <div class="valid-tooltip">
              Looks Good!
            </div>
@@ -175,21 +175,22 @@
         </div>
          <div class="col-sm-4">
             <div class="form-group form-floating">
-              <input type="date" class="form-control" name="pdate"  id="pdate">
+              <input type="date" class="form-control" name="pdate"  id="pdate" required>
   <label for="floatingSelect">Year Built</label>
             </div>
         </div>
           <div class="col-sm-4 mt-5">
             <div class="form-group form-floating">
-                <textarea class="form-control" name="ptextarea" id="ptextarea">                  
+                <textarea class="form-control" name="ptextarea" id="ptextarea" required>                  
                 </textarea>
-                      <label for="Description">Description</label>
-                       <div class="valid-tooltip">
+                      <div class="valid-tooltip">
              Looks Good!
            </div>
          <div class="invalid-tooltip">
                 description required more characters
            </div>
+                      <label for="Description">Description</label>
+                 
            
             </div>
                                    <label for="Descriptioncharacter" id="Descriptioncharacter">220 characters remaining</label>
@@ -197,7 +198,7 @@
         </div>
   <div class="col-sm-4 mt-5">
             <div class="form-group form-floating">
-              <select class="form-select form-control" name="pselectType" id="pselectType" aria-label="Floating label select example">
+              <select class="form-select form-control" name="pselectType" id="pselectType" aria-label="Floating label select example" required>
    <option value="">Select an option</option>
     <option value="Villa">Villa</option>
     <option value="Apartment">Apartment</option>
@@ -214,7 +215,7 @@
 
 <div class="col-sm-4 mt-5">
             <div class="form-group form-floating">
-              <input type="file" class="form-control" name="pimage" id="pimage">
+              <input type="file" class="form-control" name="pimage" id="pimage" required>
           <div class="valid-tooltip">
              Looks Good!
            </div>
@@ -241,7 +242,7 @@
     <div class="row clearfix">
         <div class="col-sm-6">
    <div class="form-check">
-  <input class="form-check-input d-inline-block" type="radio" name="formGroupExampleInput" id="formGroupExampleInput1">
+  <input class="form-check-input d-inline-block" type="radio" name="formGroupExampleInput" id="formGroupExampleInput1" required>
   <label class="form-check-label" for="formGroupExampleInput1">
    For Rent
   </label><br>
@@ -254,7 +255,7 @@ For Sale
         </div>
 <div class="col-sm-6">
 <div class="form-group">
-    <input type="number" class="form-control" placeholder="Sqaure Ft" id="sqaureft" name="squareft">
+    <input type="number" class="form-control" placeholder="Sqaure Ft" id="sqaureft" name="squareft" required>
    <div class="valid-tooltip">
              Looks Good!
            </div>
@@ -265,7 +266,7 @@ For Sale
 </div>
 <div class="col-sm-6 mt-1">
     <div class="form-group">
-        <textarea class="form-control txtarrea" rows="2" placeholder="Property Address" name="paddress" id="paddress"></textarea>
+        <textarea class="form-control txtarrea" rows="2" placeholder="Property Address" name="paddress" id="paddress" required></textarea>
     <div class="valid-feedback">
              Looks Good!
            </div>
@@ -299,7 +300,7 @@ For Sale
     <div class="row clearfix">
         <div class="col-sm-3">
    <div class="form-group">
-    <input type="number" class="form-control" placeholder="Number of bedroom" name="pbedroom" id="pbedroom" >
+    <input type="number" class="form-control" placeholder="Number of bedroom" name="pbedroom" id="pbedroom" required >
        <div class="valid-tooltip">
              Looks Good!
            </div>
@@ -311,7 +312,7 @@ For Sale
 
     <div class="col-sm-3">
    <div class="form-group">
-    <input type="number" class="form-control" placeholder="Number of Kitchen" name="pkitchen" id="pkitchen">
+    <input type="number" class="form-control" placeholder="Number of Kitchen" name="pkitchen" id="pkitchen" required>
 <div class="valid-tooltip">
              Looks Good!
            </div>
@@ -323,7 +324,7 @@ For Sale
 
     <div class="col-sm-3">
    <div class="form-group">
-    <input type="number" class="form-control" placeholder="Number of Living Room" name="plivingromm" id="plivingromm">
+    <input type="number" class="form-control" placeholder="Number of Living Room" name="plivingromm" id="plivingromm" required>
 <div class="valid-tooltip">
              Looks Good!
            </div>
@@ -335,7 +336,7 @@ For Sale
 
    <div class="col-sm-3">
    <div class="form-group">
-    <input type="number" class="form-control" placeholder="Number of Bathroom" name="pbathroom" id="pbathroom">
+    <input type="number" class="form-control" placeholder="Number of Bathroom" name="pbathroom" id="pbathroom" required>
    <div class="valid-tooltip">
              Looks Good!
            </div>
@@ -365,27 +366,27 @@ For Sale
     <div class="row">
         <div class="col-sm-12">
 <div class="form-check  form-check-inline">
-  <input class="form-check-input" type="checkbox" id="checkboxPool" value="option1">
+  <input class="form-check-input" type="checkbox" id="checkboxPool" value="option1" required>
   <label class="form-check-label" for="checkboxPool">Pool</label>
 </div>
 
 <div class="form-check  form-check-inline">
-  <input class="form-check-input" type="checkbox" id="checkboGarden" value="option2">
+  <input class="form-check-input" type="checkbox" id="checkboGarden" value="option2" required>
   <label class="form-check-label" for="checkboGarden">Garden</label>
 </div>
 
 <div class="form-check  form-check-inline">
-  <input class="form-check-input" type="checkbox" id="checkboxParking" value="option3">
+  <input class="form-check-input" type="checkbox" id="checkboxParking" value="option3" required>
   <label class="form-check-label" for="checkboxParking">Car Parking</label>
 </div>
 
 <div class="form-check  form-check-inline">
-  <input class="form-check-input" type="checkbox" id="checkboxBalcony" value="option4">
+  <input class="form-check-input" type="checkbox" id="checkboxBalcony" value="option4" required>
   <label class="form-check-label" for="checkboxBalcony">Balcony</label>
 </div>
 
 <div class="form-check  form-check-inline">
-  <input class="form-check-input" type="checkbox" id="checkboxTerrace" value="option5">
+  <input class="form-check-input" type="checkbox" id="checkboxTerrace" value="option5" required>
   <label class="form-check-label" for="checkboxTerrace">Terrace</label>
 </div>
         </div>

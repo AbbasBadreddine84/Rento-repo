@@ -22,7 +22,7 @@ const pimage = document.getElementById("pimage");
 
 const reSpaces = /^\S*$/;
 
-function validateProductName(e) {
+function validateProductName() {
     const pname = document.getElementById("pname");
     if (pname.value == "") {
         pname.classList.remove("is-valid");
@@ -53,7 +53,7 @@ function validatePLocation(e) {
     }
 }
 
-function validateptextarea(e) {
+function validateptextarea() {
     const description = document.getElementById("ptextarea");
     const Descriptioncharacter = document.getElementById("Descriptioncharacter");
     const MAX_CHARS = 220;
@@ -61,10 +61,11 @@ function validateptextarea(e) {
     description.addEventListener("input", () => {
         const remaining = MAX_CHARS - description.value.length;
         Descriptioncharacter.textContent = `${remaining} characters remaining`;
+
     });
 }
 
-function validatepselectType(e) {
+function validatepselectType() {
     const pselectType = document.getElementById("pselectType");
 
     if (pselectType.value) {
@@ -78,7 +79,7 @@ function validatepselectType(e) {
     }
 }
 
-function validatepimage(e) {
+function validatepimage() {
     const pimage = document.getElementById("pimage");
     const reg = /\.(gif|jpe?g|tiff?|png|webp|bmp)$/i;
     if (reg.test(pimage.value) && reg.test(pimage.value)) {
@@ -93,7 +94,7 @@ function validatepimage(e) {
 }
 
 
-function validatepsquare(e) {
+function validatepsquare() {
     const sqaureft = document.getElementById("sqaureft");
     if (sqaureft.value == "") {
         sqaureft.classList.remove("is-valid");
@@ -114,7 +115,7 @@ function validatepsquare(e) {
 
 
 
-function validatepaddress(e){
+function validatepaddress(){
        const paddress = document.getElementById("paddress");
        if (paddress.value === "" || paddress.value == null) {
          paddress.classList.add("is-invalid");
@@ -128,7 +129,7 @@ function validatepaddress(e){
 
 }
 
-function validatepbedroom(e) {
+function validatepbedroom() {
   const pbedroom = document.getElementById("pbedroom");
   if (pbedroom.value == "") {
     pbedroom.classList.remove("is-valid");
@@ -147,7 +148,7 @@ function validatepbedroom(e) {
   }
 }
 
-function validatepkitchen(e){
+function validatepkitchen(){
   const pkitchen = document.getElementById("pkitchen");
    if (pkitchen.value == "") {
      pkitchen.classList.remove("is-valid");
@@ -166,7 +167,7 @@ function validatepkitchen(e){
    }
 
 }
-function validateplivingromm(e) {
+function validateplivingromm() {
   const plivingromm = document.getElementById("plivingromm");
    if (plivingromm.value == "") {
      plivingromm.classList.remove("is-valid");
@@ -184,7 +185,7 @@ function validateplivingromm(e) {
      return false;
    }
 }
-function validatepbathroom(e) {
+function validatepbathroom() {
   const pbathroom = document.getElementById("pbathroom");
    if (pbathroom.value == "") {
      pbathroom.classList.remove("is-valid");
@@ -212,7 +213,7 @@ function validatepbathroom(e) {
     for (let form of forms) {
         form.addEventListener(
             "submit",
-            function (event) {
+            function (e) {
                 if (
                   !form.checkValidity() ||
                   !validateProductName() ||
@@ -221,15 +222,15 @@ function validatepbathroom(e) {
                   !validatepselectType() ||
                   !validatepimage() ||
                   !validatepsquare() ||
-                  validatepaddress() ||
-                  validatepbedroom() ||
-                  validatepkitchen() ||
-                  validateplivingromm()||
-                  validatepbathroom()
+                  !validatepaddress() ||
+                  !validatepbedroom() ||
+                  !validatepkitchen() ||
+                  !validateplivingromm()||
+                  !validatepbathroom()
 
                 ) {
-                  event.preventDefault();
-                  event.stopPropagation();
+                  e.preventDefault();
+                  e.stopPropagation();
                 } else {
                   form.classList.add("was-validated");
                 }

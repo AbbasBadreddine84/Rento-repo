@@ -16,7 +16,7 @@ document.getElementById("Nationality").addEventListener("blur", validateNational
 
 
 const reSpaces = /^\S*$/;
-function validateusername(e){
+function validateusername(){
 
     const usernameProfile = document.getElementById("usernameProfile");
     if (usernameProfile.value == "") {
@@ -36,7 +36,7 @@ function validateusername(e){
 
 }
 
-function validatepassword(e){
+function validatepassword(){
     const password=document.getElementById("password")
  const repassword = /(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.{8,})(?=.*[!@#$%^&*])/;
 if (repassword.test(password.value) && reSpaces.test(password.value)) {
@@ -52,7 +52,7 @@ if (repassword.test(password.value) && reSpaces.test(password.value)) {
 
 }
 
-function validateemail(e){
+function validateemail(){
 const email=document.getElementById("email")
   const remail = /^([a-zA-Z0-9_\-?\.?]){3,}@([a-zA-Z]){3,}\.([a-zA-Z]){2,5}$/;
 
@@ -71,7 +71,7 @@ const email=document.getElementById("email")
 
 
 
-function validateFirstName(e) {
+function validateFirstName() {
   const FirstName = document.getElementById("FirstName");
   if (FirstName.value == "") {
     FirstName.classList.remove("is-valid");
@@ -88,7 +88,7 @@ function validateFirstName(e) {
     return true;
   }
 }
-function validateLastName(e) {
+function validateLastName() {
   const LastName = document.getElementById("LastName");
   if (LastName.value == "") {
     LastName.classList.remove("is-valid");
@@ -105,7 +105,7 @@ function validateLastName(e) {
     return true;
   }
 }
-function validatePhoneNumber(e) {
+function validatePhoneNumber() {
   const PhoneNumber = document.getElementById("PhoneNumber");
   const phoneno = /^\+?([0-9]{2})\)?[-. ]?([0-9]{4})[-. ]?([0-9]{4})$/;
       if (phoneno.test(PhoneNumber.value)) {
@@ -145,12 +145,12 @@ function validateNationality() {
 }
 
 (function () {
-  const forms = document.querySelectorAll(".needs-validation");
+  const forms = document.getElementById("needs-validation");
 
   for (let form of forms) {
     form.addEventListener(
       "submit",
-      function (event) {
+      function (e) {
         if (
           !form.checkValidity() ||
           !validateusername() ||
@@ -162,8 +162,8 @@ function validateNationality() {
           !validateaddress() ||
           !validateNationality()
         ) {
-          event.preventDefault();
-          event.stopPropagation();
+          e.preventDefault();
+          e.stopPropagation();
         } else {
           form.classList.add("was-validated");
         }
