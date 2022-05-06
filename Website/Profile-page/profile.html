@@ -5,16 +5,14 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Profile</title>
     <link rel="stylesheet" href="profile.css">
     <!-- CSS only -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-    <!-- JavaScript Bundle with Popper -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
-        crossorigin="anonymous"></script>
-        <script src="profile.js"></script>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/intlTelInput.min.js"></script>
 </head>
 
 <body>
@@ -24,7 +22,7 @@
     <div class="container position-relative p-0">
 
         <nav class="navbar navbar-expand-lg navbar-light px-4 px-lg-5 py-3 py-lg-0">
-            <a href="" class="navbar-brand p-0">
+            <a href="../Landing_page/LandingPage.html" class="navbar-brand p-0">
                 <img src="images/Rento-logo.png" alt="Logo">
             </a>
             <button class="navbar-toggler collapsed d-flex d-lg-none flex-column justify-content-around" type="button"
@@ -36,10 +34,10 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <div class="navbar-nav ms-auto py-0" id="navbar-items">
-                    <a href="home.html" class="nav-item nav-link active">Home</a>
-                    <a href="about.html" class="nav-item nav-link">About</a>
-                    <a href="rental.html" class="nav-item nav-link">Apartments</a>
-                    <a href="listing.html" class="nav-item nav-link">List a property</a>
+                    <a href="../Home_page/home.html" class="nav-item nav-link active">Home</a>
+                    <a href="../About-page/About.html" class="nav-item nav-link">About</a>
+                    <a href="../Rental-page/Rental.html" class="nav-item nav-link">Apartments</a>
+                    <a href="../Description-page/Description.html" class="nav-item nav-link">List a property</a>
                 </div>
                 <a href="signIn.html" class="btn btn-primary text-light rounded-pill py-2 px-4 m-3 ">Sign in</a>
             </div>
@@ -47,7 +45,7 @@
     </div>
 
     <!-- navbar ENDS-->
-    <div class="container mt-2 mb-2">
+    <div class="container mt-2 mb-2 cont1">
         <div class="row">
             <div class="col-l-4 col-xl-4 col-xxl-4 col-sm-12 col-xs-12">
                 <div id="list-example" class="list-group">
@@ -106,20 +104,36 @@
                             </div>
 
                             <div class="col-7">
-                                <p id="already-shown">select your title</p>
 
-                                
-                                <select class="form-select" aria-label="Default select example" id="show1">
-                                    <option selected>Select your title</option>
-                                    <option value="1">Mr.</option>
-                                    <option value="2">Ms.</option>
-                                    <option value="3">Mrs.</option>
-                                  </select>
-                                  <button type="button" class="btn btn-primary" id="show2">Save</button>
+                                <div id="title-shown">
+                                    <p>select your title</p>
+                                </div>
+
+                                <div id="title-hiden">
+
+                                    <form class="needs-validation" novalidate>
+
+                                        <label for="validationCustom04" class="form-label">Title:</label>
+                                        <select class="form-select" id="validationCustom04" required>
+                                            <option selected disabled value="">Select your title ..</option>
+                                            <option value="1">Mr.</option>
+                                            <option value="2">Ms.</option>
+                                            <option value="3">Mrs.</option>
+                                        </select>
+                                        <div class="valid-feedback">Valid.</div>
+                                        <div class="invalid-feedback">Please select a title</div>
+                                        <br>
+                                        <button type="submit" class="btn btn-primary">Save</button>
+                                    </form>
+
+                                </div>
+
+
 
                             </div>
                             <div class="col-2" style="text-align: center;">
-                                <button type="button" class="btn btn-light" id="edit" onclick="myfunction()">Edit</button>
+                                <button type="button" class="btn btn-light" id="edit1"
+                                    onclick="switchVisible('title-shown','title-hiden','edit1')">Edit</button>
                             </div>
                         </div>
                         <hr>
@@ -127,14 +141,37 @@
                         <div class="row">
                             <div class="col-3">
                                 <p>Name</p>
+
                             </div>
 
                             <div class="col-7">
-                                <p>Let us know what to call you</p>
+                                <div id="name-shown">
+                                    <p>Let us know what to call you</p>
+                                </div>
+                                <div id="name-hiden">
+                                    <form action="" class="needs-validation" novalidate>
+                                        <!-- First Name -->
+                                        <label for="exampleForm2" class="form-label">First Name</label>
+                                        <input type="text" id="exampleForm2" class="form-control" required>
+                                        <div class="valid-feedback">Valid.</div>
+                                        <div class="invalid-feedback">Please Enter your First Name</div>
+                                        <!-- Display Name -->
+                                        <label for="exampleForm3">Last Name</label>
+                                        <input type="text" id="exampleForm3" class="form-control" required>
+                                        <div class="valid-feedback">Valid.</div>
+                                        <div class="invalid-feedback">Please Enter your Last Name.</div>
+                                        <br>
+                                        <button type="submit" class="btn btn-primary">Save</button>
+                                    </form>
+
+                                </div>
                             </div>
+
                             <div class="col-2" style="text-align: center;">
-                                <button type="button" class="btn btn-light">Edit</button>
+                                <button type="button" class="btn btn-light" id="edit2"
+                                    onclick="switchVisible('name-shown','name-hiden','edit2')">Edit</button>
                             </div>
+
                         </div>
                         <hr>
 
@@ -144,10 +181,25 @@
                             </div>
 
                             <div class="col-7">
-                                <p>Choose a display name</p>
+                                <div id="Dname-shown">
+                                    <p>Choose a display name</p>
+                                </div>
+                                <div id="Dname-hiden">
+                                    <form action="" class="needs-validation" novalidate>
+                                        <!-- Display Name -->
+                                        <label for="exampleForm4">Display Name</label><br>
+                                        <input type="text" id="exampleForm4" class="form-control" required>
+                                        <div class="valid-feedback">Valid.</div>
+                                        <div class="invalid-feedback">Please Enter your Display Name.</div>
+                                        <br>
+                                        <button type="submit" class="btn btn-primary">Save</button>
+                                    </form>
+
+                                </div>
                             </div>
                             <div class="col-2" style="text-align: center;">
-                                <button type="button" class="btn btn-light">Edit</button>
+                                <button type="button" class="btn btn-light" id="edit3"
+                                    onclick="switchVisible('Dname-shown','Dname-hiden','edit3')">Edit</button>
                             </div>
                         </div>
                         <hr>
@@ -157,42 +209,100 @@
                             </div>
 
                             <div class="col-7">
-                                <p>hijaziabbass40@gmail.com</p>
-                                <p style="font-size: small;">This email address is not verified yet, so you can't use
-                                    all your account's features. Resend verification email?</p>
+
+                                <div id="email-shown">
+                                    <p>hijaziabbass40@gmail.com</p>
+                                    <p style="font-size: small;">This email address is not verified yet, so you can't
+                                        use all your account's features. </p>
+
+                                    <button type="button" class="btn btn-link">Resend verification email?</button>
+                                </div>
+                                <div id="email-hiden">
+                                    <form action="" class="needs-validation" novalidate>
+                                        <!-- Email-->
+                                        <label for="exampleForm5">Email Address</label><br>
+                                        <input type="email" id="exampleForm5" class="form-control"
+                                            placeholder="hijaziabbass40@gmail.com" required>
+                                        <div class="valid-feedback">Valid.</div>
+                                        <div class="invalid-feedback">Please Valid Email.</div>
+                                        <p style="font-size: small;"> We'll send a verification link to your new email
+                                            address – check your inbox.</p>
+                                        <br>
+                                        <button type="submit" class="btn btn-primary">Save</button>
+                                    </form>
+                                </div>
+
                             </div>
                             <div class="col-2" style="text-align: center;">
-                                <button type="button" class="btn btn-light">Edit</button>
+                                <button type="button" class="btn btn-light" id="edit4"
+                                    onclick="switchVisible('email-shown','email-hiden','edit4')">Edit</button>
                             </div>
                         </div>
                         <hr>
+
+
+
+
+
                         <div class="row">
                             <div class="col-3">
                                 <p>Phone number</p>
                             </div>
 
                             <div class="col-7">
-                                <p>Add your phone number</p>
-                                <p style="font-size: small;">Properties or attractions you book can use this number to
-                                    contact you. You can also use it to sign in.</p>
+                                <div id="phone-shown">
+                                    <p>Add your phone number</p>
+                                    <p style="font-size: small;">Properties or attractions you book can use this number
+                                        to
+                                        contact you. You can also use it to sign in.</p>
+                                </div>
+                                <div id="phone-hidden">
+
+                                </div>
+
                             </div>
                             <div class="col-2" style="text-align: center;">
                                 <button type="button" class="btn btn-light">Edit</button>
                             </div>
                         </div>
+
+
+
+
                         <hr>
+
+
                         <div class="row">
                             <div class="col-3">
                                 <p>Date of birth</p>
                             </div>
 
                             <div class="col-7">
-                                <p>Enter your date of birth</p>
+                                <div id="birth-shown">
+                                    <p>Enter your date of birth</p>
+                                </div>
+                                <div id="birth-hiden">
+                                    <form action="" class="needs-validation" novalidate>
+                                        <!-- Birth Day-->
+                                        <label for="exampleForm6">Birth Day</label><br>
+                                        <input type="date" id="exampleForm6" class="form-control" required>
+                                        <div class="valid-feedback">Valid.</div>
+                                        <div class="invalid-feedback">Please Enter your Birth Date.</div>
+                                        <br>
+                                        <button type="submit" class="btn btn-primary">Save</button>
+                                    </form>
+                                </div>
                             </div>
+
                             <div class="col-2" style="text-align: center;">
-                                <button type="button" class="btn btn-light">Edit</button>
+                                <button type="submit" class="btn btn-light" id="edit6"
+                                    onclick="switchVisible('birth-shown','birth-hiden','edit6')">Edit</button>
                             </div>
                         </div>
+
+
+
+
                         <hr>
                         <div class="row">
                             <div class="col-3">
@@ -200,10 +310,273 @@
                             </div>
 
                             <div class="col-7">
-                                <p>Select the country/region you're from</p>
+                                <div id="nationality-shown">
+                                    <p>Select the country/region you're from</p>
+
+                                </div>
+                                <div id="nationality-hiden">
+                                    <form class="needs-validation" novalidate>
+
+                                        <label for="countries1" class="form-label">Nationality:</label>
+                                        <select id="countries1" name="countries" class="form-select" required>
+                                            <option value="Afganistan">Afghanistan</option>
+                                            <option value="Albania">Albania</option>
+                                            <option value="Algeria">Algeria</option>
+                                            <option value="American Samoa">American Samoa</option>
+                                            <option value="Andorra">Andorra</option>
+                                            <option value="Angola">Angola</option>
+                                            <option value="Anguilla">Anguilla</option>
+                                            <option value="Antigua & Barbuda">Antigua & Barbuda</option>
+                                            <option value="Argentina">Argentina</option>
+                                            <option value="Armenia">Armenia</option>
+                                            <option value="Aruba">Aruba</option>
+                                            <option value="Australia">Australia</option>
+                                            <option value="Austria">Austria</option>
+                                            <option value="Azerbaijan">Azerbaijan</option>
+                                            <option value="Bahamas">Bahamas</option>
+                                            <option value="Bahrain">Bahrain</option>
+                                            <option value="Bangladesh">Bangladesh</option>
+                                            <option value="Barbados">Barbados</option>
+                                            <option value="Belarus">Belarus</option>
+                                            <option value="Belgium">Belgium</option>
+                                            <option value="Belize">Belize</option>
+                                            <option value="Benin">Benin</option>
+                                            <option value="Bermuda">Bermuda</option>
+                                            <option value="Bhutan">Bhutan</option>
+                                            <option value="Bolivia">Bolivia</option>
+                                            <option value="Bonaire">Bonaire</option>
+                                            <option value="Bosnia & Herzegovina">Bosnia & Herzegovina</option>
+                                            <option value="Botswana">Botswana</option>
+                                            <option value="Brazil">Brazil</option>
+                                            <option value="British Indian Ocean Ter">British Indian Ocean Ter</option>
+                                            <option value="Brunei">Brunei</option>
+                                            <option value="Bulgaria">Bulgaria</option>
+                                            <option value="Burkina Faso">Burkina Faso</option>
+                                            <option value="Burundi">Burundi</option>
+                                            <option value="Cambodia">Cambodia</option>
+                                            <option value="Cameroon">Cameroon</option>
+                                            <option value="Canada">Canada</option>
+                                            <option value="Canary Islands">Canary Islands</option>
+                                            <option value="Cape Verde">Cape Verde</option>
+                                            <option value="Cayman Islands">Cayman Islands</option>
+                                            <option value="Central African Republic">Central African Republic</option>
+                                            <option value="Chad">Chad</option>
+                                            <option value="Channel Islands">Channel Islands</option>
+                                            <option value="Chile">Chile</option>
+                                            <option value="China">China</option>
+                                            <option value="Christmas Island">Christmas Island</option>
+                                            <option value="Cocos Island">Cocos Island</option>
+                                            <option value="Colombia">Colombia</option>
+                                            <option value="Comoros">Comoros</option>
+                                            <option value="Congo">Congo</option>
+                                            <option value="Cook Islands">Cook Islands</option>
+                                            <option value="Costa Rica">Costa Rica</option>
+                                            <option value="Cote DIvoire">Cote DIvoire</option>
+                                            <option value="Croatia">Croatia</option>
+                                            <option value="Cuba">Cuba</option>
+                                            <option value="Curaco">Curacao</option>
+                                            <option value="Cyprus">Cyprus</option>
+                                            <option value="Czech Republic">Czech Republic</option>
+                                            <option value="Denmark">Denmark</option>
+                                            <option value="Djibouti">Djibouti</option>
+                                            <option value="Dominica">Dominica</option>
+                                            <option value="Dominican Republic">Dominican Republic</option>
+                                            <option value="East Timor">East Timor</option>
+                                            <option value="Ecuador">Ecuador</option>
+                                            <option value="Egypt">Egypt</option>
+                                            <option value="El Salvador">El Salvador</option>
+                                            <option value="Equatorial Guinea">Equatorial Guinea</option>
+                                            <option value="Eritrea">Eritrea</option>
+                                            <option value="Estonia">Estonia</option>
+                                            <option value="Ethiopia">Ethiopia</option>
+                                            <option value="Falkland Islands">Falkland Islands</option>
+                                            <option value="Faroe Islands">Faroe Islands</option>
+                                            <option value="Fiji">Fiji</option>
+                                            <option value="Finland">Finland</option>
+                                            <option value="France">France</option>
+                                            <option value="French Guiana">French Guiana</option>
+                                            <option value="French Polynesia">French Polynesia</option>
+                                            <option value="French Southern Ter">French Southern Ter</option>
+                                            <option value="Gabon">Gabon</option>
+                                            <option value="Gambia">Gambia</option>
+                                            <option value="Georgia">Georgia</option>
+                                            <option value="Germany">Germany</option>
+                                            <option value="Ghana">Ghana</option>
+                                            <option value="Gibraltar">Gibraltar</option>
+                                            <option value="Great Britain">Great Britain</option>
+                                            <option value="Greece">Greece</option>
+                                            <option value="Greenland">Greenland</option>
+                                            <option value="Grenada">Grenada</option>
+                                            <option value="Guadeloupe">Guadeloupe</option>
+                                            <option value="Guam">Guam</option>
+                                            <option value="Guatemala">Guatemala</option>
+                                            <option value="Guinea">Guinea</option>
+                                            <option value="Guyana">Guyana</option>
+                                            <option value="Haiti">Haiti</option>
+                                            <option value="Hawaii">Hawaii</option>
+                                            <option value="Honduras">Honduras</option>
+                                            <option value="Hong Kong">Hong Kong</option>
+                                            <option value="Hungary">Hungary</option>
+                                            <option value="Iceland">Iceland</option>
+                                            <option value="Indonesia">Indonesia</option>
+                                            <option value="India">India</option>
+                                            <option value="Iran">Iran</option>
+                                            <option value="Iraq">Iraq</option>
+                                            <option value="Ireland">Ireland</option>
+                                            <option value="Isle of Man">Isle of Man</option>
+                                            <option value="Israel">Israel</option>
+                                            <option value="Italy">Italy</option>
+                                            <option value="Jamaica">Jamaica</option>
+                                            <option value="Japan">Japan</option>
+                                            <option value="Jordan">Jordan</option>
+                                            <option value="Kazakhstan">Kazakhstan</option>
+                                            <option value="Kenya">Kenya</option>
+                                            <option value="Kiribati">Kiribati</option>
+                                            <option value="Korea North">Korea North</option>
+                                            <option value="Korea Sout">Korea South</option>
+                                            <option value="Kuwait">Kuwait</option>
+                                            <option value="Kyrgyzstan">Kyrgyzstan</option>
+                                            <option value="Laos">Laos</option>
+                                            <option value="Latvia">Latvia</option>
+                                            <option value="Lebanon">Lebanon</option>
+                                            <option value="Lesotho">Lesotho</option>
+                                            <option value="Liberia">Liberia</option>
+                                            <option value="Libya">Libya</option>
+                                            <option value="Liechtenstein">Liechtenstein</option>
+                                            <option value="Lithuania">Lithuania</option>
+                                            <option value="Luxembourg">Luxembourg</option>
+                                            <option value="Macau">Macau</option>
+                                            <option value="Macedonia">Macedonia</option>
+                                            <option value="Madagascar">Madagascar</option>
+                                            <option value="Malaysia">Malaysia</option>
+                                            <option value="Malawi">Malawi</option>
+                                            <option value="Maldives">Maldives</option>
+                                            <option value="Mali">Mali</option>
+                                            <option value="Malta">Malta</option>
+                                            <option value="Marshall Islands">Marshall Islands</option>
+                                            <option value="Martinique">Martinique</option>
+                                            <option value="Mauritania">Mauritania</option>
+                                            <option value="Mauritius">Mauritius</option>
+                                            <option value="Mayotte">Mayotte</option>
+                                            <option value="Mexico">Mexico</option>
+                                            <option value="Midway Islands">Midway Islands</option>
+                                            <option value="Moldova">Moldova</option>
+                                            <option value="Monaco">Monaco</option>
+                                            <option value="Mongolia">Mongolia</option>
+                                            <option value="Montserrat">Montserrat</option>
+                                            <option value="Morocco">Morocco</option>
+                                            <option value="Mozambique">Mozambique</option>
+                                            <option value="Myanmar">Myanmar</option>
+                                            <option value="Nambia">Nambia</option>
+                                            <option value="Nauru">Nauru</option>
+                                            <option value="Nepal">Nepal</option>
+                                            <option value="Netherland Antilles">Netherland Antilles</option>
+                                            <option value="Netherlands">Netherlands (Holland, Europe)</option>
+                                            <option value="Nevis">Nevis</option>
+                                            <option value="New Caledonia">New Caledonia</option>
+                                            <option value="New Zealand">New Zealand</option>
+                                            <option value="Nicaragua">Nicaragua</option>
+                                            <option value="Niger">Niger</option>
+                                            <option value="Nigeria">Nigeria</option>
+                                            <option value="Niue">Niue</option>
+                                            <option value="Norfolk Island">Norfolk Island</option>
+                                            <option value="Norway">Norway</option>
+                                            <option value="Oman">Oman</option>
+                                            <option value="Pakistan">Pakistan</option>
+                                            <option value="Palau Island">Palau Island</option>
+                                            <option value="Palestine">Palestine</option>
+                                            <option value="Panama">Panama</option>
+                                            <option value="Papua New Guinea">Papua New Guinea</option>
+                                            <option value="Paraguay">Paraguay</option>
+                                            <option value="Peru">Peru</option>
+                                            <option value="Phillipines">Philippines</option>
+                                            <option value="Pitcairn Island">Pitcairn Island</option>
+                                            <option value="Poland">Poland</option>
+                                            <option value="Portugal">Portugal</option>
+                                            <option value="Puerto Rico">Puerto Rico</option>
+                                            <option value="Qatar">Qatar</option>
+                                            <option value="Republic of Montenegro">Republic of Montenegro</option>
+                                            <option value="Republic of Serbia">Republic of Serbia</option>
+                                            <option value="Reunion">Reunion</option>
+                                            <option value="Romania">Romania</option>
+                                            <option value="Russia">Russia</option>
+                                            <option value="Rwanda">Rwanda</option>
+                                            <option value="St Barthelemy">St Barthelemy</option>
+                                            <option value="St Eustatius">St Eustatius</option>
+                                            <option value="St Helena">St Helena</option>
+                                            <option value="St Kitts-Nevis">St Kitts-Nevis</option>
+                                            <option value="St Lucia">St Lucia</option>
+                                            <option value="St Maarten">St Maarten</option>
+                                            <option value="St Pierre & Miquelon">St Pierre & Miquelon</option>
+                                            <option value="St Vincent & Grenadines">St Vincent & Grenadines</option>
+                                            <option value="Saipan">Saipan</option>
+                                            <option value="Samoa">Samoa</option>
+                                            <option value="Samoa American">Samoa American</option>
+                                            <option value="San Marino">San Marino</option>
+                                            <option value="Sao Tome & Principe">Sao Tome & Principe</option>
+                                            <option value="Saudi Arabia">Saudi Arabia</option>
+                                            <option value="Senegal">Senegal</option>
+                                            <option value="Seychelles">Seychelles</option>
+                                            <option value="Sierra Leone">Sierra Leone</option>
+                                            <option value="Singapore">Singapore</option>
+                                            <option value="Slovakia">Slovakia</option>
+                                            <option value="Slovenia">Slovenia</option>
+                                            <option value="Solomon Islands">Solomon Islands</option>
+                                            <option value="Somalia">Somalia</option>
+                                            <option value="South Africa">South Africa</option>
+                                            <option value="Spain">Spain</option>
+                                            <option value="Sri Lanka">Sri Lanka</option>
+                                            <option value="Sudan">Sudan</option>
+                                            <option value="Suriname">Suriname</option>
+                                            <option value="Swaziland">Swaziland</option>
+                                            <option value="Sweden">Sweden</option>
+                                            <option value="Switzerland">Switzerland</option>
+                                            <option value="Syria">Syria</option>
+                                            <option value="Tahiti">Tahiti</option>
+                                            <option value="Taiwan">Taiwan</option>
+                                            <option value="Tajikistan">Tajikistan</option>
+                                            <option value="Tanzania">Tanzania</option>
+                                            <option value="Thailand">Thailand</option>
+                                            <option value="Togo">Togo</option>
+                                            <option value="Tokelau">Tokelau</option>
+                                            <option value="Tonga">Tonga</option>
+                                            <option value="Trinidad & Tobago">Trinidad & Tobago</option>
+                                            <option value="Tunisia">Tunisia</option>
+                                            <option value="Turkey">Turkey</option>
+                                            <option value="Turkmenistan">Turkmenistan</option>
+                                            <option value="Turks & Caicos Is">Turks & Caicos Is</option>
+                                            <option value="Tuvalu">Tuvalu</option>
+                                            <option value="Uganda">Uganda</option>
+                                            <option value="United Kingdom">United Kingdom</option>
+                                            <option value="Ukraine">Ukraine</option>
+                                            <option value="United Arab Erimates">United Arab Emirates</option>
+                                            <option value="United States of America">United States of America</option>
+                                            <option value="Uraguay">Uruguay</option>
+                                            <option value="Uzbekistan">Uzbekistan</option>
+                                            <option value="Vanuatu">Vanuatu</option>
+                                            <option value="Vatican City State">Vatican City State</option>
+                                            <option value="Venezuela">Venezuela</option>
+                                            <option value="Vietnam">Vietnam</option>
+                                            <option value="Virgin Islands (Brit)">Virgin Islands (Brit)</option>
+                                            <option value="Virgin Islands (USA)">Virgin Islands (USA)</option>
+                                            <option value="Wake Island">Wake Island</option>
+                                            <option value="Wallis & Futana Is">Wallis & Futana Is</option>
+                                            <option value="Yemen">Yemen</option>
+                                            <option value="Zaire">Zaire</option>
+                                            <option value="Zambia">Zambia</option>
+                                            <option value="Zimbabwe">Zimbabwe</option>
+                                        </select>
+                                        <div class="valid-feedback">Valid.</div>
+                                        <div class="invalid-feedback">Please select your Nationality</div>
+                                        <br>
+                                        <button type="submit" class="btn btn-primary">Save</button>
+                                    </form>
+                                </div>
                             </div>
+
                             <div class="col-2" style="text-align: center;">
-                                <button type="button" class="btn btn-light">Edit</button>
+                                <button type="button" class="btn btn-light" id="edit7"
+                                    onclick="switchVisible('nationality-shown','nationality-hiden','edit7')">Edit</button>
                             </div>
                         </div>
                         <hr>
@@ -213,22 +586,73 @@
                             </div>
 
                             <div class="col-7">
-                                <p>Select your gender</p>
+                                <div id="gender-shown">
+                                    <p>Select your gender</p>
+                                </div>
+                                <div id="gender-hiden">
+                                    <form class="needs-validation" novalidate>
+                                        <label for="gender" class="form-label">Gender:</label>
+                                        <select class="form-select" id="gender" required>
+                                            <option selected disabled value="">Select your gender..</option>
+                                            <option value="1">I am a man</option>
+                                            <option value="2">I am a Women</option>
+                                            <option value="3">I prefer not to say</option>
+                                        </select>
+                                        <div class="valid-feedback">Valid.</div>
+                                        <div class="invalid-feedback">Please select your gender</div>
+                                        <br>
+                                        <button type="submit" class="btn btn-primary">Save</button>
+                                    </form>
+                                </div>
                             </div>
                             <div class="col-2" style="text-align: center;">
-                                <button type="button" class="btn btn-light">Edit</button>
+                                <button type="button" class="btn btn-light" id="edit8"
+                                    onclick="switchVisible('gender-shown','gender-hiden','edit8')">Edit</button>
                             </div>
                         </div>
                         <hr>
+
                         <div class="row">
                             <div class="col-3">
                                 <p>Address</p>
                             </div>
 
                             <div class="col-7">
-                                <p>Add your address</p>
+                                <div id="address-shown">
+                                    <p>Add your address</p>
+                                </div>
+                                <div id="address-hiden">
+                                    <form class="needs-validation" novalidate>
+                                        <!-- country-->
+                                        <label for="countries2" class="form-label">country:</label>
+                                        <select class="form-select" id="countries2" required>
+
+                                        </select>
+                                        <div class="valid-feedback">Valid.</div>
+                                        <div class="invalid-feedback">Please select your country</div>
+                                        <br>
+                                        <!-- city-->
+                                        <label for="exampleForm7">City:</label><br>
+                                        <input type="text" id="exampleForm7" class="form-control" required>
+                                        <div class="valid-feedback">Valid.</div>
+                                        <div class="invalid-feedback">Please Enter Valid City</div>
+                                        <br>
+
+                                        <!-- Zip-->
+                                        <label for="exampleForm8">ZIP</label><br>
+                                        <input type="text" id="exampleForm8" class="form-control" required>
+                                        <div class="valid-feedback">Valid.</div>
+                                        <div class="invalid-feedback">Please Valid ZIP</div>
+                                        <br>
+
+                                        <button type="submit" class="btn btn-primary">Save</button>
+                                    </form>
+                                </div>
+
                             </div>
-                            <div class="col-2" style="text-align: center;">
+
+                            <div class="col-2" style="text-align: center;" id="edit9"
+                                onclick="switchVisible('address-shown','address-hiden','edit9')">
                                 <button type="button" class="btn btn-light">Edit</button>
                             </div>
                         </div>
@@ -236,6 +660,9 @@
 
                     </div>
                     <br><br>
+
+
+
                     <div id="list-item-2">
 
                         <div class="row">
@@ -251,36 +678,61 @@
                             </div>
 
                             <div class="col-7">
-                                <p>US$ U.S. Dollar</p>
-                            </div>
-                            <div class="col-2" style="text-align: center;">
-                                <button type="button" class="btn btn-light">Edit</button>
-                            </div>
-                        </div>
-                        <hr>
-                        <div class="row">
-                            <div class="col-3">
-                                <p>Language</p>
-                            </div>
+                                <div id="currency-shown">
+                                    <p>US$ U.S. Dollar</p>
+                                </div>
+                                <div id="currency-hiden">
+                                    <form class="needs-validation" novalidate>
+                                        <label for="currency" class="form-label">Currency:</label>
+                                        <select class="form-select" id="currency" required>
+                                            <option selected disabled value="">Select your currency..</option>
+                                            <option value="dollar">U.S (Dollar)</option>
+                                            <option value="">EUR (EURO)</option>
+                                        </select>
+                                        <div class="valid-feedback">Valid.</div>
+                                        <div class="invalid-feedback">Please select Your Currency</div>
+                                        <br>
+                                        <button type="submit" class="btn btn-primary">Save</button>
+                                    </form>
+                                </div>
 
-                            <div class="col-7">
-                                <p>Select your language</p>
                             </div>
                             <div class="col-2" style="text-align: center;">
-                                <button type="button" class="btn btn-light">Edit</button>
+                                <button type="button" class="btn btn-light" id="edit10"
+                                    onclick="switchVisible('currency-shown','currency-hiden','edit10')">Edit</button>
                             </div>
                         </div>
                         <hr>
+
                         <div class="row">
                             <div class="col-3">
                                 <p>Accessibility requirements</p>
                             </div>
 
                             <div class="col-7">
-                                <p>Filter out properties that do not meet your needs</p>
+
+                                <div id="requirements-shown">
+                                    <p>Filter out properties that do not meet your needs</p>
+                                </div>
+
+                                <div id="requirements-hiden">
+                                    <form action="" class="needs-validation" novalidate>
+                                        <input type="checkbox" class="form-check-input" id="validationFormCheck1"
+                                            required>
+                                        <label class="form-check-label" for="validationFormCheck1">Only show accessible
+                                            properties</label>
+                                        <div class="valid-feedback">Valid.</div>
+                                        <div class="invalid-feedback">Please select your gender</div>
+                                        <br>
+                                        <button type="submit" class="btn btn-primary">Save</button>
+                                    </form>
+
+                                </div>
+
                             </div>
                             <div class="col-2" style="text-align: center;">
-                                <button type="button" class="btn btn-light">Edit</button>
+                                <button type="button" class="btn btn-light" id="edit11"
+                                    onclick="switchVisible('requirements-shown','requirements-hiden','edit11')">Edit</button>
                             </div>
                         </div>
                         <hr>
@@ -302,12 +754,23 @@
                             </div>
 
                             <div class="col-7">
-                                <p>Reset your password regularly to keep your account secure</p>
+                                <div id="password-shown">
+                                    <p>Reset your password regularly to keep your account secure</p>
+                                </div>
+
+                                <div id="password-hiden">
+                                    <p>To change your password, we need to send a reset link to your email address</p>
+                                    <br>
+                                    <button type="submit" class="btn btn-primary">Send</button>
+
+                                </div>
                             </div>
                             <div class="col-2" style="text-align: center;">
-                                <button type="button" class="btn btn-light">Reset</button>
+                                <button type="button" class="btn btn-light" id="edit12"
+                                    onclick="switchVisible('password-shown','password-hiden','edit12')">Reset</button>
                             </div>
                         </div>
+
                         <hr>
                         <div class="row">
                             <div class="col-3">
@@ -315,10 +778,47 @@
                             </div>
 
                             <div class="col-7">
-                                <p>Permanently delete your Rento.com account</p>
+                                <div id="delet-shown">
+                                    <p>Permanently delete your Rento.com account</p>
+                                </div>
+                                <div id="delet-hiden">
+                                    <p>Why do you want to delete your account:</p><br>
+                                    <form action="" class="needs-validation" novalidate>
+                                        <input type="radio" class="form-check-input" id="validationFormCheck2"
+                                            name="radio-stacked" required>
+                                        <label class="form-check-label" for="validationFormCheck2">
+                                            I get too many emails from Booking.com
+                                        </label><br> <br>
+                                        <input type="radio" class="form-check-input" id="validationFormCheck2"
+                                            name="radio-stacked" required>
+                                        <label class="form-check-label" for="validationFormCheck2">
+                                            I want to use a different email address for my account
+                                        </label><br> <br>
+                                        <div id="others-shown">
+                                            <input type="radio" class="form-check-input" id="others"
+                                                name="radio-stacked"
+                                                onclick="show('others-shown','others-hiden','others')" required>
+                                            <label class="form-check-label" for="validationFormCheck2">
+                                                Others
+                                            </label>
+                                        </div>
+                                        <div id="others-hiden">
+                                            <label for="validationTextarea" class="form-label">Do you have any feedback
+                                                you'd like to share before you go? We'll use it to fix problems and
+                                                improve
+                                                our services.</label>
+                                            <textarea class="form-control" id="validationTextarea" required></textarea>
+                                        </div>
+                                        <br>
+                                        <br>
+                                        <button type="submit" class="btn btn-primary">Delet</button>
+                                    </form>
+                                </div>
+
                             </div>
                             <div class="col-2" style="text-align: center;">
-                                <button type="button" class="btn btn-light">Delet</button>
+                                <button type="button" class="btn btn-light" id="edit13"
+                                    onclick="switchVisible('delet-shown','delet-hiden','edit13')">Delet</button>
                             </div>
                         </div>
                         <hr>
@@ -342,10 +842,37 @@
                             </div>
 
                             <div class="col-7">
+                                <div id="payment-shown">
                                 <p>Pay with new card</p>
+                                </div>
+                                <div id="payment-hiden">
+                                    <div class='credit-card-validation'>
+                                        <p>
+                                        <label>Card Number</label>
+                                        <input type="tel" name="cardNumber" class="cardNumber" maxlength="16" placeholder="0000 0000 0000 0000" data-validation-type="custom" data-validation-error-msg="Please enter a valid card number" data-validation-error-msg-container="#cardnumber-error-dialog">
+                                        <div id="cardnumber-error-dialog" class="field-error"></div>
+                                        </p>
+                                    
+                                        <p>
+                                            <label>Expiry Date</label>
+                                            <input type="text" name="cardExpiry" maxlength="5" class="cardExpiry" placeholder="mm/yy" data-validation-type="alphanumeric" data-validation-error-msg="Please enter a valid card expiry" data-validation-error-msg-container="#cardexpiry-error-dialog">
+                                            <div id="cardexpiry-error-dialog" class="field-error"></div>
+                                        </p>
+                                    
+                                        <p>
+                                            <label>CVV Code</label>
+                                            <input type="text" name="cardCVV" maxlength="3" class="cardCVV" data-validation-type="numeric" data-validation-error-msg="Please enter a valid CVV number" data-validation-error-msg-container="#cardcvv-error-dialog">
+                                            <div id="cardcvv-error-dialog" class="field-error"></div>
+                                        </p>
+                                    </div>
+                                    <br><br>
+                                    <button type="submit" class="btn btn-primary">Add card</button>
+                                </div>
+                                
                             </div>
                             <div class="col-2" style="text-align: center;">
-                                <button type="button" class="btn btn-light">Add card</button>
+                                <button type="button" class="btn btn-light" id="edit14"
+                                onclick="switchVisible('payment-shown','payment-hiden','edit14')">Add card</button>
                             </div>
                         </div>
                         <hr>
@@ -440,6 +967,16 @@
     </DIV>
 
 
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
+        integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
+        integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
+        crossorigin="anonymous"></script>
+    <script src="profile.js"></script>
 </body>
 
 </html>

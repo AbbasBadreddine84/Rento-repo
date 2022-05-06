@@ -1,12 +1,39 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200&family=Poppins:ital,wght@0,100;1,100&display=swap");
-
-body {
-    background-color: #FAFBFF !important;
-}
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap");
 
 .banner-image {
-    background-image: url(./images/Landingpage-img.png);
+    background-image: url(images/header.png);
     background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+.background{
+    background-image: url(../images/background.png);
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+.banner-image .content input {
+    margin-top: 1rem;
+    background-color: #0d6efd;
+    border-radius: 50px !important;
+    width: 50%;
+    height: 4rem;
+    border: none;
+}
+
+.banner-image .content input:hover {
+    background-color: #ffffff;
+    color: #0d6efd;
+    border: none;
+    transition: 0.2s ease-in;
+}
+
+.banner-image h1 {
+    margin-top: 150px;
+    font-size: 50px;
+
 }
 
 nav {
@@ -110,169 +137,205 @@ nav .collapse>a:hover {
     transform: rotate(0deg);
 }
 
+/* ************************* */
 
 
-
-
-
-
-
-.list-group img {
-    height: 40px;
-    width: 40px;
-    background-color: #F5F5F5;
+.section1-text,
+.section3-text {
+    font-family: rofina;
 }
-
-.list-group p {
-    margin-top: 10px;
-    margin-left: 50px;
-    font-size: medium;
-
+.section1 h2 {
+    text-align: center;
+    color: #DA6076;
+    margin-top: 40px;
+    font-size: 50px;
 }
+.section1 h1 {
 
-.list-group p:hover {
-    color: #005fa6;
+    text-align: center;
+    font-size: 50px;
+    margin-bottom: 70px;
+    margin-top: 70px;
+    width: 100%;
 
 }
+.section1 p {
 
-@media only screen and (max-width: 450px) {
-    .list-group a {
-        width: 60px;
-        height: 70px;
-
-    }
+    line-height: 50px;
+    font-size: xx-large;
+    margin-bottom: 100px;
 }
 
-@media only screen and (max-width: 600px) {
-    .list-group a {
-        height: 60px;
-        width: 70px;
-
-    }
+.section2 {
+    background-color: #0d6efd;
+    height: auto;
 }
 
-.list-group ul {
-    list-style-type: none;
-    padding: 0px;
+.section2 h1 {
+    color: white;
+    text-align: center;
+    font-family: rofina;
+    margin-top: 50px;
+    font-size: 60px;
+}
+.section2 img {
+
+    width: 450px;
+    height: 600px;
+}
+
+.section2-image {
+
+    margin-left: 80px;
+    margin-top: 100px;
+
+
+}
+.section2 .row {
+    height: auto;
+}
+
+.section2-text {
+
+
+    font-family: rofina;
+    margin-top: 220px;
+    margin-left: 100px;
+    width: 380px;
+    text-align: center;
+}
+
+.section2-tittle1 {
+    font-size: 40px;
+    margin-bottom: 20px;
+}
+
+.section2-tittle2 {
+    font-size: 30px;
+    margin-bottom: 20px;
+}
+
+.section2-description {
+    font-size: 25px;
+}
+
+/* section 3 */
+.section3 h2 {
+    text-align: center;
+    color: #DA6076;
+    margin-top: 100px;
+    font-size: 50px;
+}
+
+.section3 h1 {
+
+    text-align: center;
+    font-size: 50px;
+    margin-bottom: 100px;
+    margin-top: 70px;
+    width: 100%;
+
+}
+
+.section3 img {
+
+    width: 300px;
+    height: 400px;
     margin: 0px;
-}
-
-.list-group li {
-
-    list-style: none;
-
     padding: 0px;
-    margin: 0px;
 }
 
-@media only screen and (max-width: 450px) {
-    .list-group li {
-        list-style: none;
-        padding-left: 20px;
-        display: inline-block !important;
+.section3-image h1 {
+    margin-top: 20px;
+}
+
+@media screen and (max-width: 450px) {
+
+    .section2 img {
+
+        width: 300px;
+        height: 400px;
+        margin: 0px;
+        padding: 0px;
     }
-}
 
-@media only screen and (max-width: 600px) {
-    .list-group li {
+    .section2-image {
 
-        list-style: none;
-        padding-left: 20px;
-        display: inline-block;
-    }
-}
-
-
-@media only screen and (max-width: 450px) {
-    .list-group {
-        background-color: #F5F5F5;
+        margin: 0px;
+        padding: 0px;
 
     }
-}
 
-@media only screen and (max-width: 600px) {
-    .list-group {
-        background-color: #F5F5F5;
+    .section3 img {
+
+        width: 300px;
+        height: 400px;
+        margin: 0px !important;
+        padding: 0px !important;
+    }
+
+    .section3-image {
+
+        margin: 0px;
+        padding: 0px;
 
     }
-}
 
-.scrollspy-example p {
-    vertical-align: middle;
-    margin-bottom: 0px;
-}
+    .section2-text {
 
-.btn-light {
-    color: #005fa6 !important;
-}
-
-.btn-light:hover {
-    background-color: #4dadf6 !important;
-}
-
-
-
-
-@media only screen and (max-width: 450px) {
-    #list-item-1 {
-        margin-top: 20px;
+        margin: 0px;
     }
-    .btn-light {
-        margin-left: 0px !important;
+
+    .section3-image h1 {
+        margin-bottom: 30px !important;
     }
+
 }
 
-@media only screen and (max-width: 600px) {
-    #list-item-1 {
-        margin-top: 20px;
-    }.btn-light {
-        margin-left: 0px !important;
+@media screen and (max-width: 600px) {
+
+    .section2 img {
+
+        width: 92%;
+        height: 500px;
+        margin: 0px;
+        margin-left: 17px;
+        padding: 0px;
     }
-}
+
+    .section2-image {
+
+        margin: 0px !important;
+        padding: 0px !important;
 
 
-#title-hiden {
-    display: none;
-  }
-  #name-hiden{
-    display: none;
+    }
 
-  }
-#Dname-hiden{
-    display: none;
-}
-#email-hiden{
-    display: none;
-}
-#birth-hiden{
-    display: none;
-}
-#nationality-hiden{
-    display: none;
-}
-#gender-hiden{
-    display: none;
-}
-#address-hiden{
-    display: none;
-}
-#currency-hiden{
-display: none;
-}
-#requirements-hiden{
-    display: none;
-}
-#password-hiden{
-    display: none;
-}
-#delet-hiden{
-    display: none;
-}
-#others-hiden{
-    display: none;
-}
-#payment-hiden{
-    display: none;
+    .section3 img {
+
+        width: 300px;
+        height: 400px;
+        margin: 0px !important;
+        padding: 0px !important;
+    }
+
+    .section3-image {
+
+        margin: 0px;
+        padding: 0px;
+
+    }
+
+    .section2-text {
+
+        width: 100% !important;
+        margin: 0px !important;
+    }
+
+    .section3-image h1 {
+        margin-bottom: 30px !important;
+    }
+
 }
 
 
@@ -285,57 +348,7 @@ display: none;
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+/* Footer */
 #footer {
     background: #005fa6;
     color: #fff;
