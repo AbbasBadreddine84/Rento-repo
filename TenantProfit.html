@@ -168,10 +168,10 @@
                                     <td class="center">john</td>
                                     <td class="center">23/9/2021</td>
                                     <td class="center">4322334</td>
-                                    <td class="center">$1000</td>
+                                    <td class="center">400$</td>
                                     <td class="center">
-                                        <a href="" class="btn btn-tbl-delete btn-xs" role="button"
-                                            onclick="DeleteRow()"><i class="fa fa-trash"></i>
+                                        <a class="btn btn-tbl-delete btn-xs" role="button"
+                                            onclick="deleteR(this)"><i class="fa fa-trash"></i>
                                     </td>
                                 </tr>
                                 <tr>
@@ -179,10 +179,10 @@
                                     <td class="center">Mike</td>
                                     <td class="center">23/11/2021</td>
                                     <td class="center">545252</td>
-                                    <td class="center">$1500</td>
+                                    <td class="center">500$</td>
                                     <td class="center">
-                                        <a href="" class="btn btn-tbl-delete btn-xs" role="button"
-                                            onclick="DeleteRow()"><i class="fa fa-trash"></i>
+                                        <a class="btn btn-tbl-delete btn-xs" role="button"
+                                          onclick="deleteR(this)"><i class="fa fa-trash"></i>
                                     </td>
                                 </tr>
                                 <tr>
@@ -190,10 +190,10 @@
                                     <td class="center">Marie</td>
                                     <td class="center">25/6/2021</td>
                                     <td class="center">648329</td>
-                                    <td class="center">$1300</td>
+                                    <td class="center">1100$</td>
                                     <td class="center">
-                                        <a href="" class="btn btn-tbl-delete btn-xs" role="button"
-                                            onclick="DeleteRow()"><i class="fa fa-trash"></i>
+                                        <a class="btn btn-tbl-delete btn-xs" role="button"
+                                          onclick="deleteR(this)"><i class="fa fa-trash"></i>
                                     </td>
                                 </tr>
                                 <tr>
@@ -201,10 +201,10 @@
                                     <td class="center">Alex</td>
                                     <td class="center">22/8/2021</td>
                                     <td class="center">58658558</td>
-                                    <td class="center">$1200</td>
+                                    <td class="center">1100$</td>
                                     <td class="center">
-                                        <a href="" class="btn btn-tbl-delete btn-xs" role="button"
-                                            onclick="DeleteRow()"><i class="fa fa-trash"></i>
+                                        <a class="btn btn-tbl-delete btn-xs" role="button"
+                                            onclick="deleteR(this)"><i class="fa fa-trash"></i>
                                     </td>
                                 </tr>
 
@@ -221,10 +221,14 @@
                   <hr>
      
 
+                  <div class="date">
+  <strong class="fs-5 text-primary">Date:</strong><label id="dateT" class=" fs-5" for=""></label>
+</div>
                     <div class="total-footer">
-
-                         <strong class="mb-0 fs-4 text-primary">VAT:</strong><label class=" fs-4" for="">10%</label><br>
-                        <strong class="mb-0 fs-4 text-primary">Total:</strong><label class=" fs-4" for="">$5000.00</label>      
+                          <strong class="mb-0 fs-5 text-primary">TAX:</strong><label id="VATN" class=" fs-5" for=""></label><br>
+                           <strong class="mb-0 fs-5 text-primary">SubTotal:</strong><label id="Subtotal" class=" fs-5" for=""></label><br>
+                         <strong class="mb-0 fs-5 text-primary">Pre-Tax:</strong><label id="VAT" class=" fs-5" for=""></label><br>
+                        <strong class="mb-0 fs-5 text-primary">Total:</strong><label class=" fs-5" for="" id="total"></label>      
                     </div>
         <hr>
      <div class="total-footer">
@@ -237,7 +241,7 @@
         </div>
     </div>
  
-    <script src="/JS/app1.js"></script>
+    <script src="/JS/TenantProfit.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js"></script>
 
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"

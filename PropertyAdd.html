@@ -136,7 +136,6 @@
 
 <div class="container-fluid px-5">
 <div class="row clearfix mt-5">
-  <!-- <div id="error"></div> -->
   <form id="form" action="#" class="needs-validation" novalidate>
 <div class="col-lg-12">
     <div class="card hover-shadow">
@@ -175,25 +174,23 @@
         </div>
          <div class="col-sm-4">
             <div class="form-group form-floating">
-              <input type="date" class="form-control" name="pdate"  id="pdate" required>
+              <input type="date" class="form-control" name="pdate"  id="pdate">
   <label for="floatingSelect">Year Built</label>
             </div>
         </div>
           <div class="col-sm-4 mt-5">
-            <div class="form-group form-floating">
-                <textarea class="form-control" name="ptextarea" id="ptextarea" required>                  
-                </textarea>
+            <div class="form-outline">
+               <textarea class="form-control" id="ptextarea" rows="2" maxlength="220" required></textarea>   
+                                                  <label for="ptextarea" class="form-label" id="Descriptioncharacter">220 characters remaining for description</label>
                       <div class="valid-tooltip">
              Looks Good!
            </div>
          <div class="invalid-tooltip">
-                description required more characters
+               You neet to fill the text area
            </div>
-                      <label for="Description">Description</label>
                  
            
             </div>
-                                   <label for="Descriptioncharacter" id="Descriptioncharacter">220 characters remaining</label>
 
         </div>
   <div class="col-sm-4 mt-5">
@@ -242,14 +239,16 @@
     <div class="row clearfix">
         <div class="col-sm-6">
    <div class="form-check">
-  <input class="form-check-input d-inline-block" type="radio" name="formGroupExampleInput" id="formGroupExampleInput1" required>
+  <input class="form-check-input d-inline-block" type="radio" name="formGroupExampleInput" id="formGroupExampleInput1" checked>
   <label class="form-check-label" for="formGroupExampleInput1">
    For Rent
   </label><br>
-   <input class="form-check-input" type="radio" name="formGroupExampleInput" id="formGroupExampleInput1">
+   <input class="form-check-input" type="radio" name="formGroupExampleInput" id="formGroupExampleInput1" >
      <label class="form-check-label" for="formGroupExampleInput1">
 For Sale
   </label>
+
+
 </div>
 
         </div>
@@ -366,36 +365,37 @@ For Sale
     <div class="row">
         <div class="col-sm-12">
 <div class="form-check  form-check-inline">
-  <input class="form-check-input" type="checkbox" id="checkboxPool" value="option1" required>
+  <input class="form-check-input" type="checkbox" id="checkboxAll" value="option1"  >
   <label class="form-check-label" for="checkboxPool">Pool</label>
 </div>
 
 <div class="form-check  form-check-inline">
-  <input class="form-check-input" type="checkbox" id="checkboGarden" value="option2" required>
+  <input class="form-check-input" type="checkbox" id="checkboxAll" value="option2"  >
   <label class="form-check-label" for="checkboGarden">Garden</label>
 </div>
 
 <div class="form-check  form-check-inline">
-  <input class="form-check-input" type="checkbox" id="checkboxParking" value="option3" required>
+  <input class="form-check-input" type="checkbox" id="checkboxAll" value="option3" >
   <label class="form-check-label" for="checkboxParking">Car Parking</label>
 </div>
 
 <div class="form-check  form-check-inline">
-  <input class="form-check-input" type="checkbox" id="checkboxBalcony" value="option4" required>
+  <input class="form-check-input" type="checkbox" id="checkboxAll" value="option4"  >
   <label class="form-check-label" for="checkboxBalcony">Balcony</label>
 </div>
 
 <div class="form-check  form-check-inline">
-  <input class="form-check-input" type="checkbox" id="checkboxTerrace" value="option5" required>
+  <input class="form-check-input" type="checkbox" id="checkboxAll" value="option5"  >
   <label class="form-check-label" for="checkboxTerrace">Terrace</label>
 </div>
+
         </div>
 
 
  <div class="col-sm-12">
 <div class="d-grid gap-2 d-md-flex justify-content-sm-end"> 
 <button class="btn btn-primary me-md-2 btn-Submit" type="submit">Submit</button>
-<button class="btn btn-primary me-md-2 btn-Cancle" type="button">Cancle</button>
+<button class="btn btn-primary me-md-2 btn-Cancle" type="reset">Cancle</button>
 </div>
 
  </div>
@@ -413,11 +413,11 @@ For Sale
 
 
 
-    </form>
 </div>
 
 
 
+    </form>
 
 </div>
 

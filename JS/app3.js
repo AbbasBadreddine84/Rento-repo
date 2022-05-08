@@ -9,11 +9,30 @@ document.getElementById("pbedroom").addEventListener("blur", validatepbedroom);
 document.getElementById("pkitchen").addEventListener("blur", validatepkitchen);
 document.getElementById("plivingromm").addEventListener("blur", validateplivingromm);
 document.getElementById("pbathroom").addEventListener("blur", validatepbathroom);
+// document.getElementById("formGroupExampleInput1").addEventListener("mouseover", validateradio);
 
 
 
 
 
+// function validateradio(){
+//   const formGroupExampleInput1 = document.getElementById(
+//     "formGroupExampleInput1"
+//   );
+// // const formGroupExampleInput1 = document.querySelector(
+// //   'input[name="formGroupExampleInput"]:checked'
+// // );   
+// if(formGroupExampleInput1 !=null){
+// formGroupExampleInput1.classList.add("is-valid")
+// formGroupExampleInput1.classList.remove("is-invalid");
+// return true
+// }else{
+//   formGroupExampleInput1.classList.remove("is-valid");
+//   formGroupExampleInput1.classList.add("is-invalid");
+//   return false;
+// }
+
+// }
 
 
 
@@ -23,60 +42,68 @@ const pimage = document.getElementById("pimage");
 const reSpaces = /^\S*$/;
 
 function validateProductName() {
-    const pname = document.getElementById("pname");
-    if (pname.value == "") {
-        pname.classList.remove("is-valid");
-        pname.classList.add("is-invalid");
-        return false;
-    }
-    if (reSpaces.test(pname.value)) {
-        pname.classList.remove("is-invalid");
-        pname.classList.add("is-valid");
-        return true;
-    } else {
-        pname.classList.remove("is-valid");
-        pname.classList.add("is-invalid");
-        return false;
-    }
+  const pname = document.getElementById("pname");
+  if (pname.value == "") {
+    pname.classList.remove("is-valid");
+    pname.classList.add("is-invalid");
+    return false;
+  }
+  if (reSpaces.test(pname.value)) {
+    pname.classList.remove("is-invalid");
+    pname.classList.add("is-valid");
+    return true;
+  } else {
+    pname.classList.remove("is-valid");
+    pname.classList.add("is-invalid");
+    return false;
+  }
 }
 
-function validatePLocation(e) {
-    const plocation = document.getElementById("plocation");
-    if (plocation.value === "" || plocation.value == null) {
-        plocation.classList.add("is-invalid");
-        plocation.classList.remove("is-valid");
-        return false;
-    } else {
-        plocation.classList.add("is-valid");
-        plocation.classList.remove("is-invalid");
-        return true;
-    }
+function validatePLocation() {
+  const plocation = document.getElementById("plocation");
+  if (plocation.value === "" || plocation.value == null) {
+    plocation.classList.add("is-invalid");
+    plocation.classList.remove("is-valid");
+    return false;
+  } else {
+    plocation.classList.add("is-valid");
+    plocation.classList.remove("is-invalid");
+    return true;
+  }
 }
 
 function validateptextarea() {
-    const description = document.getElementById("ptextarea");
-    const Descriptioncharacter = document.getElementById("Descriptioncharacter");
-    const MAX_CHARS = 220;
+  const description = document.getElementById("ptextarea");
+  const Descriptioncharacter = document.getElementById("Descriptioncharacter");
+  const MAX_CHARS = 220;
 
-    description.addEventListener("input", () => {
-        const remaining = MAX_CHARS - description.value.length;
-        Descriptioncharacter.textContent = `${remaining} characters remaining`;
-
-    });
+  description.addEventListener("input", () => {
+    const remaining = MAX_CHARS - description.value.length;
+    Descriptioncharacter.textContent = `${remaining} characters remaining`;
+  });
+  if (description.value === "" || description.value == null) {
+    description.classList.add("is-invalid");
+    description.classList.remove("is-valid");
+    return false;
+  } else {
+    description.classList.add("is-valid");
+    description.classList.remove("is-invalid");
+    return true;
+  }
 }
 
 function validatepselectType() {
-    const pselectType = document.getElementById("pselectType");
+  const pselectType = document.getElementById("pselectType");
 
-    if (pselectType.value) {
-        pselectType.classList.add("is-valid");
-        pselectType.classList.remove("is-invalid");
-        return true;
-    } else {
-        pselectType.classList.remove("is-valid");
-        pselectType.classList.add("is-invalid");
-        return false;
-    }
+  if (pselectType.value) {
+    pselectType.classList.add("is-valid");
+    pselectType.classList.remove("is-invalid");
+    return true;
+  } else {
+    pselectType.classList.remove("is-valid");
+    pselectType.classList.add("is-invalid");
+    return false;
+  }
 }
 
 function validatepimage() {
@@ -136,7 +163,7 @@ function validatepbedroom() {
     pbedroom.classList.add("is-invalid");
     return false;
   }
-  if (pbedroom.value < 2) {
+  if (pbedroom.value <= 2) {
     pbedroom.classList.remove("is-valid");
     pbedroom.classList.add("is-invalid");
     return false;
@@ -208,34 +235,33 @@ function validatepbathroom() {
 
 
 (function () {
-    const forms = document.querySelectorAll(".needs-validation");
+  var forms = document.querySelectorAll(".needs-validation");
 
-    for (let form of forms) {
-        form.addEventListener(
-            "submit",
-            function (e) {
-                if (
-                  !form.checkValidity() ||
-                  !validateProductName() ||
-                  !validatePLocation() ||
-                  !validateptextarea() ||
-                  !validatepselectType() ||
-                  !validatepimage() ||
-                  !validatepsquare() ||
-                  !validatepaddress() ||
-                  !validatepbedroom() ||
-                  !validatepkitchen() ||
-                  !validateplivingromm()||
-                  !validatepbathroom()
-
-                ) {
-                  e.preventDefault();
-                  e.stopPropagation();
-                } else {
-                  form.classList.add("was-validated");
-                }
-            },
-            false
-        );
-    }
+  Array.prototype.slice.call(forms).forEach(function (form) {
+    form.addEventListener(
+      "submit",
+      function (event) {
+        if (
+          !form.checkValidity() ||
+         !validateProductName() ||
+   !validatePLocation() ||
+   !validateptextarea() ||
+   !validatepselectType() ||
+   !validatepimage() ||
+   !validatepsquare() ||
+   !validatepaddress() ||
+   !validatepbedroom() ||
+   !validatepkitchen() ||
+   !validateplivingromm() ||
+   !validatepbathroom()
+        ) {
+          event.preventDefault();
+          event.stopPropagation();
+        } else {
+          form.classList.add("was-validated");
+        }
+      },
+      false
+    );
+  });
 })();

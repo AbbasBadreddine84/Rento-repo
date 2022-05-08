@@ -1,59 +1,68 @@
-document.getElementById("usernameProfile").addEventListener("blur", validateusername);
+document
+  .getElementById("usernameProfile")
+  .addEventListener("blur", validateusername);
 
 document.getElementById("password").addEventListener("blur", validatepassword);
 
 document.getElementById("email").addEventListener("blur", validateemail);
 
-document.getElementById("FirstName").addEventListener("blur",validateFirstName);
+document
+  .getElementById("FirstName")
+  .addEventListener("blur", validateFirstName);
 
-document.getElementById("LastName").addEventListener("blur",validateLastName);
+document.getElementById("LastName").addEventListener("blur", validateLastName);
 
-document.getElementById("PhoneNumber").addEventListener("blur", validatePhoneNumber);
+document
+  .getElementById("PhoneNumber")
+  .addEventListener("blur", validatePhoneNumber);
 
 document.getElementById("address").addEventListener("blur", validateaddress);
 
-document.getElementById("Nationality").addEventListener("blur", validateNationality);
+document
+  .getElementById("Nationality")
+  .addEventListener("blur", validateNationality);
 
+document
+  .getElementById("imageInput")
+  .addEventListener("change", previewImageProfile);
 
 const reSpaces = /^\S*$/;
-function validateusername(){
-
-    const usernameProfile = document.getElementById("usernameProfile");
-    if (usernameProfile.value == "") {
-        usernameProfile.classList.remove("is-valid");
-        usernameProfile.classList.add("is-invalid");
-        return false;
-    }
-    if (reSpaces.test(usernameProfile.value)) {
-        usernameProfile.classList.remove("is-invalid");
-        usernameProfile.classList.add("is-valid");
-        return true;
-    } else {
-        usernameProfile.classList.remove("is-valid");
-        usernameProfile.classList.add("is-invalid");
-        return false;
-    }
-
+function validateusername() {
+  const usernameProfile = document.getElementById("usernameProfile");
+  if (usernameProfile.value == "") {
+    usernameProfile.classList.remove("is-valid");
+    usernameProfile.classList.add("is-invalid");
+    return false;
+  }
+  if (reSpaces.test(usernameProfile.value)) {
+    usernameProfile.classList.remove("is-invalid");
+    usernameProfile.classList.add("is-valid");
+    return true;
+  } else {
+    usernameProfile.classList.remove("is-valid");
+    usernameProfile.classList.add("is-invalid");
+    return false;
+  }
 }
 
-function validatepassword(){
-    const password=document.getElementById("password")
- const repassword = /(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.{8,})(?=.*[!@#$%^&*])/;
-if (repassword.test(password.value) && reSpaces.test(password.value)) {
-  password.classList.remove("is-invalid");
-  password.classList.add("is-valid");
-  return true;
-} else {
-  password.classList.add("is-invalid");
-  password.classList.remove("is-valid");
+function validatepassword() {
+  const password = document.getElementById("password");
+  const repassword =
+    /(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.{8,})(?=.*[!@#$%^&*])/;
+  if (repassword.test(password.value) && reSpaces.test(password.value)) {
+    password.classList.remove("is-invalid");
+    password.classList.add("is-valid");
+    return true;
+  } else {
+    password.classList.add("is-invalid");
+    password.classList.remove("is-valid");
 
-  return false;
+    return false;
+  }
 }
 
-}
-
-function validateemail(){
-const email=document.getElementById("email")
+function validateemail() {
+  const email = document.getElementById("email");
   const remail = /^([a-zA-Z0-9_\-?\.?]){3,}@([a-zA-Z]){3,}\.([a-zA-Z]){2,5}$/;
 
   if (reSpaces.test(email.value) && remail.test(email.value)) {
@@ -66,10 +75,7 @@ const email=document.getElementById("email")
 
     return false;
   }
-
 }
-
-
 
 function validateFirstName() {
   const FirstName = document.getElementById("FirstName");
@@ -108,28 +114,28 @@ function validateLastName() {
 function validatePhoneNumber() {
   const PhoneNumber = document.getElementById("PhoneNumber");
   const phoneno = /^\+?([0-9]{2})\)?[-. ]?([0-9]{4})[-. ]?([0-9]{4})$/;
-      if (phoneno.test(PhoneNumber.value)) {
-        PhoneNumber.classList.remove("is-invalid");
-        PhoneNumber.classList.add("is-valid");
-        return true;
-      } else {
-        PhoneNumber.classList.remove("is-valid");
-        PhoneNumber.classList.add("is-invalid");
-        return false;
-      }
+  if (phoneno.test(PhoneNumber.value)) {
+    PhoneNumber.classList.remove("is-invalid");
+    PhoneNumber.classList.add("is-valid");
+    return true;
+  } else {
+    PhoneNumber.classList.remove("is-valid");
+    PhoneNumber.classList.add("is-invalid");
+    return false;
+  }
 }
 
-function validateaddress(){
+function validateaddress() {
   const address = document.getElementById("address");
- if (address.value == "") {
-   address.classList.remove("is-valid");
-   address.classList.add("is-invalid");
-   return false;
- }else{
-      address.classList.add("is-valid");
-      address.classList.remove("is-invalid");
-      return true;
- }  
+  if (address.value == "") {
+    address.classList.remove("is-valid");
+    address.classList.add("is-invalid");
+    return false;
+  } else {
+    address.classList.add("is-valid");
+    address.classList.remove("is-invalid");
+    return true;
+  }
 }
 function validateNationality() {
   const Nationality = document.getElementById("Nationality");
@@ -144,13 +150,26 @@ function validateNationality() {
   }
 }
 
-(function () {
-  const forms = document.getElementById("needs-validation");
+function previewImageProfile(event) {
+var frame=document.getElementById("frame")
+frame.src=URL.createObjectURL(event.target.files[0])
+frame.onload=function(){
+  URL.revokeObjectURL(frame.src)
+}
 
-  for (let form of forms) {
+
+}
+
+
+
+
+(function () {
+  var forms = document.querySelectorAll(".needs-validation");
+
+  Array.prototype.slice.call(forms).forEach(function (form) {
     form.addEventListener(
       "submit",
-      function (e) {
+      function (event) {
         if (
           !form.checkValidity() ||
           !validateusername() ||
@@ -162,13 +181,13 @@ function validateNationality() {
           !validateaddress() ||
           !validateNationality()
         ) {
-          e.preventDefault();
-          e.stopPropagation();
+          event.preventDefault();
+          event.stopPropagation();
         } else {
           form.classList.add("was-validated");
         }
       },
       false
     );
-  }
+  });
 })();

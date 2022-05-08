@@ -144,17 +144,23 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
+        <form id="form" action="#" class="needs-validation" novalidate>
 <div class="row g-3">
   <div class="mb-3 col-md-6 input-P">
   <label for="formGroupExampleInput" class="form-label">Property Name</label>
-  <input type="text" class="form-control rounded-pill  hover-shadow" id="formGroupExampleInput">
-
+  <input type="text" class="form-control rounded-pill  hover-shadow" id="ModalPname">
+<div class="valid-tooltip">
+             Looks Good!
+           </div>
+                <div class="invalid-tooltip">
+                  Property cannot be blank or have space
+           </div>
 </div>
 
 
   <div class="mb-3 col-md-6 input-L">
   <label for="formGroupExampleInput" class="form-label">Property Location</label>
-  <input type="text" class="form-control rounded-pill hover-shadow" id="formGroupExampleInput">
+  <input type="text" class="form-control rounded-pill hover-shadow" id="ModalPLocation">
 
 </div>
       
@@ -163,14 +169,14 @@
 <div class="row g-3">
   <div class="mb-3 col-md-6 input-P">
   <label for="formGroupExampleInput" class="form-label">Year Built</label>
-  <input type="date"  class="form-control rounded-pill hover-shadow " id="formGroupExampleInput">
+  <input type="date"  class="form-control rounded-pill hover-shadow " id="ModalYear">
 
 </div>  
 
 
   <div class="mb-3 col-md-6 input-P">
   <label for="formGroupExampleInput" class="form-label">Price</label>
-  <input type="text" class="form-control rounded-pill hover-shadow " id="formGroupExampleInput">
+  <input type="text" class="form-control rounded-pill hover-shadow " id="ModalPprice">
 
 </div>
       
@@ -205,9 +211,10 @@ For Sale
       </div>
 
       <div class="modal-footer">
-        <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Save</button>
+        <button type="submit" class="btn btn-primary" data-bs-dismiss="modal">Save</button>
       <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
       </div>
+      </form>
       </div>
     </div>
   </div>
@@ -225,19 +232,19 @@ For Sale
 <div class="container-fluid px-5">
     <section>
 <div class="table-responsive mt-5 col-lg-12"> 
-<table class="table table-borderless table-sm table-hover table-striped caption-top" id="Table">
+<table class="table table-borderless table-sm table-hover table-striped caption-top table-sortable" id="Table">
     <caption class="text-black fw-bolder"><label class="List">List of Property</label>
-<label class="Search">Search:<input type="search" id="SearchInput" class="form-control form-control-sm input-search" placeholder="Search For Property names" onkeyup="myFunction()"></label>
+<label class="Search">Search:<input type="search" id="SearchInput" class="form-control form-control-sm input-search" placeholder="Search For Property names"></label>
     </caption>
   <thead class="table-primary">
     <tr>
         
       <th scope="col" class="center">Property ID</th>
-      <th onclick="sortName(0)" scope="col" class="centerName" >Property Name <i class="fas fa-sort"></i></th>
+      <th  scope="col" class="centerName" >Property Name <i class="fas fa-sort"></i></th>
       <th scope="col"class="center">Property Image</th>
-      <th onclick="sortName(2)" scope="col" class="centerName">Price <i class="fas fa-sort"></i></th>
-      <th onclick="sortName(3)" scope="col"class="centerName">Year built <i class="fas fa-sort"></i></th>
-       <th onclick="sortName(4)" scope="col" class="centerName" >Location<i class="fas fa-sort"></i></th>
+      <th  scope="col" class="centerName">Price <i class="fas fa-sort"></i></th>
+      <th  scope="col"class="centerName">Year built <i class="fas fa-sort"></i></th>
+       <th scope="col" class="centerName" >Location<i class="fas fa-sort"></i></th>
       <th scope="col"class="center">Status</th>
       <th scope="col"class="center">Action</th>
 
