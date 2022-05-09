@@ -64,3 +64,32 @@ function total(){
 
 
 }
+
+
+
+function filterdate() {
+  var from = $("#SearchInput1").val();
+  var to = $("#SearchInput2").val();
+
+  if (!from && !to) {
+    // no value for from and to
+    return;
+  }
+
+  from = from || "1970-01-01"; // default from to a old date if it is not set
+  to = to || "2999-12-31";
+
+  var dateFrom = moment(from);
+  var dateTo = moment(to);
+
+  $("#table tr").each(function (i, tr) {
+    var val = $(tr).find("td:nth-child(3)").text();
+    var dateVal = moment(val, "MM/DD/YYYY");
+    var visible = dateVal.isBetween(dateFrom, dateTo, null, []) ? "" : "none"; // [] for inclusive
+    $(tr).css("display", visible);
+    console.log("td");
+  });
+}
+
+$("#SearchInput1").on("change", filterdate);
+$("#SearchInput2").on("change", filterdate);
