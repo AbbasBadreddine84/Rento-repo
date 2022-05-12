@@ -26,6 +26,10 @@ document
   .getElementById("imageInput")
   .addEventListener("change", previewImageProfile);
 
+document.getElementById("DateOfbirth").addEventListener("change", validateMonth);
+
+
+
 const reSpaces = /^\S*$/;
 function validateusername() {
   const usernameProfile = document.getElementById("usernameProfile");
@@ -161,6 +165,22 @@ frame.onload=function(){
 }
 
 
+function validateMonth() {
+  const regDate =
+    /(?:((0\d|[12]\d|3[01])|(0\d|1[012]))[\-|\\|\/]((0\d|1[012])|(0\d|[12]\d|3[01]))[\-|\\|\/](((19|20)\d{2})|\d\d))/;
+  const DateOfbirth = document.getElementById("DateOfbirth");
+
+  if (regDate.test(DateOfbirth.value)) {
+    DateOfbirth.classList.remove("is-invalid");
+    DateOfbirth.classList.add("is-valid");
+    return true;
+  } else {
+    DateOfbirth.classList.remove("is-valid");
+    DateOfbirth.classList.add("is-invalid");
+    return false;
+  }
+}
+
 
 
 (function () {
@@ -171,14 +191,15 @@ frame.onload=function(){
       "submit",
       function (event) {
         if (
-          !form.checkValidity() ||
-          !validateusername() ||
-          !validatepassword() ||
-          !validateemail() ||
-          !validateFirstName() ||
-          !validateLastName() ||
-          !validatePhoneNumber() ||
-          !validateaddress() ||
+          !form.checkValidity() &&
+          !validateusername() &&
+          !validatepassword() &&
+          !validateemail() &&
+          !validateFirstName() &&
+          !validateLastName() &&
+          !validateMonth()&&
+          !validatePhoneNumber() &&
+          !validateaddress() &&
           !validateNationality()
         ) {
           event.preventDefault();

@@ -107,7 +107,7 @@
           <nav class="navbar navbar-expand-lg navbar-light bg-light py-4 px-4">
             <div class="d-flex align-items-center">
               <i class="fas fa-align-left  fs-4 me-3" id="menu-toggle"></i>
-              <h2 class="fs-4 m-0">Home</h2>
+              <h2 class="fs-4 m-0">Tenant View</h2>
             </div>
           
             <button class="navbar-toggler collapsed" type="button" data-mdb-toggle="collapse" data-mdb-target="#navbarContent"
@@ -218,16 +218,16 @@
                             <thead class="table-primary">
                                 <tr>
 
-                                    <th scope="col" class="centerName">Name<i class="fas fa-sort"></i></th>
-                                    <th  scope="col" class="centerName">PropertyID<i
+                                    <th scope="col" class="center">Name</th>
+                                    <th  scope="col" class="centerName" onclick="sortName(1)">PropertyID<i
                                             class="fas fa-sort d-inline"></i></th>
                                   
                                     <th scope="col" class="centerName">Arrive</i></th>
                                     <th scope="col" class="centerName">Depart</th>
-                                    <th scope="col" class="centerName">Location<i
+                                    <th scope="col" class="centerName" onclick="sortName(4)">Location<i
                                             class="fas fa-sort d-inline"></i></th>
                                              <th scope="col" class="center">Mobile</th>
-                                    <th scope="col" class="center">Payment</th>
+                                    <th scope="col" class="centerName" onclick="sortName(6)">Payment <i class="fas fa-sort"></i></th>
                                     <th scope="col" class="center">Action</th>
                                 </tr>
                             </thead>
@@ -251,13 +251,13 @@
                                             role="button"><label class="text-success" for="">Paid</label></a></td>
                                     <td class="center"><a href="" class="btn btn-tbl-edit btn-xs" data-bs-toggle="modal"
                                             data-bs-target="#exampleModal"><i class="fa fa-pencil"></i></a>
-                                        <a href="" class="btn btn-tbl-delete btn-xs" role="button"
-                                            onclick="DeleteRow()"><i class="fa fa-trash"></i>
+                                        <a  class="btn btn-tbl-delete btn-xs" role="button"
+                                            onclick="deleteR(this)"><i class="fa fa-trash"></i>
                                     </td>
                                 </tr>
 
                                      <tr>
-                                    <td scope="row" class="center">   <div class="d-flex align-items-center">
+                                    <td scope="row" class="center"> <div class="d-flex align-items-center">
                                            <img src="img/tenants/tenant2.jpg"
                                             class="rounded-circle imgProfile" alt>
                                             <div class="ms-2">
@@ -275,8 +275,8 @@
                                             role="button"><label class="text-danger" for="">Unpaid</label></a></td>
                                     <td class="center"><a href="" class="btn btn-tbl-edit btn-xs" data-bs-toggle="modal"
                                             data-bs-target="#exampleModal"><i class="fa fa-pencil"></i></a>
-                                        <a href="" class="btn btn-tbl-delete btn-xs" role="button"
-                                            onclick="DeleteRow()"><i class="fa fa-trash"></i>
+                                        <a class="btn btn-tbl-delete btn-xs" role="button"
+                                            onclick="deleteR(this)"><i class="fa fa-trash"></i>
                                     </td>
                                 </tr>
                                 
@@ -299,8 +299,8 @@
                                             role="button"><label class="text-danger" for="">Unpaid</label></a></td>
                                     <td class="center"><a href="" class="btn btn-tbl-edit btn-xs" data-bs-toggle="modal"
                                             data-bs-target="#exampleModal"><i class="fa fa-pencil"></i></a>
-                                        <a href="" class="btn btn-tbl-delete btn-xs" role="button"
-                                            onclick="DeleteRow()"><i class="fa fa-trash"></i>
+                                        <a class="btn btn-tbl-delete btn-xs" role="button"
+                                           onclick="deleteR(this)"><i class="fa fa-trash"></i>
                                     </td>
                                 </tr>
 
@@ -323,8 +323,8 @@
                                             role="button"><label class="text-success" for="">Paid</label></a></td>
                                     <td class="center"><a href="" class="btn btn-tbl-edit btn-xs" data-bs-toggle="modal"
                                             data-bs-target="#exampleModal"><i class="fa fa-pencil"></i></a>
-                                        <a href="" class="btn btn-tbl-delete btn-xs" role="button"
-                                            onclick="DeleteRow()"><i class="fa fa-trash"></i>
+                                        <a class="btn btn-tbl-delete btn-xs" role="button"
+                                            onclick="deleteR(this)"><i class="fa fa-trash"></i>
                                     </td>
                                 </tr>
 
@@ -339,7 +339,7 @@
         </div>
     </div>
 
-    <script src="/JS/app.js"></script>
+    <script src="/JS/TenantView.js"></script>
 
 
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"

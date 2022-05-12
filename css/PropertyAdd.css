@@ -63,7 +63,7 @@ color: white !important;
 #wrapper.toggled #sidebar-wrapper {
     margin-left: 0;
 }
-@media (min-width:400px) {
+@media (min-width:500px) {
     #sidebar-wrapper {
         margin-left: 0;
        
@@ -138,18 +138,13 @@ color: white !important;
     position: relative;
     cursor: pointer;
 }
-#formGroupExampleInput1{
+/* #formGroupExampleInput{
 background: #EAFEF1;
 border: 1px solid #038C8C;
 box-sizing: border-box;
 border-radius: 10px;
-}
-#formGroupExampleInput2{
-background: #EAFEF1;
-border: 1px solid #038C8C;
-box-sizing: border-box;
-border-radius: 10px;
-}
+} */
+
 .txtarrea.form-control{
     max-width: 100%;
     resize: none;

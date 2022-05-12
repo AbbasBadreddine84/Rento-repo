@@ -93,3 +93,15 @@ function filterdate() {
 
 $("#SearchInput1").on("change", filterdate);
 $("#SearchInput2").on("change", filterdate);
+
+
+
+
+
+
+
+
+
+
+
+

@@ -64,7 +64,7 @@ color: white !important;
 #wrapper.toggled #sidebar-wrapper {
     margin-left: 0;
 }
-@media (min-width:400px) {
+@media (min-width:500px) {
     #sidebar-wrapper {
         margin-left: 0;
        
@@ -267,7 +267,7 @@ height: 45px;
 }
 
 .imgProfile{
-min-width: 45px;
+  width: 53px;
 height: 45px;
 }
 .titlename{
