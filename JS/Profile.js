@@ -191,15 +191,15 @@ function validateMonth() {
       "submit",
       function (event) {
         if (
-          !form.checkValidity() &&
-          !validateusername() &&
-          !validatepassword() &&
-          !validateemail() &&
-          !validateFirstName() &&
-          !validateLastName() &&
-          !validateMonth()&&
-          !validatePhoneNumber() &&
-          !validateaddress() &&
+          !form.checkValidity()||
+          !validateusername() ||
+          !validatepassword() ||
+          !validateemail() ||
+          !validateFirstName() ||
+          !validateLastName() ||
+          !validateMonth()||
+          !validatePhoneNumber() ||
+          !validateaddress() ||
           !validateNationality()
         ) {
           event.preventDefault();

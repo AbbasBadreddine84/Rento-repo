@@ -1,50 +1,33 @@
 document.getElementById("pname").addEventListener("blur", validateProductName);
-document.getElementById("plocation").addEventListener("blur", validatePLocation);
+document
+  .getElementById("plocation")
+  .addEventListener("blur", validatePLocation);
 document.getElementById("pdate").addEventListener("change", validateMonth);
-document.getElementById("ptextarea").addEventListener("blur", validateptextarea);
-document.getElementById("pselectType").addEventListener("blur", validatepselectType);
+document
+  .getElementById("ptextarea")
+  .addEventListener("blur", validateptextarea);
+document
+  .getElementById("pselectType")
+  .addEventListener("blur", validatepselectType);
 document.getElementById("pimage").addEventListener("blur", validatepimage);
 document.getElementById("sqaureft").addEventListener("blur", validatepsquare);
 document.getElementById("paddress").addEventListener("blur", validatepaddress);
 document.getElementById("pbedroom").addEventListener("blur", validatepbedroom);
 document.getElementById("pkitchen").addEventListener("blur", validatepkitchen);
-document.getElementById("plivingromm").addEventListener("blur", validateplivingromm);
-document.getElementById("pbathroom").addEventListener("blur", validatepbathroom);
-document.getElementById("formGroupExampleInput").addEventListener("blur", validateRadio);
-// document.querySelectorAll("#checkboxAll").addEventListener("blur", validateCheckbox);
-
-     
-
-// function validateCheckbox() {
-//   const checkboxAll = document.querySelectorAll("#checkboxAll");
-
-  
-//     if (checkboxAll.checked) {
-//       checkboxAll.classList.add("is-valid");
-//       checkboxAll.classList.remove("is-invalid");
-//       return true;
-//     } else {
-//         checkboxAll.classList.remove("is-valid")
-//       checkboxAll.classList.add("is-invalid");
-//       return false;
-
-//   }
-// }
-
-
-
-
-
-
-
-
-
-
+document
+  .getElementById("plivingromm")
+  .addEventListener("blur", validateplivingromm);
+document
+  .getElementById("pbathroom")
+  .addEventListener("blur", validatepbathroom);
+document
+  .getElementById("formGroupExampleInput")
+  .addEventListener("blur", validateRadio);
 
 function validateRadio() {
   const formGroupExampleInput = document.getElementById(
-    "formGroupExampleInput");
-
+    "formGroupExampleInput"
+  );
 
   if (formGroupExampleInput.value) {
     formGroupExampleInput.classList.add("is-valid");
@@ -55,7 +38,6 @@ function validateRadio() {
     formGroupExampleInput.classList.add("is-invalid");
     return false;
   }
-
 }
 
 const reSpaces = /^\S*$/;
@@ -141,11 +123,7 @@ function validatepimage() {
 
 function validatepsquare() {
   const sqaureft = document.getElementById("sqaureft");
-  if (sqaureft.value == "") {
-    sqaureft.classList.remove("is-valid");
-    sqaureft.classList.add("is-invalid");
-    return false;
-  }
+
   if (sqaureft.value < 1000) {
     sqaureft.classList.remove("is-valid");
     sqaureft.classList.add("is-invalid");
@@ -154,7 +132,7 @@ function validatepsquare() {
   if (sqaureft.value >= 1000) {
     sqaureft.classList.add("is-valid");
     sqaureft.classList.remove("is-invalid");
-    return false;
+    return true;
   }
 }
 
@@ -186,7 +164,7 @@ function validatepbedroom() {
   if (pbedroom.value >= 3) {
     pbedroom.classList.add("is-valid");
     pbedroom.classList.remove("is-invalid");
-    return false;
+    return true;
   }
 }
 
@@ -205,7 +183,7 @@ function validatepkitchen() {
   if (pkitchen.value >= 2) {
     pkitchen.classList.add("is-valid");
     pkitchen.classList.remove("is-invalid");
-    return false;
+    return true;
   }
 }
 function validateplivingromm() {
@@ -223,7 +201,7 @@ function validateplivingromm() {
   if (plivingromm.value >= 3) {
     plivingromm.classList.add("is-valid");
     plivingromm.classList.remove("is-invalid");
-    return false;
+    return true;
   }
 }
 function validatepbathroom() {
@@ -241,7 +219,7 @@ function validatepbathroom() {
   if (pbathroom.value >= 3) {
     pbathroom.classList.add("is-valid");
     pbathroom.classList.remove("is-invalid");
-    return false;
+    return true;
   }
 }
 function validateMonth() {
@@ -260,19 +238,6 @@ function validateMonth() {
   }
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 (function () {
   var forms = document.querySelectorAll(".needs-validation");
 
@@ -281,21 +246,21 @@ function validateMonth() {
       "submit",
       function (event) {
         if (
-          !form.checkValidity() &&
-          !validateProductName() &&
-          !validatePLocation() &&
-          !validateMonth() &&
-          !validateptextarea() &&
-          !validatepselectType() &&
-          !validatepimage() &&
-          !validateRadio() &&
-          !validatepsquare() &&
-          !validatepaddress() &&
-          !validatepbedroom() &&
-          !validatepkitchen() &&
-          !validateplivingromm() &&
-          !validatepbathroom() 
-          // !validateCheckbox()
+          !form.checkValidity() ||
+          !validateProductName() ||
+          !validatePLocation() ||
+          !validateMonth() ||
+          !validateptextarea() ||
+          !validatepselectType() ||
+          !validatepimage() ||
+          !validateRadio() ||
+          !validatepsquare() ||
+          !validatepaddress() ||
+          !validatepbedroom() ||
+          !validatepkitchen ||
+          !validateplivingromm ||
+          !validatepbathroom
+      
         ) {
           event.preventDefault();
           event.stopPropagation();
