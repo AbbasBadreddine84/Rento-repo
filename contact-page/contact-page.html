@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="contact-page.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+</head>
+
+<body>
+
+    <div class="container-lg position-relative p-0">
+
+        <nav class="navbar navbar-expand-lg navbar-light px-4 px-lg-5 py-3 py-lg-0">
+            <a href="" class="navbar-brand p-0">
+                <img src="Resources/Rento.png" alt="Logo">
+            </a>
+            <button class="navbar-toggler collapsed d-flex d-lg-none flex-column justify-content-around" type="button"
+                data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-expanded="false" aria-controls="navbarNav"
+                aria-label="Toggle-navigation">
+                <span class="toggler-icon top-bar"></span>
+                <span class="toggler-icon mid-bar"></span>
+                <span class="toggler-icon bot-bar"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <div class="navbar-nav ms-auto py-0" id="navbar-items">
+                    <a href="home.html" class="nav-item nav-link active">Home</a>
+                    <a href="about.html" class="nav-item nav-link">About</a>
+                    <a href="rental.html" class="nav-item nav-link">Apartments</a>
+                    <a href="listing.html" class="nav-item nav-link">List a property</a>
+                </div>
+                <a href="signIn.html" class="btn btn-primary text-light rounded-pill py-2 px-4 m-3 ">Sign in</a>
+            </div>
+        </nav>
+    </div>
+    <div id="upimage">
+        <br><br>
+    </div>
+
+    <Div class="container" id="allcontainer">
+
+
+
+        <div class="row">
+            <div class="col-xl-7">
+                <br><br><br><br>
+                <h2>Casa Elena
+                </h2>
+                <br>
+                <h2>Vila Chã | House</h2>
+                <br><br>
+                <p id="desc-text">The house in Beirut has 1 bedroom and has capacity for 4 people (max. 1 adults).
+                    The house is 180 m².
+                    The accommodation is equipped with the following items: garden, garden furniture, barbecue,
+                    fireplace, iron, internet (Wi-Fi), balcony, childrens area, alarm, private swimming pool, garage
+                    the
+                    same building, 1 TV, tv satellite.
+                    In the independent kitchen, refrigerator, microwave, oven, freezer, washing machine, dryer,
+                    dishwasher, dishes/cutlery, kitchen utensils, coffee machine, frying pan, toaster, kettle and
+                    juicer
+                    are provided.
+                </p>
+            </div>
+            <div class="col-xl-5" id="contact-box">
+
+                <div id="box">
+                    <a href=""></a>
+                    <p> Dates: <span style="color: orange;">(change)</span></p>
+                    <br>
+                    <div>
+
+                        <label for="input">check in : </label>
+                        <input type="date" id="date" value="08/05/2022">
+
+
+                    </div>
+                    <br>
+                    <div>
+
+                        <label for="date">check out :</label>
+                        <input type="date" id="date" value="21/05/2022">
+
+
+                    </div>
+                    <br>
+                    <a href=""></a>
+                    <p>Guests: <span style="color: orange;">(change)</span></p>
+                    <br>
+                    <p>Adults : <input type="number" class="form-control" id="quantity" name="quantity" min="1" max="6"
+                            style="max-width: 20%;"></p>
+                    <br>
+                    <p>Children: <input type="number" class="form-control" id="quantity" name="quantity" min="1" max="6"
+                            style="max-width: 20%;"></p>
+
+                    <hr style="border:2px solid whitesmoke ;">
+                    <br>
+                    <p>Accommodation <span style="float: right;">€0</span></p>
+                    <p>extra fees<span style="float: right;">€0</span></p>
+                    <p> Total<span style="float: right;">€0</span></p>
+                </div>
+            </div>
+        </div>
+        <br>
+        <br>
+        <br><br>
+        <div class="row">
+            <h2 style="margin-left: 2%;">Additional notes</h2>
+            <hr id="breakline">
+            <div class="col-xl-1"></div>
+            <div class="col-xl-8 col-sm-12" id="left-part">
+                <br>
+
+                <li>Parking space not included</li>
+                <li>Pets not allowed</li>
+                <li>Check-in schedule: from 14:00 to 20:00</li>
+                <li>Check-out schedule: Before 12:00</li>
+
+                <ul>
+
+                </ul>
+            </div>
+            <div class="col-xl-2 ">
+            </div>
+
+        </div>
+        <br><br>
+
+
+
+        <form id="myform" action="" class="needs-validation" novalidate>
+
+            <div class="row">
+                <h2 style="margin-left: 2%;">Personal data</h2>
+                <hr id="breakline">
+
+                <div class="col-xl-1"></div>
+                <div class="col-xl-4 col-sm-12" id="left-part">
+                    <ul>
+                        <li>
+
+                            <label for="text" id="info">FIRST NAME:*</label>
+                            <br><br>
+                            <input type="text" name="fname" id="firstname" class="form-control" required>
+                            <div class="valid-feedback">
+                                valid!
+                            </div>
+                            <div class="invalid-feedback">
+                                please enter your first name
+                            </div>
+
+
+
+                            <hr>
+
+                        </li>
+                        <li>
+
+                            <label for="text" id="info">
+                                SECOND SURNAME:*
+                            </label>
+                            <br><br>
+                            <input type="text" id="lastname" name="ssname" class="form-control" required>
+                            <div class="valid-feedback">
+                                valid!
+                            </div>
+                            <div class="invalid-feedback">
+                                please enter your second surname
+                            </div>
+                            <hr>
+
+                        </li>
+                        <li>
+
+                            <label for="text" id="info">
+                                CITY:*
+                            </label>
+                            <br><br>
+                            <input type="text" name="city" id="city" class="form-control" required>
+                            <div class="valid-feedback">
+                                valid!
+                            </div>
+                            <div class="invalid-feedback">
+                                please enter your city name
+                            </div>
+                            <hr>
+
+                        </li>
+                        <li>
+
+                            <label for="text" id="info">PROVINCE/COUNTY:*</label>
+                            <br><br>
+                            <input type="text" name="county" id="county" class="form-control" required>
+                            <div class="valid-feedback">
+                                valid!
+                            </div>
+                            <div class="invalid-feedback">
+                                please enter your county name
+                            </div>
+                            <hr>
+
+                        </li>
+                        <li>
+
+                            <label for="text" id="info">
+                                COUNTRY:*
+                            </label>
+                            <br><br>
+                            <input type="text" id="country" name="country" class="form-control" required>
+                            <div class="valid-feedback">
+                                valid!
+                            </div>
+                            <div class="invalid-feedback">
+                                please enter your country name
+                            </div>
+
+                            <hr>
+                        </li>
+                        <li>
+                            <label for="text" id="info">
+                                E-MAIL:*
+                            </label>
+                            <br><br>
+                            <input type="text" name="email" class="form-control" required>
+                            <div class="valid-feedback">
+                                valid!
+                            </div>
+                            <div class="invalid-feedback">
+                                please enter a valid email
+                            </div>
+                            <hr>
+                        </li>
+                    </ul>
+
+
+
+                </div>
+                <div class="col-xl-1 "></div>
+
+
+                <div class="col-xl-4 col-sm-12" id="right-part">
+                    <ul>
+                        <li>
+                            <label for="text" id="info">SURNAME:*</label>
+                            <br><br>
+                            <input type="text" name="sname" id="surname" class="form-control" required>
+                            <div class="valid-feedback">
+                                valid!
+                            </div>
+                            <div class="invalid-feedback">
+                                please enter your last name
+                            </div>
+                            <hr>
+                        </li>
+                        <li>
+                            <label for="text" id="info">
+                                ADDRESS:*
+                            </label>
+                            <br><br>
+                            <input type="text" name="co" id="adress" class="form-control" required>
+                            <div class="valid-feedback">
+                                valid!
+                            </div>
+                            <div class="invalid-feedback">
+                                please enter a valid adress
+                            </div>
+                            <hr>
+                        </li>
+                        <li>
+                            <label for="text" id="info">
+                                POSTAL CODE:*
+                            </label>
+                            <br><br>
+                            <input type="text" name="code" class="form-control" required>
+                            <div class="valid-feedback">
+                                valid!
+                            </div>
+                            <div class="invalid-feedback">
+                                please enter a valid code!
+                            </div>
+                            <hr>
+                        </li>
+                        <li>
+                            <label for="text" id="info">
+                                PASSPORT/ID NUMBER:
+                            </label>
+                            <br><br>
+                            <input type="text" name="id" class="form-control" required>
+
+                            <div class="valid-feedback">
+                                valid!
+                            </div>
+                            <div class="invalid-feedback">
+                                please enter a valid password
+                            </div>
+
+                            <hr>
+                        </li>
+                        <li>
+                            <label for="text" id="info">
+                                PHONE:*
+                            </label>
+                            <br><br>
+                            <input type="text" class="form-control" id="phonenumber" required>
+
+                            <div class="valid-feedback">
+                                valid!
+                            </div>
+                            <div class="invalid-feedback">
+                                please enter a valid number
+                            </div>
+                            <hr>
+                        </li>
+
+
+                    </ul>
+                </div>
+
+
+                <div class="col-xl-2 ">
+                </div>
+
+
+            </div>
+
+            <br><br>
+
+            <div class="row" id="row3">
+
+                <div class="col-xl-1"></div>
+
+                <div class="col-xl-10 sm-12">
+                    <input type="checkbox" class="form-check-input" name="cb" id="cb1" required>
+                    <label for="checkbox">I have read and accept the<span id="sp"> general terms</span> and
+                        <span id="sp">the
+                            data protection</span>
+                        policy</label>
+                    <br>
+
+                    <div class="invalid-feedback">
+                        You must agree before submitting.
+                    </div>
+
+                    <input type="checkbox" class="form-check-input" name="cb" id="cb2" required>
+                    <label for="checkbox">Send me special offers and promotions</label>
+                    <br>
+                    
+                    <div class="invalid-feedback">
+                        You must agree before submitting.
+                    </div>
+
+                </div>
+
+                <div class="col-xl-1"></div>
+
+
+            </div>
+            <br><br>
+
+
+            <div class="row">
+
+                <h2 style="margin-left: 2%;">Payment method
+                    <hr id="payment_hr"><br><br>
+                </h2>
+                <div class="col-1"></div>
+                <div class="col-xl-5" id="paymentcheck">
+
+                    <input type="radio" class="form-check-input" name="reason" id="paywithcard"
+                        onclick="show('paymentviacard','paymentviabank','paywithcard')" required>
+                    &ensp;Card
+                    number to make a charge<br>
+                </div>
+                <div class="col-xl-5" id="paymentcheck">
+                    <input type="radio" class="form-check-input" name="reason" id="paywithbankaccount"
+                        onclick="show('paymentviabank','paymentviacard','paywithbankaccount')" required>
+                    &ensp;Bank transfer<br>
+                </div>
+
+
+
+                <div class="col-1"></div>
+                <br>
+                <br>
+            </div>
+            <br><br>
+
+        </form>
+        <div id="paymentviacard">
+
+            <form action="" id="payment-validation" novalidate>
+
+                <div class="row">
+
+                    <div class="col-xl-1"></div>
+
+                    <div class="col-xl-5">
+                        
+                        <label for="cardNumber">Card Number</label>
+                        <input type="text" id="cardNumber" class="form-control" required>
+                    </div>
+                    <div class="col-xl-2 col-m-6">
+                        <label for="expirationDate" id="info">EXPIRY DATE</label><br>
+                        <input type="date" name="ssname" class="form-control" id="expirationDate" placeholder="00"
+                            required><br>
+                    </div>
+                    <div class="col-xl-2 col-m-6"></div>
+                    <div class="col-xl-1"></div>
+                    <div class="col-xl-1"></div>
+
+                </div>
+
+                <br>
+                <div class="row">
+                    <div class="col-xl-1"></div>
+                    <div class="col-xl-5">
+                        <label for="cardHolder" id="info">NAME ON CARD</label><br>
+                        <input type="text" name="ssname" class="form-control" id="cardHolder" required><br>
+                        <div class="valid-feedback">valid!</div>
+                        <div class="invalid-feedback">please enter correct name</div>
+                    </div>
+                    <div class="col-xl-3 col-m-6">
+                        <label for="cvc" id="info">CCV CODE</label><br>
+                        <input type="text" name="ssname" class="form-control" id="cvc" required><br>
+                    </div>
+                    <div class="col-xl-2 col-m-6"></div>
+                    <div class="col-xl-1"></div>
+                </div>
+
+                <button type="submit" class="btn btn-primary">Save</button>
+            </form>
+        </div>
+
+
+
+        <div id="paymentviabank">
+            <div class="row">
+                <div class="col-xl-1 "></div>
+                <div class="col-xl-8 col-md-10 col-sm-10">
+                    <p id="bankpaymenttext">If you choose this payment,
+                        the accommodation will be pre-reserved for you. However,
+                        to confirm the booking you will have to make a bank transfer deposit. The payment
+                        instructions
+                        will be sent to you by email at the end of the booking process.</p>
+                </div>
+                <div class="col-xl-3"></div>
+
+            </div>
+            <br>
+            <br>
+        </div>
+        <br>
+
+
+        <br><br>
+
+        <br>
+        <div>
+            <button type="submit" form="myform" class="btn btn-primary btn-block" id="sendbtn">Send</button>
+        </div>
+        <br><br><br>
+
+
+
+
+    </Div>
+
+    <footer id="footer">
+        <div class="footer-newsletter">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <h4>Our Newsletter</h4>
+                        <p>Subscribe to our newsletter to check our latest news and offers</p>
+                    </div>
+                    <div class="col-lg-6">
+                        <form action="" method="post"> <input type="email" name="email"
+                                placeholder="enter your email here"><input type="submit" value="Subscribe"> </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-top">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-3 col-md-6 footer-links">
+                        <h4>Useful Links</h4>
+                        <ul>
+                            <li><i class="bx bx-chevron-right"></i> <a href="home.html">Home</a></li>
+                            <li><i class="bx bx-chevron-right"></i> <a href="about.html">About us</a></li>
+                            <li><i class="bx bx-chevron-right"></i> <a href="rental.html">Apartments</a></li>
+                            <li><i class="bx bx-chevron-right"></i> <a href="termsOfService.html">Terms of service</a>
+                            </li>
+                            <li><i class="bx bx-chevron-right"></i> <a href="privacyPolicy.html">Privacy policy</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-3 col-md-6 footer-links">
+                        <h4>Quick links</h4>
+                        <ul>
+                            <li><i class="bx bx-chevron-right"></i> <a href="#">Villa</a></li>
+                            <li><i class="bx bx-chevron-right"></i> <a href="#">Apartment</a></li>
+                            <li><i class="bx bx-chevron-right"></i> <a href="#">Tokyo</a></li>
+                            <li><i class="bx bx-chevron-right"></i> <a href="#">Lebanon</a></li>
+                            <li><i class="bx bx-chevron-right"></i> <a href="listing.html">List a property</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-3 col-md-6 footer-contact">
+                        <h4>Contact Us</h4>
+                        <p> A108 Adam Street <br> New York, NY 535022<br> United States <br><br> <strong>Phone:</strong>
+                            +1 5589
+                            55488 55<br> <strong>Email:</strong> Travolta@example.com<br> </p>
+                    </div>
+                    <div class="col-lg-3 col-md-6 footer-info">
+                        <h3>About Rento</h3>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt placeat iste culpa repellat
+                            velit
+                            ducimus repudiandae asperiores aperiam quis officia.</p>
+                        <div class="social-links mt-3"> <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
+                            <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a> <a href="#"
+                                class="instagram"><i class="bx bxl-instagram"></i></a> <a href="#" class="linkedin"><i
+                                    class="bx bxl-linkedin"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="copyright"> © Copyright <strong><span>Rento</span></strong>. All Rights Reserved Designed by <a
+                    href="about.html">Rento</a> </div>
+            <div class="credits"> </div>
+        </div>
+
+    </footer>
+
+
+    <script defer src="contact.js"></script>
+</body>
+
+</html>
