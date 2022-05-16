@@ -149,17 +149,26 @@
                                     <p>Let us know what to call you</p>
                                 </div>
                                 <div id="name-hiden">
-                                    <form action="" class="needs-validation" novalidate>
+                                    <form action="" class="" id="name-validation" novalidate>
                                         <!-- First Name -->
-                                        <label for="exampleForm2" class="form-label">First Name</label>
-                                        <input type="text" id="exampleForm2" class="form-control" required>
-                                        <div class="valid-feedback">Valid.</div>
-                                        <div class="invalid-feedback">Please Enter your First Name</div>
+                                        <div>
+                                            <label for="firstName" class="form-label">First Name</label>
+                                            <input type="text" id="firstName" name="username" class="form-control"
+                                                required>
+                                            <div class="valid-feedback">looks good.</div>
+                                            <div class="invalid-feedback" id="name-invalid-message">First Name should be
+                                                between 2 and 30 characters and cant have blank spaces</div>
+                                        </div>
+
                                         <!-- Display Name -->
-                                        <label for="exampleForm3">Last Name</label>
-                                        <input type="text" id="exampleForm3" class="form-control" required>
-                                        <div class="valid-feedback">Valid.</div>
-                                        <div class="invalid-feedback">Please Enter your Last Name.</div>
+                                        <div>
+                                            <label for="exampleForm3">Last Name</label>
+                                            <input type="text" id="lastName" class="form-control" required>
+                                            <div class="valid-feedback">looks good.</div>
+                                            <div class="invalid-feedback">Last Name should be between 2 and 30
+                                                characters and cant have blank spaces</div>
+                                        </div>
+
                                         <br>
                                         <button type="submit" class="btn btn-primary">Save</button>
                                     </form>
@@ -185,12 +194,13 @@
                                     <p>Choose a display name</p>
                                 </div>
                                 <div id="Dname-hiden">
-                                    <form action="" class="needs-validation" novalidate>
+                                    <form action="" class="" id="validate-dipslayName" novalidate>
                                         <!-- Display Name -->
-                                        <label for="exampleForm4">Display Name</label><br>
-                                        <input type="text" id="exampleForm4" class="form-control" required>
+                                        <label for="displayName">Display Name</label><br>
+                                        <input type="text" id="displayName" class="form-control" required>
                                         <div class="valid-feedback">Valid.</div>
-                                        <div class="invalid-feedback">Please Enter your Display Name.</div>
+                                        <div class="invalid-feedback">Your DisplayName should be at least 3 characters.
+                                        </div>
                                         <br>
                                         <button type="submit" class="btn btn-primary">Save</button>
                                     </form>
@@ -218,15 +228,15 @@
                                     <button type="button" class="btn btn-link">Resend verification email?</button>
                                 </div>
                                 <div id="email-hiden">
-                                    <form action="" class="needs-validation" novalidate>
+                                    <form action="" class="" id="email-validation" novalidate>
                                         <!-- Email-->
-                                        <label for="exampleForm5">Email Address</label><br>
-                                        <input type="email" id="exampleForm5" class="form-control"
+                                        <label for="email">Email Address</label><br>
+                                        <input type="email" id="email" class="form-control"
                                             placeholder="hijaziabbass40@gmail.com" required>
                                         <div class="valid-feedback">Valid.</div>
-                                        <div class="invalid-feedback">Please Valid Email.</div>
+                                        <div class="invalid-feedback">Please Insert Valid Email.</div>
                                         <p style="font-size: small;"> We'll send a verification link to your new email
-                                            address – check your inbox.</p>
+                                            address check your inbox.</p>
                                         <br>
                                         <button type="submit" class="btn btn-primary">Save</button>
                                     </form>
@@ -239,39 +249,6 @@
                             </div>
                         </div>
                         <hr>
-
-
-
-
-
-                        <div class="row">
-                            <div class="col-3">
-                                <p>Phone number</p>
-                            </div>
-
-                            <div class="col-7">
-                                <div id="phone-shown">
-                                    <p>Add your phone number</p>
-                                    <p style="font-size: small;">Properties or attractions you book can use this number
-                                        to
-                                        contact you. You can also use it to sign in.</p>
-                                </div>
-                                <div id="phone-hidden">
-
-                                </div>
-
-                            </div>
-                            <div class="col-2" style="text-align: center;">
-                                <button type="button" class="btn btn-light">Edit</button>
-                            </div>
-                        </div>
-
-
-
-
-                        <hr>
-
-
                         <div class="row">
                             <div class="col-3">
                                 <p>Date of birth</p>
@@ -295,8 +272,8 @@
                             </div>
 
                             <div class="col-2" style="text-align: center;">
-                                <button type="submit" class="btn btn-light" id="edit6"
-                                    onclick="switchVisible('birth-shown','birth-hiden','edit6')">Edit</button>
+                                <button type="submit" class="btn btn-light" id="edit5"
+                                    onclick="switchVisible('birth-shown','birth-hiden','edit5')">Edit</button>
                             </div>
                         </div>
 
@@ -319,6 +296,7 @@
 
                                         <label for="countries1" class="form-label">Nationality:</label>
                                         <select id="countries1" name="countries" class="form-select" required>
+                                            <option selected disabled value="">Select your nationality ..</option>
                                             <option value="Afganistan">Afghanistan</option>
                                             <option value="Albania">Albania</option>
                                             <option value="Algeria">Algeria</option>
@@ -575,8 +553,8 @@
                             </div>
 
                             <div class="col-2" style="text-align: center;">
-                                <button type="button" class="btn btn-light" id="edit7"
-                                    onclick="switchVisible('nationality-shown','nationality-hiden','edit7')">Edit</button>
+                                <button type="button" class="btn btn-light" id="edit6"
+                                    onclick="switchVisible('nationality-shown','nationality-hiden','edit6')">Edit</button>
                             </div>
                         </div>
                         <hr>
@@ -594,8 +572,8 @@
                                         <label for="gender" class="form-label">Gender:</label>
                                         <select class="form-select" id="gender" required>
                                             <option selected disabled value="">Select your gender..</option>
-                                            <option value="1">I am a man</option>
-                                            <option value="2">I am a Women</option>
+                                            <option value="1">Male</option>
+                                            <option value="2">Female</option>
                                             <option value="3">I prefer not to say</option>
                                         </select>
                                         <div class="valid-feedback">Valid.</div>
@@ -606,8 +584,8 @@
                                 </div>
                             </div>
                             <div class="col-2" style="text-align: center;">
-                                <button type="button" class="btn btn-light" id="edit8"
-                                    onclick="switchVisible('gender-shown','gender-hiden','edit8')">Edit</button>
+                                <button type="button" class="btn btn-light" id="edit7"
+                                    onclick="switchVisible('gender-shown','gender-hiden','edit7')">Edit</button>
                             </div>
                         </div>
                         <hr>
@@ -622,38 +600,287 @@
                                     <p>Add your address</p>
                                 </div>
                                 <div id="address-hiden">
-                                    <form class="needs-validation" novalidate>
+                                    <form class="" id="address-validation" novalidate>
                                         <!-- country-->
                                         <label for="countries2" class="form-label">country:</label>
                                         <select class="form-select" id="countries2" required>
-
+                                            <option value="please select">Select your nationality ..</option>
+                                            <option value="Afganistan">Afghanistan</option>
+                                            <option value="Albania">Albania</option>
+                                            <option value="Algeria">Algeria</option>
+                                            <option value="American Samoa">American Samoa</option>
+                                            <option value="Andorra">Andorra</option>
+                                            <option value="Angola">Angola</option>
+                                            <option value="Anguilla">Anguilla</option>
+                                            <option value="Antigua & Barbuda">Antigua & Barbuda</option>
+                                            <option value="Argentina">Argentina</option>
+                                            <option value="Armenia">Armenia</option>
+                                            <option value="Aruba">Aruba</option>
+                                            <option value="Australia">Australia</option>
+                                            <option value="Austria">Austria</option>
+                                            <option value="Azerbaijan">Azerbaijan</option>
+                                            <option value="Bahamas">Bahamas</option>
+                                            <option value="Bahrain">Bahrain</option>
+                                            <option value="Bangladesh">Bangladesh</option>
+                                            <option value="Barbados">Barbados</option>
+                                            <option value="Belarus">Belarus</option>
+                                            <option value="Belgium">Belgium</option>
+                                            <option value="Belize">Belize</option>
+                                            <option value="Benin">Benin</option>
+                                            <option value="Bermuda">Bermuda</option>
+                                            <option value="Bhutan">Bhutan</option>
+                                            <option value="Bolivia">Bolivia</option>
+                                            <option value="Bonaire">Bonaire</option>
+                                            <option value="Bosnia & Herzegovina">Bosnia & Herzegovina</option>
+                                            <option value="Botswana">Botswana</option>
+                                            <option value="Brazil">Brazil</option>
+                                            <option value="British Indian Ocean Ter">British Indian Ocean Ter</option>
+                                            <option value="Brunei">Brunei</option>
+                                            <option value="Bulgaria">Bulgaria</option>
+                                            <option value="Burkina Faso">Burkina Faso</option>
+                                            <option value="Burundi">Burundi</option>
+                                            <option value="Cambodia">Cambodia</option>
+                                            <option value="Cameroon">Cameroon</option>
+                                            <option value="Canada">Canada</option>
+                                            <option value="Canary Islands">Canary Islands</option>
+                                            <option value="Cape Verde">Cape Verde</option>
+                                            <option value="Cayman Islands">Cayman Islands</option>
+                                            <option value="Central African Republic">Central African Republic</option>
+                                            <option value="Chad">Chad</option>
+                                            <option value="Channel Islands">Channel Islands</option>
+                                            <option value="Chile">Chile</option>
+                                            <option value="China">China</option>
+                                            <option value="Christmas Island">Christmas Island</option>
+                                            <option value="Cocos Island">Cocos Island</option>
+                                            <option value="Colombia">Colombia</option>
+                                            <option value="Comoros">Comoros</option>
+                                            <option value="Congo">Congo</option>
+                                            <option value="Cook Islands">Cook Islands</option>
+                                            <option value="Costa Rica">Costa Rica</option>
+                                            <option value="Cote DIvoire">Cote DIvoire</option>
+                                            <option value="Croatia">Croatia</option>
+                                            <option value="Cuba">Cuba</option>
+                                            <option value="Curaco">Curacao</option>
+                                            <option value="Cyprus">Cyprus</option>
+                                            <option value="Czech Republic">Czech Republic</option>
+                                            <option value="Denmark">Denmark</option>
+                                            <option value="Djibouti">Djibouti</option>
+                                            <option value="Dominica">Dominica</option>
+                                            <option value="Dominican Republic">Dominican Republic</option>
+                                            <option value="East Timor">East Timor</option>
+                                            <option value="Ecuador">Ecuador</option>
+                                            <option value="Egypt">Egypt</option>
+                                            <option value="El Salvador">El Salvador</option>
+                                            <option value="Equatorial Guinea">Equatorial Guinea</option>
+                                            <option value="Eritrea">Eritrea</option>
+                                            <option value="Estonia">Estonia</option>
+                                            <option value="Ethiopia">Ethiopia</option>
+                                            <option value="Falkland Islands">Falkland Islands</option>
+                                            <option value="Faroe Islands">Faroe Islands</option>
+                                            <option value="Fiji">Fiji</option>
+                                            <option value="Finland">Finland</option>
+                                            <option value="France">France</option>
+                                            <option value="French Guiana">French Guiana</option>
+                                            <option value="French Polynesia">French Polynesia</option>
+                                            <option value="French Southern Ter">French Southern Ter</option>
+                                            <option value="Gabon">Gabon</option>
+                                            <option value="Gambia">Gambia</option>
+                                            <option value="Georgia">Georgia</option>
+                                            <option value="Germany">Germany</option>
+                                            <option value="Ghana">Ghana</option>
+                                            <option value="Gibraltar">Gibraltar</option>
+                                            <option value="Great Britain">Great Britain</option>
+                                            <option value="Greece">Greece</option>
+                                            <option value="Greenland">Greenland</option>
+                                            <option value="Grenada">Grenada</option>
+                                            <option value="Guadeloupe">Guadeloupe</option>
+                                            <option value="Guam">Guam</option>
+                                            <option value="Guatemala">Guatemala</option>
+                                            <option value="Guinea">Guinea</option>
+                                            <option value="Guyana">Guyana</option>
+                                            <option value="Haiti">Haiti</option>
+                                            <option value="Hawaii">Hawaii</option>
+                                            <option value="Honduras">Honduras</option>
+                                            <option value="Hong Kong">Hong Kong</option>
+                                            <option value="Hungary">Hungary</option>
+                                            <option value="Iceland">Iceland</option>
+                                            <option value="Indonesia">Indonesia</option>
+                                            <option value="India">India</option>
+                                            <option value="Iran">Iran</option>
+                                            <option value="Iraq">Iraq</option>
+                                            <option value="Ireland">Ireland</option>
+                                            <option value="Isle of Man">Isle of Man</option>
+                                            <option value="Israel">Israel</option>
+                                            <option value="Italy">Italy</option>
+                                            <option value="Jamaica">Jamaica</option>
+                                            <option value="Japan">Japan</option>
+                                            <option value="Jordan">Jordan</option>
+                                            <option value="Kazakhstan">Kazakhstan</option>
+                                            <option value="Kenya">Kenya</option>
+                                            <option value="Kiribati">Kiribati</option>
+                                            <option value="Korea North">Korea North</option>
+                                            <option value="Korea Sout">Korea South</option>
+                                            <option value="Kuwait">Kuwait</option>
+                                            <option value="Kyrgyzstan">Kyrgyzstan</option>
+                                            <option value="Laos">Laos</option>
+                                            <option value="Latvia">Latvia</option>
+                                            <option value="Lebanon">Lebanon</option>
+                                            <option value="Lesotho">Lesotho</option>
+                                            <option value="Liberia">Liberia</option>
+                                            <option value="Libya">Libya</option>
+                                            <option value="Liechtenstein">Liechtenstein</option>
+                                            <option value="Lithuania">Lithuania</option>
+                                            <option value="Luxembourg">Luxembourg</option>
+                                            <option value="Macau">Macau</option>
+                                            <option value="Macedonia">Macedonia</option>
+                                            <option value="Madagascar">Madagascar</option>
+                                            <option value="Malaysia">Malaysia</option>
+                                            <option value="Malawi">Malawi</option>
+                                            <option value="Maldives">Maldives</option>
+                                            <option value="Mali">Mali</option>
+                                            <option value="Malta">Malta</option>
+                                            <option value="Marshall Islands">Marshall Islands</option>
+                                            <option value="Martinique">Martinique</option>
+                                            <option value="Mauritania">Mauritania</option>
+                                            <option value="Mauritius">Mauritius</option>
+                                            <option value="Mayotte">Mayotte</option>
+                                            <option value="Mexico">Mexico</option>
+                                            <option value="Midway Islands">Midway Islands</option>
+                                            <option value="Moldova">Moldova</option>
+                                            <option value="Monaco">Monaco</option>
+                                            <option value="Mongolia">Mongolia</option>
+                                            <option value="Montserrat">Montserrat</option>
+                                            <option value="Morocco">Morocco</option>
+                                            <option value="Mozambique">Mozambique</option>
+                                            <option value="Myanmar">Myanmar</option>
+                                            <option value="Nambia">Nambia</option>
+                                            <option value="Nauru">Nauru</option>
+                                            <option value="Nepal">Nepal</option>
+                                            <option value="Netherland Antilles">Netherland Antilles</option>
+                                            <option value="Netherlands">Netherlands (Holland, Europe)</option>
+                                            <option value="Nevis">Nevis</option>
+                                            <option value="New Caledonia">New Caledonia</option>
+                                            <option value="New Zealand">New Zealand</option>
+                                            <option value="Nicaragua">Nicaragua</option>
+                                            <option value="Niger">Niger</option>
+                                            <option value="Nigeria">Nigeria</option>
+                                            <option value="Niue">Niue</option>
+                                            <option value="Norfolk Island">Norfolk Island</option>
+                                            <option value="Norway">Norway</option>
+                                            <option value="Oman">Oman</option>
+                                            <option value="Pakistan">Pakistan</option>
+                                            <option value="Palau Island">Palau Island</option>
+                                            <option value="Palestine">Palestine</option>
+                                            <option value="Panama">Panama</option>
+                                            <option value="Papua New Guinea">Papua New Guinea</option>
+                                            <option value="Paraguay">Paraguay</option>
+                                            <option value="Peru">Peru</option>
+                                            <option value="Phillipines">Philippines</option>
+                                            <option value="Pitcairn Island">Pitcairn Island</option>
+                                            <option value="Poland">Poland</option>
+                                            <option value="Portugal">Portugal</option>
+                                            <option value="Puerto Rico">Puerto Rico</option>
+                                            <option value="Qatar">Qatar</option>
+                                            <option value="Republic of Montenegro">Republic of Montenegro</option>
+                                            <option value="Republic of Serbia">Republic of Serbia</option>
+                                            <option value="Reunion">Reunion</option>
+                                            <option value="Romania">Romania</option>
+                                            <option value="Russia">Russia</option>
+                                            <option value="Rwanda">Rwanda</option>
+                                            <option value="St Barthelemy">St Barthelemy</option>
+                                            <option value="St Eustatius">St Eustatius</option>
+                                            <option value="St Helena">St Helena</option>
+                                            <option value="St Kitts-Nevis">St Kitts-Nevis</option>
+                                            <option value="St Lucia">St Lucia</option>
+                                            <option value="St Maarten">St Maarten</option>
+                                            <option value="St Pierre & Miquelon">St Pierre & Miquelon</option>
+                                            <option value="St Vincent & Grenadines">St Vincent & Grenadines</option>
+                                            <option value="Saipan">Saipan</option>
+                                            <option value="Samoa">Samoa</option>
+                                            <option value="Samoa American">Samoa American</option>
+                                            <option value="San Marino">San Marino</option>
+                                            <option value="Sao Tome & Principe">Sao Tome & Principe</option>
+                                            <option value="Saudi Arabia">Saudi Arabia</option>
+                                            <option value="Senegal">Senegal</option>
+                                            <option value="Seychelles">Seychelles</option>
+                                            <option value="Sierra Leone">Sierra Leone</option>
+                                            <option value="Singapore">Singapore</option>
+                                            <option value="Slovakia">Slovakia</option>
+                                            <option value="Slovenia">Slovenia</option>
+                                            <option value="Solomon Islands">Solomon Islands</option>
+                                            <option value="Somalia">Somalia</option>
+                                            <option value="South Africa">South Africa</option>
+                                            <option value="Spain">Spain</option>
+                                            <option value="Sri Lanka">Sri Lanka</option>
+                                            <option value="Sudan">Sudan</option>
+                                            <option value="Suriname">Suriname</option>
+                                            <option value="Swaziland">Swaziland</option>
+                                            <option value="Sweden">Sweden</option>
+                                            <option value="Switzerland">Switzerland</option>
+                                            <option value="Syria">Syria</option>
+                                            <option value="Tahiti">Tahiti</option>
+                                            <option value="Taiwan">Taiwan</option>
+                                            <option value="Tajikistan">Tajikistan</option>
+                                            <option value="Tanzania">Tanzania</option>
+                                            <option value="Thailand">Thailand</option>
+                                            <option value="Togo">Togo</option>
+                                            <option value="Tokelau">Tokelau</option>
+                                            <option value="Tonga">Tonga</option>
+                                            <option value="Trinidad & Tobago">Trinidad & Tobago</option>
+                                            <option value="Tunisia">Tunisia</option>
+                                            <option value="Turkey">Turkey</option>
+                                            <option value="Turkmenistan">Turkmenistan</option>
+                                            <option value="Turks & Caicos Is">Turks & Caicos Is</option>
+                                            <option value="Tuvalu">Tuvalu</option>
+                                            <option value="Uganda">Uganda</option>
+                                            <option value="United Kingdom">United Kingdom</option>
+                                            <option value="Ukraine">Ukraine</option>
+                                            <option value="United Arab Erimates">United Arab Emirates</option>
+                                            <option value="United States of America">United States of America</option>
+                                            <option value="Uraguay">Uruguay</option>
+                                            <option value="Uzbekistan">Uzbekistan</option>
+                                            <option value="Vanuatu">Vanuatu</option>
+                                            <option value="Vatican City State">Vatican City State</option>
+                                            <option value="Venezuela">Venezuela</option>
+                                            <option value="Vietnam">Vietnam</option>
+                                            <option value="Virgin Islands (Brit)">Virgin Islands (Brit)</option>
+                                            <option value="Virgin Islands (USA)">Virgin Islands (USA)</option>
+                                            <option value="Wake Island">Wake Island</option>
+                                            <option value="Wallis & Futana Is">Wallis & Futana Is</option>
+                                            <option value="Yemen">Yemen</option>
+                                            <option value="Zaire">Zaire</option>
+                                            <option value="Zambia">Zambia</option>
+                                            <option value="Zimbabwe">Zimbabwe</option>
                                         </select>
                                         <div class="valid-feedback">Valid.</div>
                                         <div class="invalid-feedback">Please select your country</div>
                                         <br>
                                         <!-- city-->
-                                        <label for="exampleForm7">City:</label><br>
-                                        <input type="text" id="exampleForm7" class="form-control" required>
-                                        <div class="valid-feedback">Valid.</div>
-                                        <div class="invalid-feedback">Please Enter Valid City</div>
-                                        <br>
-
+                                        <div>
+                                            <label for="city">City:</label><br>
+                                            <input type="text" id="city" class="form-control" required>
+                                            <div class="valid-feedback">Valid.</div>
+                                            <div class="invalid-feedback">City at least should have 3 characters without
+                                                any symbols</div>
+                                            <br>
+                                        </div>
                                         <!-- Zip-->
-                                        <label for="exampleForm8">ZIP</label><br>
-                                        <input type="text" id="exampleForm8" class="form-control" required>
-                                        <div class="valid-feedback">Valid.</div>
-                                        <div class="invalid-feedback">Please Valid ZIP</div>
-                                        <br>
-
+                                        <div>
+                                            <label for="zip">ZIP</label><br>
+                                            <input type="text" id="zip" class="form-control" required>
+                                            <div class="valid-feedback">Valid.</div>
+                                            <div class="invalid-feedback">Zip should have 5 numbers</div>
+                                            <br>
+                                        </div>
                                         <button type="submit" class="btn btn-primary">Save</button>
                                     </form>
                                 </div>
 
                             </div>
 
-                            <div class="col-2" style="text-align: center;" id="edit9"
-                                onclick="switchVisible('address-shown','address-hiden','edit9')">
-                                <button type="button" class="btn btn-light">Edit</button>
+                            <div class="col-2" style="text-align: center;">
+                                <button type="button" class="btn btn-light" id="edit8"
+                                    onclick="switchVisible('address-shown','address-hiden','edit8')">Edit</button>
                             </div>
                         </div>
                         <hr>
@@ -698,8 +925,8 @@
 
                             </div>
                             <div class="col-2" style="text-align: center;">
-                                <button type="button" class="btn btn-light" id="edit10"
-                                    onclick="switchVisible('currency-shown','currency-hiden','edit10')">Edit</button>
+                                <button type="button" class="btn btn-light" id="edit9"
+                                    onclick="switchVisible('currency-shown','currency-hiden','edit9')">Edit</button>
                             </div>
                         </div>
                         <hr>
@@ -731,8 +958,8 @@
 
                             </div>
                             <div class="col-2" style="text-align: center;">
-                                <button type="button" class="btn btn-light" id="edit11"
-                                    onclick="switchVisible('requirements-shown','requirements-hiden','edit11')">Edit</button>
+                                <button type="button" class="btn btn-light" id="edit10"
+                                    onclick="switchVisible('requirements-shown','requirements-hiden','edit10')">Edit</button>
                             </div>
                         </div>
                         <hr>
@@ -766,8 +993,8 @@
                                 </div>
                             </div>
                             <div class="col-2" style="text-align: center;">
-                                <button type="button" class="btn btn-light" id="edit12"
-                                    onclick="switchVisible('password-shown','password-hiden','edit12')">Reset</button>
+                                <button type="button" class="btn btn-light" id="edit11"
+                                    onclick="switchVisible('password-shown','password-hiden','edit11')">Res</button>
                             </div>
                         </div>
 
@@ -785,20 +1012,20 @@
                                     <p>Why do you want to delete your account:</p><br>
                                     <form action="" class="needs-validation" novalidate>
                                         <input type="radio" class="form-check-input" id="validationFormCheck2"
-                                            name="radio-stacked" required>
+                                            name="radio-stacked" onclick="hide()" required>
                                         <label class="form-check-label" for="validationFormCheck2">
                                             I get too many emails from Booking.com
                                         </label><br> <br>
-                                        <input type="radio" class="form-check-input" id="validationFormCheck2"
-                                            name="radio-stacked" required>
-                                        <label class="form-check-label" for="validationFormCheck2">
+                                        <input type="radio" class="form-check-input" id="validationFormCheck3"
+                                            name="radio-stacked" onclick="hide()" required>
+                                        <label class="form-check-label" for="validationFormCheck3">
                                             I want to use a different email address for my account
                                         </label><br> <br>
                                         <div id="others-shown">
                                             <input type="radio" class="form-check-input" id="others"
                                                 name="radio-stacked"
                                                 onclick="show('others-shown','others-hiden','others')" required>
-                                            <label class="form-check-label" for="validationFormCheck2">
+                                            <label class="form-check-label" for="others">
                                                 Others
                                             </label>
                                         </div>
@@ -807,7 +1034,7 @@
                                                 you'd like to share before you go? We'll use it to fix problems and
                                                 improve
                                                 our services.</label>
-                                            <textarea class="form-control" id="validationTextarea" required></textarea>
+                                            <textarea class="form-control" id="validationTextarea"></textarea>
                                         </div>
                                         <br>
                                         <br>
@@ -817,8 +1044,8 @@
 
                             </div>
                             <div class="col-2" style="text-align: center;">
-                                <button type="button" class="btn btn-light" id="edit13"
-                                    onclick="switchVisible('delet-shown','delet-hiden','edit13')">Delet</button>
+                                <button type="button" class="btn btn-light" id="edit12"
+                                    onclick="switchVisible('delet-shown','delet-hiden','edit12')">Delet</button>
                             </div>
                         </div>
                         <hr>
@@ -843,36 +1070,60 @@
 
                             <div class="col-7">
                                 <div id="payment-shown">
-                                <p>Pay with new card</p>
+                                    <p>Pay with new card</p>
                                 </div>
                                 <div id="payment-hiden">
-                                    <div class='credit-card-validation'>
-                                        <p>
-                                        <label>Card Number</label>
-                                        <input type="tel" name="cardNumber" class="cardNumber" maxlength="16" placeholder="0000 0000 0000 0000" data-validation-type="custom" data-validation-error-msg="Please enter a valid card number" data-validation-error-msg-container="#cardnumber-error-dialog">
-                                        <div id="cardnumber-error-dialog" class="field-error"></div>
-                                        </p>
-                                    
-                                        <p>
-                                            <label>Expiry Date</label>
-                                            <input type="text" name="cardExpiry" maxlength="5" class="cardExpiry" placeholder="mm/yy" data-validation-type="alphanumeric" data-validation-error-msg="Please enter a valid card expiry" data-validation-error-msg-container="#cardexpiry-error-dialog">
-                                            <div id="cardexpiry-error-dialog" class="field-error"></div>
-                                        </p>
-                                    
-                                        <p>
-                                            <label>CVV Code</label>
-                                            <input type="text" name="cardCVV" maxlength="3" class="cardCVV" data-validation-type="numeric" data-validation-error-msg="Please enter a valid CVV number" data-validation-error-msg-container="#cardcvv-error-dialog">
-                                            <div id="cardcvv-error-dialog" class="field-error"></div>
-                                        </p>
+                                    <div class="">
+
+
                                     </div>
-                                    <br><br>
-                                    <button type="submit" class="btn btn-primary">Add card</button>
+                                    <form action="" class="" id="payment-validation" novalidate>
+                                        <!-- Cardholder's Name -->
+                                        <div>
+                                            <label for="cardHolder" class="form-label">Cardholder's Name</label>
+                                            <input type="text" id="cardHolder" name="username" class="form-control"
+                                                required>
+                                            <div class="valid-feedback">looks good.</div>
+                                            <div class="invalid-feedback" id="name-invalid-message">Has minimum 2 and
+                                                maximum 26 characters - Accept dashes (-) and apostrophes (') only and
+                                                no other special character - Capital and small alphabets and no numbers
+                                            </div>
+                                        </div>
+
+                                        <!-- Card Number-->
+                                        <div>
+                                            <label for="cardNumber">Card Number</label>
+                                            <input type="text" id="cardNumber" class="form-control" required>
+                                            <div class="valid-feedback">looks good.</div>
+                                            <div class="invalid-feedback">Card number should Start with 4 and have
+                                                maximum 16 characters </div>
+                                        </div>
+
+                                        <!-- Expiration Date-->
+                                        <div>
+                                            <label for="expirationDate">Expiration Date</label>
+                                            <input type="date" id="expirationDate" class="form-control" required>
+                                            <div class="valid-feedback">looks good.</div>
+                                            <div class="invalid-feedback">Please insert a valid Date</div>
+                                        </div>
+
+                                        <!-- Card Number-->
+                                        <div>
+                                            <label for="cvc">CVC</label>
+                                            <input type="text" id="cvc" class="form-control" required>
+                                            <div class="valid-feedback">looks good.</div>
+                                            <div class="invalid-feedback">It should have 3 or 4 digits and It should not
+                                                have any alphabets and special characters.</div>
+                                        </div>
+                                        <br>
+                                        <button type="submit" class="btn btn-primary">Save</button>
+                                    </form>
                                 </div>
-                                
+
                             </div>
                             <div class="col-2" style="text-align: center;">
-                                <button type="button" class="btn btn-light" id="edit14"
-                                onclick="switchVisible('payment-shown','payment-hiden','edit14')">Add card</button>
+                                <button type="button" class="btn btn-light" id="edit13"
+                                    onclick="switchVisible('payment-shown','payment-hiden','edit13')">Add card</button>
                             </div>
                         </div>
                         <hr>

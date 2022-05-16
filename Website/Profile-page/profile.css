@@ -275,6 +275,12 @@ display: none;
     display: none;
 }
 
+.credit-card{
+    height: 400px;
+    background-image: url(./images/creditCard.jpg);
+     background-size: cover;
+}
+
 
 
 

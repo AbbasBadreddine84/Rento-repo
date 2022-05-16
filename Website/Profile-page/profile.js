@@ -1,39 +1,64 @@
-src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js";
-src="creditCardValidator.js";
 
-
-function show(shown,hide,rad) {
-
-      if (document.getElementById(rad).checked == false) {
-          document.getElementById(shown).style.display = 'block';
-          document.getElementById(hide).style.display = 'none';
-      }
-      else {
-          document.getElementById(shown).style.display = 'block';
-          document.getElementById(hide).style.display = 'block';
-
-      }
-  
+function hide() {
+    if ((document.getElementById("validationFormCheck2").checked == true) || (document.getElementById("validationFormCheck3").checked == true)) {
+        document.getElementById('others-hiden').style.display = 'none';
+        document.getElementById("validationTextarea").required = false;
+    }
 }
 
-function switchVisible(shown,hide,btn) {
+function show(shown, hide, rad) {
+
+
+    if (document.getElementById(rad).checked == true) {
+
+        document.getElementById(shown).style.display = 'block';
+        document.getElementById(hide).style.display = 'block';
+        document.getElementById("validationTextarea").required = true;
+
+    }
+
+}
+
+function switchVisible(shown, hide, btn) {
 
     var btnName = document.getElementById(btn);
+    var str = btn;
+    var replaced = str.replace(/\D/g, '');
+
+    for (var i = 1; i <= 13; i++) {
+        if (i == replaced) {
+            document.getElementById('edit' + i).disabled = false;
+        } else {
+            document.getElementById('edit' + i).disabled = true;
+        }
+
+    }
 
     if (document.getElementById(shown)) {
 
         if (document.getElementById(shown).style.display == 'none') {
             document.getElementById(shown).style.display = 'block';
             document.getElementById(hide).style.display = 'none';
-            btnName.innerHTML="Edit";
+            btnName.innerHTML = "Edit";
+            for (var i = 1; i <= 13; i++) {
+                document.getElementById('edit' + i).disabled = false;
+                
+            }
         }
         else {
             document.getElementById(shown).style.display = 'none';
             document.getElementById(hide).style.display = 'block';
-            btnName.innerHTML="X";
+            btnName.innerHTML = "X";
 
         }
     }
+}
+
+
+
+
+function hasBlankSpaces(str) {
+    return str.match(/^\s+$/) !== null;
 }
 
 
@@ -43,235 +68,430 @@ function switchVisible(shown,hide,btn) {
 // Example starter JavaScript for disabling form submissions if there are invalid fields
 (function () {
     'use strict'
-  
+
     // Fetch all the forms we want to apply custom Bootstrap validation styles to
     var forms = document.querySelectorAll('.needs-validation')
-  
+
     // Loop over them and prevent submission
     Array.prototype.slice.call(forms)
-      .forEach(function (form) {
-        form.addEventListener('submit', function (event) {
-          if (!form.checkValidity()) {
-            event.preventDefault()
-            event.stopPropagation()
-          }
-  
-          form.classList.add('was-validated')
-        }, false)
-      })
-  })()
+        .forEach(function (form) {
+            form.addEventListener('submit', function (event) {
+
+                if (!form.checkValidity()) {
+                    event.preventDefault()
+                    event.stopPropagation()
+                }
+
+                form.classList.add('was-validated')
+
+            }, false)
+        })
+})()
 
 
+document.querySelector('#firstName').addEventListener('blur', validateFirstname);
+document.querySelector('#lastName').addEventListener('blur', validateLastName);
 
 
+const reNumChars = /^[a-zA-Z ]{3,30}$/;
+const reSpaces = /^\S*$/;
+const reZip = /\d{5}/;
+const Revisa = /^(?:4[0-9]{12}(?:[0-9]{3})?)$/;
+const reCardHolder = /(?<! )[-a-zA-Z' ]{2,26}/;
+const ReCVC = /^[0-9]{3,4}$/;
+const reDate = /(?:(?:31(\/|-|\.)(?:0?[13578]|1[02]))\1|(?:(?:29|30)(\/|-|\.)(?:0?[13-9]|1[0-2])\2))(?:(?:1[6-9]|[2-9]\d)?\d{2})$|^(?:29(\/|-|\.)0?2\3(?:(?:(?:1[6-9]|[2-9]\d)?(?:0[48]|[2468][048]|[13579][26])|(?:(?:16|[2468][048]|[3579][26])00))))$|^(?:0?[1-9]|1\d|2[0-8])(\/|-|\.)(?:(?:0?[1-9])|(?:1[0-2]))\4(?:(?:1[6-9]|[2-9]\d)?\d{2})/;
 
-   
-// copying nationality select options 
-var $options = $("#countries1 > option").clone();
-$('#countries2').append($options);
-     
 
+// Firstname validation
+function validateFirstname(e) {
 
-/*
- * Display error message based on current element's data attributes
- */
-function cgToggleError(element, status) {
-  var errorMessage = $(element).data('validation-error-msg'),
-      errorContainer = $(element).data('validation-error-msg-container');
+    const firstName = document.querySelector('#firstName');
+    if ((reSpaces.test(firstName.value)) && (reNumChars.test(firstName.value))) {
+        firstName.classList.remove('is-invalid');
+        firstName.classList.add('is-valid');
+        return true;
+    } else {
+        firstName.classList.remove('is-valid');
+        firstName.classList.add('is-invalid');
 
-  $(element).removeClass().addClass(status);
-
-  if (status === 'valid') {
-      $(errorContainer).html(errorMessage).hide();
-  } else if (status === 'invalid') {
-      $(errorContainer).html(errorMessage).show();
-  }
+        return false;
+    }
 }
 
-/*
-* Format a date as MM/YY
-*/
-function cgFormatExpiryDate(e) {
-  var inputChar = String.fromCharCode(event.keyCode);
-  var code = event.keyCode;
-  var allowedKeys = [8];
-  if (allowedKeys.indexOf(code) !== -1) {
-      return;
-  }
+// Lastname validation
 
-  event.target.value = event.target.value.replace(
-      /^([1-9]\/|[2-9])$/g, '0$1/' // 3 > 03/
-  ).replace(
-      /^(0[1-9]|1[0-2])$/g, '$1/' // 11 > 11/
-  ).replace(
-      /^([0-1])([3-9])$/g, '0$1/$2' // 13 > 01/3
-  ).replace(
-      /^(0?[1-9]|1[0-2])([0-9]{2})$/g, '$1/$2' // 141 > 01/41
-  ).replace(
-      /^([0]+)\/|[0]+$/g, '0' // 0/ > 0 and 00 > 0
-  ).replace(
-      /[^\d\/]|^[\/]*$/g, '' // To allow only digits and `/`
-  ).replace(
-      /\/\//g, '/' // Prevent entering more than 1 `/`
-  );
+function validateLastName(e) {
+
+    const lastName = document.querySelector('#lastName');
+    if ((reSpaces.test(lastName.value)) && (reNumChars.test(lastName.value))) {
+        lastName.classList.remove('is-invalid');
+        lastName.classList.add('is-valid');
+        return true;
+    } else {
+        lastName.classList.remove('is-valid');
+        lastName.classList.add('is-invalid');
+        return false;
+    }
 }
 
-/*
-* Check if date element is valid and add a visual hint
-*/
-function cgDateValidate(whatDate) {
-  var currVal = whatDate;
 
-  if (currVal === '') {
-      return false;
-  }
 
-  var rxDatePattern = /^(\d{1,2})(\/|-)(\d{1,2})(\/|-)(\d{4})$/;
-  var dtArray = currVal.match(rxDatePattern);
+// Example starter JavaScript for disabling form submissions if there are invalid fields
+(function () {
+    'use strict'
 
-  if (dtArray == null) {
-      return false;
-  }
+    // Fetch all the forms we want to apply custom Bootstrap validation styles to
+    var forms = document.querySelectorAll('#name-validation')
 
-  // Check for dd/mm/yyyy format
-  var dtDay = dtArray[1],
-      dtMonth= dtArray[3],
-      dtYear = dtArray[5];
+    // Loop over them and prevent submission
+    Array.prototype.slice.call(forms)
+        .forEach(function (form) {
+            form.addEventListener('submit', function (event) {
 
-  if (dtMonth < 1 || dtMonth > 12) {
-      return false;
-  } else if (dtDay < 1 || dtDay> 31) {
-      return false;
-  } else if ((dtMonth==4 || dtMonth==6 || dtMonth==9 || dtMonth==11) && dtDay ==31) {
-      return false;
-  } else if (dtMonth == 2) {
-      var isleap = (dtYear % 4 == 0 && (dtYear % 100 != 0 || dtYear % 400 == 0));
-      if (dtDay> 29 || (dtDay ==29 && !isleap)) {
-          return false;
-      }
-  }
+                if (
+                    ((!validateFirstname()))
+                    || ((!validateLastName()))
+                ) {
+                    event.preventDefault()
+                    event.stopPropagation()
 
-  return true;
+                } else {
+                    form.classList.add('was-validated')
+                }
+
+
+
+            }, false)
+        })
+})();
+
+
+
+
+
+
+
+
+
+
+
+
+
+// Display Name validation
+document.querySelector('#displayName').addEventListener('blur', validateDisplayName);
+
+function validateDisplayName(e) {
+
+    const displayName = document.querySelector('#displayName');
+    if ((reNumChars.test(displayName.value))) {
+        displayName.classList.remove('is-invalid');
+        displayName.classList.add('is-valid');
+        return true;
+    } else {
+        displayName.classList.remove('is-valid');
+        displayName.classList.add('is-invalid');
+        return false;
+    }
 }
 
-/*
-* Credit card expiry date formatting (real-time)
-*/
-$(document).on('keyup blur', '.cardExpiry', function(event) {
-  var currentDate = new Date();
-  var currentMonth = ("0" + (currentDate.getMonth() + 1)).slice(-2);
-  var currentYear = String(currentDate.getFullYear()).slice(-2);
 
-  var cardExpiryArray = $('.cardExpiry').val().split('/');
-  var userMonth = cardExpiryArray[0],
-      userYear = cardExpiryArray[1];
+// Example starter JavaScript for disabling form submissions if there are invalid fields
+(function () {
+    'use strict'
 
-  if ($('.cardExpiry').val().length !== 5) {
-      cgToggleError($(this), 'invalid');
-  } else if (userYear < currentYear) {
-      cgToggleError($(this), 'invalid');
-  } else if (userYear <= currentYear && userMonth < currentMonth) { cgToggleError($(this), 'invalid'); } else if (userMonth > 12) {
-      cgToggleError($(this), 'invalid');
-  } else {
-      cgToggleError($(this), 'valid');
-  }
+    // Fetch all the forms we want to apply custom Bootstrap validation styles to
+    var forms = document.querySelectorAll('#validate-dipslayName')
 
-  cgFormatExpiryDate(event);
-});
+    // Loop over them and prevent submission
+    Array.prototype.slice.call(forms)
+        .forEach(function (form) {
+            form.addEventListener('submit', function (event) {
 
-/*
-* Credit card CVV disallow letters (real-time)
-*/
-$(document).on('keyup', '.cardCVV', function(event) {
-  event.target.value = event.target.value.replace(/[^\d\/]|^[\/]*$/g, '');
-});
+                if (
+                    !validateDisplayName()
+                ) {
+                    event.preventDefault()
+                    event.stopPropagation()
 
-/*
-* Credit card CVV length check
-*/
-$(document).on('blur', '.cardCVV', function(e) {
-  if ($('#cardCVV').val().length < 3) {
-      cgToggleError($(this), 'invalid');
-  }
-});
+                } else {
+                    form.classList.add('was-validated')
+                }
 
-/*
-* Credit card validation
-*/
-function cgCheckLuhn(input) {
-  var sum = 0,
-      numdigits = input.length;
-  var parity = numdigits % 2;
 
-  for (var i=0; i < numdigits; i++) { var digit = parseInt(input.charAt(i)); if (i % 2 == parity) { digit *= 2; } if (digit > 9) {
-          digit -= 9;
-      }
-      sum += digit;
-  }
 
-  return (sum % 10) == 0;
+            }, false)
+        })
+})();
+
+
+
+
+
+
+
+
+
+
+
+
+
+document.querySelector('#email').addEventListener('blur', validateEmail);
+
+function validateEmail(e) {
+    const email = document.querySelector('#email');
+    const re = /^([a-zA-Z0-9_\-?\.?]){3,}@([a-zA-Z]){3,}\.([a-zA-Z]){2,5}$/;
+
+    if (reSpaces.test(email.value) && re.test(email.value)) {
+        email.classList.remove('is-invalid');
+        email.classList.add('is-valid');
+
+        return true;
+    } else {
+        email.classList.add('is-invalid');
+        email.classList.remove('is-valid');
+
+        return false;
+    }
 }
 
-function cgDetectCard(input) {
-  var typeTest = 'u',
-      ltest1 = 16,
-      ltest2 = 16;
-      ltest3 = 'none';
 
-  if (/^4/.test(input)) {
-      typeTest = 'v';
-      ltest1 = 13;
-      ltest3 = 'VISA';
-  } else if (/^5[1-5]/.test(input)) {
-      typeTest = 'm';
-      ltest3 = 'MASTERCARD';
-  } else if (/^6(011|4[4-9]|5)/.test(input)) {
-      typeTest = 'd';
-      ltest3 = 'VISADEBIT';
-  }
 
-  return [typeTest,ltest1,ltest2,ltest3];
+// Example starter JavaScript for disabling form submissions if there are invalid fields
+(function () {
+    'use strict'
+
+    // Fetch all the forms we want to apply custom Bootstrap validation styles to
+    var forms = document.querySelectorAll('#email-validation')
+
+    // Loop over them and prevent submission
+    Array.prototype.slice.call(forms)
+        .forEach(function (form) {
+            form.addEventListener('submit', function (event) {
+
+                if (
+                    ((!validateEmail()))
+                ) {
+                    event.preventDefault()
+                    event.stopPropagation()
+
+                } else {
+                    form.classList.add('was-validated')
+                }
+
+
+
+            }, false)
+        })
+})();
+
+
+
+
+document.querySelector('#city').addEventListener('blur', validateCity);
+document.querySelector('#zip').addEventListener('blur', validateZip);
+document.querySelector('#countries2').addEventListener('blur', validateCountry);
+
+// City validation
+function validateCity(e) {
+
+    const city = document.querySelector('#city');
+    if ((reNumChars.test(city.value))) {
+        city.classList.remove('is-invalid');
+        city.classList.add('is-valid');
+        return true;
+    } else {
+        city.classList.remove('is-valid');
+        city.classList.add('is-invalid');
+
+        return false;
+    }
 }
 
-/*
-* Credit card Luhn validation (real-time)
-*/
-$(document).on('keyup', '.cardNumber', function() {
-  var val = this.value,
-      val = val.replace(/[^0-9]/g, ''),
-      detected = cgDetectCard(val),
-      errorClass = 'invalid',
-      luhnCheck = cgCheckLuhn(val),
-      valueCheck = (val.length == detected[1] || val.length == detected[2]);
+// zip validation
 
-  if ($('body').hasClass('inline-ab')) {
-      cgToggleError($(this), 'invalid');
-  }
+function validateZip(e) {
 
-  if (luhnCheck && valueCheck) {
-      errorClass = 'valid';
-      $('#cardType').val(detected[3]);
-  } else if (valueCheck || val.length > detected[2]) {
-      errorClass = 'invalid';
-  }
+    const zip = document.querySelector('#zip');
+    if ((reZip.test(zip.value))) {
+        zip.classList.remove('is-invalid');
+        zip.classList.add('is-valid');
+        return true;
+    } else {
+        zip.classList.remove('is-valid');
+        zip.classList.add('is-invalid');
+        return false;
+    }
+}
 
-  if ($('body').hasClass('inline-ab')) {
-      cgToggleError($(this), errorClass);
-      cgToggleError($(this), 'cc ' + detected[0] + ' ' + errorClass);
-  }
-  $(this).addClass('cc ' + detected[0] + ' ' + errorClass);
-});
+//validate country:
+function validateCountry(e) {
 
-/*
-* Credit card digit formatting (real-time)
-*/
-$(document).on('keypress change blur', '.cardNumber', function() {
-  $(this).val(function(index, value) {
-      return value.replace(/[^a-z0-9]+/gi, '').replace(/(.{4})/g, '$1 ').trim();
-  });
-});
-$(document).on('copy cut paste', '.cardNumber', function() {
-  setTimeout(function() {
-      $('.cardNumber').trigger('change');
-  });
-});
+    const countries2 = document.querySelector('#countries2');
+
+    if (countries2.value !== 'please select') {
+        countries2.classList.remove('is-invalid');
+        countries2.classList.add('is-valid');
+        return true;
+    } else {
+        countries2.classList.remove('is-valid');
+        countries2.classList.add('is-invalid');
+        return false;
+    }
+}
+
+
+(function () {
+    'use strict'
+
+    // Fetch all the forms we want to apply custom Bootstrap validation styles to
+    var forms = document.querySelectorAll('#address-validation')
+
+    // Loop over them and prevent submission
+    Array.prototype.slice.call(forms)
+        .forEach(function (form) {
+            form.addEventListener('submit', function (event) {
+
+                if (
+                    ((!validateCountry()))
+                    || ((!validateCity()))
+                    || ((!validateZip()))
+
+                ) {
+                    event.preventDefault()
+                    event.stopPropagation()
+
+                } else {
+                    form.classList.add('was-validated')
+                }
+
+
+
+            }, false)
+        })
+})();
+
+
+
+
+
+
+
+
+// visa card holder namer validation
+
+document.querySelector('#cardHolder').addEventListener('blur', validateardHolderName);
+
+function validateardHolderName(e) {
+
+    const cardHolder = document.querySelector('#cardHolder');
+    if ((reCardHolder.test(cardHolder.value))) {
+        cardHolder.classList.remove('is-invalid');
+        cardHolder.classList.add('is-valid');
+        return true;
+    } else {
+        cardHolder.classList.remove('is-valid');
+        cardHolder.classList.add('is-invalid');
+        return false;
+    }
+}
+
+
+// visa card validation
+
+document.querySelector('#cardNumber').addEventListener('blur', validateVisaCard);
+
+function validateVisaCard(e) {
+
+    const cardNumber = document.querySelector('#cardNumber');
+    if ((Revisa.test(cardNumber.value))) {
+        cardNumber.classList.remove('is-invalid');
+        cardNumber.classList.add('is-valid');
+        return true;
+    } else {
+        cardNumber.classList.remove('is-valid');
+        cardNumber.classList.add('is-invalid');
+        return false;
+    }
+}
+
+
+
+
+//validate Date:
+
+document.querySelector('#expirationDate').addEventListener('blur', validateExpirationDate);
+
+function validateExpirationDate(e) {
+
+    const expirationDate = document.querySelector('#expirationDate');
+    // Create a new Date that converts the input date
+    var dob = new Date(expirationDate.value);
+
+    // Extract pieces of the date:
+    var month = dob.getMonth() + 1; // months start counting from zero!
+    var day = dob.getDate();
+    var year = dob.getFullYear();
+
+    var exdate = day + "/" + month + "/" + year;
+
+    if (reDate.test(exdate)) {
+        expirationDate.classList.remove('is-invalid');
+        expirationDate.classList.add('is-valid');
+        return true;
+    } else {
+        expirationDate.classList.remove('is-valid');
+        expirationDate.classList.add('is-invalid');
+        return false;
+    }
+}
+
+// visa card holder namer validation
+
+document.querySelector('#cvc').addEventListener('blur', validateCVC);
+
+function validateCVC(e) {
+
+    const cvc = document.querySelector('#cvc');
+    if ((ReCVC.test(cvc.value))) {
+        cvc.classList.remove('is-invalid');
+        cvc.classList.add('is-valid');
+        return true;
+    } else {
+        cvc.classList.remove('is-valid');
+        cvc.classList.add('is-invalid');
+        return false;
+    }
+}
+
+
+
+// Example starter JavaScript for disabling form submissions if there are invalid fields
+(function () {
+    'use strict'
+
+    // Fetch all the forms we want to apply custom Bootstrap validation styles to
+    var forms = document.querySelectorAll('#payment-validation')
+
+    // Loop over them and prevent submission
+    Array.prototype.slice.call(forms)
+        .forEach(function (form) {
+            form.addEventListener('submit', function (event) {
+
+                if (
+                    ((!validateardHolderName()))
+                    || ((!validateVisaCard()))
+                    || ((!validateExpirationDate()))
+                    || ((!validateCVC()))
+                ) {
+                    event.preventDefault()
+                    event.stopPropagation()
+
+                } else {
+                    form.classList.add('was-validated')
+                }
+
+
+
+            }, false)
+        })
+})();

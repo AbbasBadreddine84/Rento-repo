@@ -6,6 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
   <link rel="stylesheet" href="Rental.css">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
     integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
@@ -159,33 +160,10 @@
                     <label for="star1" title="text">1 star</label>
                   </form>
                   <br><br><br>
-                  <p id="acc-type">Distances</p>
-                  <br>
-                  <p id="acc-type">Super Market</p>
-                  <form action="">
-                    <input type="range" id="vol" name="vol" min="0" max="5">
-                  </form>
-                  <p id="acc-type">Town</p>
-                  <form action="">
-                    <input type="range" id="vol" name="vol" min="0" max="5">
-                  </form><br>
-                  <p id="acc-type">Cafe</p>
-                  <form action="">
-                    <input type="range" id="vol" name="vol" min="0" max="5">
-                  </form><br>
-                  <p id="acc-type">Hospital</p>
-                  <form action="">
-                    <input type="range" id="vol" name="vol" min="0" max="5">
-                  </form>
-                  <p id="acc-type">Park</p>
-                  <form action="">
-                    <input type="range" id="vol" name="vol" min="0" max="5">
-                  </form>
-                  <p id="acc-type">Air Port</p>
-                  <form action="">
-                    <input type="range" id="vol" name="vol" min="0" max="5">
-                  </form>
-
+                  <p id="acc-type">Prices</p>
+                  <input type="range" id="prices-range" name="prices" step="20" vol="20" min="20" max="200"
+                    oninput="this.nextElementSibling.value = this.value">
+                  <output>20</output>
                 </div>
 
                 <!-- Modal footer -->
@@ -203,11 +181,10 @@
 
       <div class="col- col-sm-6 col-xs-6 d-none d-xl-block d-xxl-block">
         <label for="text" style="font-size: small;"> sort by:</label><br>
-        <select class="form-select sm">
-          <option>Number of People</option>
-          <option>Price:low to high</option>
-          <option>Price:Hight to low</option>
-          <option>Property type</option>
+        <select class="form-select sm" id="sort_by" onchange="sortingList_price()">
+          <option value="1">Number of People</option>
+          <option value="low_to_high">Price:low to high</option>
+          <option value="High_to_low">Price:Hight to low</option>
         </select>
       </div>
 
@@ -222,102 +199,85 @@
       <div class="col-3 d-none d-xl-block d-xxl-block filters">
         <div style="margin-left: 20px;">
           <br>
-          <button type="button" class="btn btn-link">Clear all</button>
+          <button type="button" class="btn btn-link" id="btnClear" > Clear all</button>
           <br>
 
-          <form action="">
-            <div>
-              <h2 id="acc-type">Appartment for :</h2>
-              <input type="radio" id="type" name="type" value="type">
-              <label for="type">&ensp;rent</label><br>
-              <input type="radio" id="type" name="type" value="type">
-              <label for="type">&ensp;sale</label><br>
-              <br>
-            </div>
+          <form action="" id="filters-form">
+
+            <h2 id="acc-type">Appartment for :</h2>
+
+            <input type="radio" id="type1" name="type" value="type">
+            <label for="type1">&ensp;rent</label><br>
+            <input type="radio" id="type2" name="type" value="type">
+            <label for="type2">&ensp;sale</label><br>
+            <br>
 
             <p id="acc-type">Type of accomodation</p>
 
-            <form action="">
-              <input type="radio" id="all" name="all" value="all">
-              <label for="all">&ensp;All</label><br>
+           
 
-              <input type="radio" id="Apartmentt" name="all" value="all">
-              <label for="Apartment">&ensp;Apartment</label><br>
+            <input type="radio" id="Apartment" >
+            <label for="Apartment">&ensp;Apartment</label><br>
 
-              <input type="radio" id="Villa" name="all" value="all">
-              <label for="Villa">&ensp;Villa</label><br>
-            </form>
+            <input type="radio" id="Villa" >
+            <label for="Villa">&ensp;Villa</label><br>
+
             <br>
 
 
-          </form>
-          <p id="acc-type">Number of rooms</p>
-          <form action="">
-            <input type="checkbox" id="sw" name="sw" value="1">
-            &emsp;
-            <input type="checkbox" id="sw" name="sw" value="1">
-            &emsp;
-            <input type="checkbox" id="sw" name="sw" value="1">
-            &emsp;
-            <input type="checkbox" id="sw" name="sw" value="1">
-            &emsp;
-            <input type="checkbox" id="sw" name="sw" value="1">
-          </form>
-          <br>
-          <p id="acc-type">Main features</p>
-          <form action="">
-            <input type="checkbox" id="sw" name="sw" value="swimming pool">
+
+            <p id="acc-type">Numbber of Bedrooms </p>
+            <input type="range" id="bedroom-range" name="prices" step="1"  min="1" max="6" 
+            oninput="sortingroomNumbers(this.value)">
+            <output id="output">4</output>
+
+            <br>
+
+            <p id="acc-type">Main features</p>
+            <input type="checkbox" id="sw1" name="sw" value="swimming pool">
             <label for=""> &ensp;swimming pool</label><br><br>
-            <input type="checkbox" id="sw" name="sw" value="Closed Garage">
+            <input type="checkbox" id="sw2" name="sw" value="Closed Garage">
             <label for=""> &ensp;Closed Garage</label><br><br>
-            <input type="checkbox" id="sw" name="sw" value="Heating">
+            <input type="checkbox" id="sw3" name="sw" value="Heating">
             <label for=""> &ensp;Heating</label><br><br>
-            <input type="checkbox" id="sw" name="sw" value="parking">
+            <input type="checkbox" id="sw4" name="sw" value="parking">
             <label for=""> &ensp;parking</label><br><br>
-            <input type="checkbox" id="sw" name="sw" value="Internet">
+            <input type="checkbox" id="sw5" name="sw" value="Internet">
             <label for=""> &ensp;Internet</label><br><br>
-            <input type="checkbox" id="sw" name="sw" value="Fenced Garden">
+            <input type="checkbox" id="sw6" name="sw" value="Fenced Garden">
             <label for=""> &ensp;Fenced Garden</label><br><br>
-          </form>
-          <br>
-          <p id="acc-type">Reveiws</p>
-          <form action="" class="rate">
-            <input type="radio" id="star5" name="rate" value="5" /><label for="star5" title="text">5
-              stars</label>
-            <input type="radio" id="star4" name="rate" value="4" />
-            <label for="star4" title="text">4 stars</label>
-            <input type="radio" id="star3" name="rate" value="3" />
-            <label for="star3" title="text">3 stars</label>
-            <input type="radio" id="star2" name="rate" value="2" />
-            <label for="star2" title="text">2 stars</label>
-            <input type="radio" id="star1" name="rate" value="1" />
-            <label for="star1" title="text">1 star</label>
-          </form>
-          <br><br><br>
-          <p id="acc-type">Distances</p>
-          <br>
-          <p id="acc-type">Super Market</p>
-          <form action="">
+            <br>
+            <p id="acc-type">Reveiws</p>
+            <div class="rate">
+              <input type="radio" id="star5" name="rate" value="5" /><label for="star5" title="text">5
+                stars</label>
+              <input type="radio" id="star4" name="rate" value="4" />
+              <label for="star4" title="text">4 stars</label>
+              <input type="radio" id="star3" name="rate" value="3" />
+              <label for="star3" title="text">3 stars</label>
+              <input type="radio" id="star2" name="rate" value="2" />
+              <label for="star2" title="text">2 stars</label>
+              <input type="radio" id="star1" name="rate" value="1" />
+              <label for="star1" title="text">1 star</label>
+            </div>
+
+            <br><br><br>
+            <p id="acc-type">Distances</p>
+            <br>
+            <p id="acc-type">Super Market</p>
             <input type="range" id="vol" name="vol" min="0" max="5">
-          </form>
-          <p id="acc-type">Town</p>
-          <form action="">
+            <p id="acc-type">Town</p>
             <input type="range" id="vol" name="vol" min="0" max="5">
-          </form><br>
-          <p id="acc-type">Cafe</p>
-          <form action="">
+            <br>
+            <p id="acc-type">Cafe</p>
             <input type="range" id="vol" name="vol" min="0" max="5">
-          </form><br>
-          <p id="acc-type">Hospital</p>
-          <form action="">
+            <br>
+            <p id="acc-type">Hospital</p>
             <input type="range" id="vol" name="vol" min="0" max="5">
-          </form>
-          <p id="acc-type">Park</p>
-          <form action="">
+
+            <p id="acc-type">Park</p>
             <input type="range" id="vol" name="vol" min="0" max="5">
-          </form>
-          <p id="acc-type">Air Port</p>
-          <form action="">
+            <p id="acc-type">Air Port</p>
             <input type="range" id="vol" name="vol" min="0" max="5">
           </form>
 
@@ -330,7 +290,7 @@
       <div class="col-l-9 col-xl-9 col-sm-12 col-xs-12">
         <ul class="unordered-list-listing">
 
-          <li>
+          <li id="li-cards">
             <div class="card mb-3">
               <div class="row no-gutters">
 
@@ -354,7 +314,8 @@
                   <div class="card-body pt-0 mb-0 ">
                     <h5 class="card-title">RENTO APT</h5>
                     <p id="loc-text"><i class="fa-solid fa-location-dot"></i> Villacha - House </p>
-                    <p class="card-text">The <span class="span-house-name">house in Vila Chã </span> has 1
+                    <p class="card-text">The <span class="span-house-name">house in Vila Chã </span> has <span
+                        id="bedrooms">2</span>
                       bedrooms and has capacity for 4 people. The
                       house is 174 m². The house is...</p>
                     <P class="card-pricing">(00$ / night) </P>
@@ -381,10 +342,11 @@
                       <div class="logo5" style="flex-grow: 2">
                         <p class="card-price"
                           style="vertical-align: middle; padding-top: 10%;padding-left: 10%;font-weight: bold;font-size: large;">
-                          $1,050 <br> /weak</p>
+                          $<span id="price">1150</span><br> /weak</p>
                       </div>
                       <div class="logo6" style="flex-grow: 2">
-                        <button type="button" class="btn btn-primary info-buttom" onClick="location.href='../Description-page/description.html'">+ Info</button>
+                        <button type="button" class="btn btn-primary info-buttom"
+                          onClick="location.href='../Description-page/description.html'">+ Info</button>
 
                       </div>
                     </div>
@@ -403,7 +365,7 @@
 
 
 
-          <li>
+          <li id="li-cards">
             <div class="card mb-3">
               <div class="row no-gutters">
 
@@ -427,7 +389,8 @@
                   <div class="card-body pt-0 mb-0 ">
                     <h5 class="card-title">RENTO APT</h5>
                     <p id="loc-text"><i class="fa-solid fa-location-dot"></i> Villacha - House </p>
-                    <p class="card-text">The <span class="span-house-name">house in Vila Chã </span> has 1
+                    <p class="card-text">The <span class="span-house-name">house in Vila Chã </span> has <span
+                        id="bedrooms">1</span>
                       bedrooms and has capacity for 4 people. The
                       house is 174 m². The house is...</p>
                     <P class="card-pricing">(00$ / night) </P>
@@ -454,10 +417,11 @@
                       <div class="logo5" style="flex-grow: 2">
                         <p class="card-price"
                           style="vertical-align: middle; padding-top: 10%;padding-left: 10%;font-weight: bold;font-size: large;">
-                          $1,050 <br> /weak</p>
+                          $<span id="price">1350</span><br> /weak</p>
                       </div>
                       <div class="logo6" style="flex-grow: 2">
-                        <button type="button" class="btn btn-primary info-buttom" onClick="location.href='../Description-page/description.html'">+ Info</button>
+                        <button type="button" class="btn btn-primary info-buttom"
+                          onClick="location.href='../Description-page/description.html'">+ Info</button>
 
                       </div>
                     </div>
@@ -489,7 +453,7 @@
 
 
 
-          <li>
+          <li id="li-cards">
             <div class="card mb-3">
               <div class="row no-gutters">
 
@@ -513,7 +477,8 @@
                   <div class="card-body pt-0 mb-0 ">
                     <h5 class="card-title">RENTO APT</h5>
                     <p id="loc-text"><i class="fa-solid fa-location-dot"></i> Villacha - House </p>
-                    <p class="card-text">The <span class="span-house-name">house in Vila Chã </span> has 1
+                    <p class="card-text">The <span class="span-house-name">house in Vila Chã </span> has <span
+                        id="bedrooms">4</span>
                       bedrooms and has capacity for 4 people. The
                       house is 174 m². The house is...</p>
                     <P class="card-pricing">(00$ / night) </P>
@@ -540,10 +505,11 @@
                       <div class="logo5" style="flex-grow: 2">
                         <p class="card-price"
                           style="vertical-align: middle; padding-top: 10%;padding-left: 10%;font-weight: bold;font-size: large;">
-                          $1,050 <br> /weak</p>
+                          $<span id="price">1000</span><br> /weak</p>
                       </div>
                       <div class="logo6" style="flex-grow: 2">
-                        <button type="button" class="btn btn-primary info-buttom" onClick="location.href='../Description-page/description.html'">+ Info</button>
+                        <button type="button" class="btn btn-primary info-buttom"
+                          onClick="location.href='../Description-page/description.html'">+ Info</button>
 
                       </div>
                     </div>
@@ -554,7 +520,7 @@
             </div>
           </li>
 
-          <li>
+          <li id="li-cards">
             <div class="card mb-3">
               <div class="row no-gutters">
 
@@ -578,7 +544,8 @@
                   <div class="card-body pt-0 mb-0 ">
                     <h5 class="card-title">RENTO APT</h5>
                     <p id="loc-text"><i class="fa-solid fa-location-dot"></i> Villacha - House </p>
-                    <p class="card-text">The <span class="span-house-name">house in Vila Chã </span> has 1
+                    <p class="card-text">The <span class="span-house-name">house in Vila Chã </span> has <span
+                        id="bedrooms">1</span>
                       bedrooms and has capacity for 4 people. The
                       house is 174 m². The house is...</p>
                     <P class="card-pricing">(00$ / night) </P>
@@ -605,10 +572,11 @@
                       <div class="logo5" style="flex-grow: 2">
                         <p class="card-price"
                           style="vertical-align: middle; padding-top: 10%;padding-left: 10%;font-weight: bold;font-size: large;">
-                          $1,050 <br> /weak</p>
+                          $<span id="price">900</span> <br> /weak</p>
                       </div>
                       <div class="logo6" style="flex-grow: 2">
-                        <button type="button" class="btn btn-primary info-buttom" onClick="location.href='../Description-page/description.html'">+ Info</button>
+                        <button type="button" class="btn btn-primary info-buttom"
+                          onClick="location.href='../Description-page/description.html'">+ Info</button>
 
                       </div>
                     </div>
@@ -619,7 +587,7 @@
             </div>
           </li>
 
-          <li>
+          <li id="li-cards">
             <div class="card mb-3">
               <div class="row no-gutters">
 
@@ -643,7 +611,8 @@
                   <div class="card-body pt-0 mb-0 ">
                     <h5 class="card-title">RENTO APT</h5>
                     <p id="loc-text"><i class="fa-solid fa-location-dot"></i> Villacha - House </p>
-                    <p class="card-text">The <span class="span-house-name">house in Vila Chã </span> has 1
+                    <p class="card-text">The <span class="span-house-name">house in Vila Chã </span> has <span
+                        id="bedrooms">3</span>
                       bedrooms and has capacity for 4 people. The
                       house is 174 m². The house is...</p>
                     <P class="card-pricing">(00$ / night) </P>
@@ -670,10 +639,11 @@
                       <div class="logo5" style="flex-grow: 2">
                         <p class="card-price"
                           style="vertical-align: middle; padding-top: 10%;padding-left: 10%;font-weight: bold;font-size: large;">
-                          $1,050 <br> /weak</p>
+                          $<span id="price">2350</span> <br> /weak</p>
                       </div>
                       <div class="logo6" style="flex-grow: 2">
-                        <button type="button" class="btn btn-primary info-buttom" onClick="location.href='../Description-page/description.html'">+ Info</button>
+                        <button type="button" class="btn btn-primary info-buttom"
+                          onClick="location.href='../Description-page/description.html'">+ Info</button>
 
                       </div>
                     </div>
@@ -755,6 +725,7 @@
     </footer>
   </Div>
 
+  <script src="Rental.js"></script>
 </body>
 
 </html>
