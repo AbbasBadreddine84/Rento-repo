@@ -24,6 +24,26 @@ document
   .getElementById("formGroupExampleInput")
   .addEventListener("blur", validateRadio);
 
+document.getElementById("price").addEventListener("blur", validatePrice);
+
+
+
+  function validatePrice() {
+    const price = document.getElementById("price");
+    if (price.value === "" || price.value == null) {
+      price.classList.add("is-invalid");
+      price.classList.remove("is-valid");
+      return false;
+    } else {
+      price.classList.add("is-valid");
+      price.classList.remove("is-invalid");
+      return true;
+    }
+  }
+
+
+
+
 function validateRadio() {
   const formGroupExampleInput = document.getElementById(
     "formGroupExampleInput"
@@ -186,6 +206,7 @@ function validatepkitchen() {
     return true;
   }
 }
+
 function validateplivingromm() {
   const plivingromm = document.getElementById("plivingromm");
   if (plivingromm.value == "") {
@@ -204,6 +225,7 @@ function validateplivingromm() {
     return true;
   }
 }
+
 function validatepbathroom() {
   const pbathroom = document.getElementById("pbathroom");
   if (pbathroom.value == "") {
@@ -222,6 +244,7 @@ function validatepbathroom() {
     return true;
   }
 }
+
 function validateMonth() {
   const regDate =
     /(?:((0\d|[12]\d|3[01])|(0\d|1[012]))[\-|\\|\/]((0\d|1[012])|(0\d|[12]\d|3[01]))[\-|\\|\/](((19|20)\d{2})|\d\d))/;
@@ -237,6 +260,14 @@ function validateMonth() {
     return false;
   }
 }
+
+
+
+
+
+
+
+
 
 (function () {
   var forms = document.querySelectorAll(".needs-validation");
@@ -256,11 +287,11 @@ function validateMonth() {
           !validateRadio() ||
           !validatepsquare() ||
           !validatepaddress() ||
+          !validatePrice()||
           !validatepbedroom() ||
           !validatepkitchen ||
           !validateplivingromm ||
           !validatepbathroom
-      
         ) {
           event.preventDefault();
           event.stopPropagation();

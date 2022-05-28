@@ -151,10 +151,10 @@
           
             <div class="form-group">
                 <input type="text" class="form-control" placeholder="Property Name" name="pname" id="pname" required>
-     <div class="valid-tooltip">
+     <div class="valid-feedback">
              Looks Good!
            </div>
-                <div class="invalid-tooltip">
+                <div class="invalid-feedback">
                   Property cannot be blank or have space
            </div>
               </div>
@@ -163,10 +163,10 @@
             <div class="col-sm-4">
             <div class="form-group">
                 <input type="text" class="form-control" placeholder="Property Location" name="plocation" id="plocation" required>
-            <div class="valid-tooltip">
+            <div class="valid-feedback">
              Looks Good!
            </div>
-            <div class="invalid-tooltip">
+            <div class="invalid-feedback">
                 Property Location cannot be blank
            </div>
            
@@ -175,10 +175,10 @@
          <div class="col-sm-4">
             <div class="form-group form-floating">
               <input type="date" class="form-control" name="pdate"  id="pdate" required>
-              <div class="valid-tooltip">
+              <div class="valid-feedback">
 Looks Good!
 </div>
-<div class="invalid-tooltip">
+<div class="invalid-feedback">
 Enter a valid Date
 </div>
   <label for="floatingSelect">Year Built</label>
@@ -188,10 +188,10 @@ Enter a valid Date
             <div class="form-outline">
                <textarea class="form-control" id="ptextarea" rows="2" maxlength="220" required></textarea>   
                                                   <label for="ptextarea" class="form-label" id="Descriptioncharacter">220 characters remaining for description</label>
-                      <div class="valid-tooltip">
+                      <div class="valid-feedback">
              Looks Good!
            </div>
-         <div class="invalid-tooltip">
+         <div class="invalid-feedback">
                You neet to fill the text area
            </div>
                  
@@ -206,10 +206,10 @@ Enter a valid Date
     <option value="Villa">Villa</option>
     <option value="Apartment">Apartment</option>
   </select>
- <div class="valid-tooltip">
+ <div class="valid-feedback">
              Looks Good!
            </div>
-          <div class="invalid-tooltip">
+          <div class="invalid-feedback">
                 Select an option
            </div>
   <label for="pselectType">Property Type</label>
@@ -219,10 +219,10 @@ Enter a valid Date
 <div class="col-sm-4 mt-5">
             <div class="form-group form-floating">
               <input type="file" class="form-control" name="pimage" id="pimage" required>
-          <div class="valid-tooltip">
+          <div class="valid-feedback">
              Looks Good!
            </div>
-         <div class="invalid-tooltip">
+         <div class="invalid-feedback">
             file must be an image type
            </div>
   <label for="Property Image">Property Image</label>
@@ -250,10 +250,10 @@ Enter a valid Date
     <option value="ForRent">For Rent</option>
     <option value="ForSale">For Sale</option>
   </select>
- <div class="valid-tooltip">
+ <div class="valid-feedback">
              Looks Good!
            </div>
-          <div class="invalid-tooltip">
+          <div class="invalid-feedback">
                 Select an option
            </div>
   <label for="formGroupExampleInput">Property For</label>
@@ -264,30 +264,43 @@ Enter a valid Date
 <div class="col-sm-6">
 <div class="form-group">
     <input type="number" class="form-control" placeholder="Sqaure Ft" id="sqaureft" name="squareft" required>
-   <div class="valid-tooltip">
+   <div class="valid-feedback">
              Looks Good!
            </div>
-             <div class="invalid-tooltip">
+             <div class="invalid-feedback">
                 Area cannot be lesser than 1000 or field cannot be empty
            </div>
   </div>
 </div>
 </div>
-<div class="col-sm-6 mt-1">
+<div class="row clearfix mt-4">
+<div class="col-sm-6">
     <div class="form-group">
         <textarea class="form-control txtarrea" rows="2" placeholder="Property Address" name="paddress" id="paddress" required></textarea>
-    <div class="valid-tooltip">
+    <div class="valid-feedback">
              Looks Good!
            </div>
-              <div class="invalid-tooltip">
-                Property Description cannot be blank
+              <div class="invalid-feedback">
+                Property Address cannot be blank
            </div>
-           
-   
       </div>
 </div>
-<div class="col-sm-6"></div>
 
+
+
+<div class="col-sm-6">
+<div class="form-group">
+    <input type="number" class="form-control" placeholder="Price" id="price" name="price" required>
+   <div class="valid-feedback">
+             Looks Good!
+           </div>
+             <div class="invalid-feedback">
+                Price cannot be empty
+           </div>
+  </div>
+
+</div>
+</div>
     </div>
 
 
@@ -310,10 +323,10 @@ Enter a valid Date
         <div class="col-sm-3">
    <div class="form-group">
     <input type="number" class="form-control" placeholder="Number of bedroom" name="pbedroom" id="pbedroom" required >
-       <div class="valid-tooltip">
+       <div class="valid-feedback">
              Looks Good!
            </div>
-             <div class="invalid-tooltip">
+             <div class="invalid-feedback">
                 Bedroom cannot be lesser than 3 or field cannot be empty
            </div>
 </div>
@@ -322,10 +335,10 @@ Enter a valid Date
     <div class="col-sm-3">
    <div class="form-group">
     <input type="number" class="form-control" placeholder="Number of Kitchen" name="pkitchen" id="pkitchen" required>
-<div class="valid-tooltip">
+<div class="valid-feedback">
              Looks Good!
            </div>
-              <div class="invalid-tooltip">
+              <div class="invalid-feedback">
            Kitchen cannot be lesser than 2 or field cannot be empty
            </div>
 </div>
@@ -334,10 +347,10 @@ Enter a valid Date
     <div class="col-sm-3">
    <div class="form-group">
     <input type="number" class="form-control" placeholder="Number of Living Room" name="plivingromm" id="plivingromm" required>
-<div class="valid-tooltip">
+<div class="valid-feedback">
              Looks Good!
            </div>
-                <div class="invalid-tooltip">
+                <div class="invalid-feedback">
                 Living Room cannot be lesser than 3 or field cannot be empty
            </div>
 </div>
@@ -346,10 +359,10 @@ Enter a valid Date
    <div class="col-sm-3">
    <div class="form-group">
     <input type="number" class="form-control" placeholder="Number of Bathroom" name="pbathroom" id="pbathroom" required>
-   <div class="valid-tooltip">
+   <div class="valid-feedback">
              Looks Good!
            </div>
-                <div class="invalid-tooltip">
+                <div class="invalid-feedback">
                Bathroom cannot be lesser than 3 or field cannot be empty
            </div>
 </div>
@@ -385,8 +398,8 @@ Enter a valid Date
   <label class="form-check-label" for="">Balcony</label><br>
   <input class="form-check-input" type="checkbox" name="checkboxAll" id="checkboxAll" value="Terrace"   >
   <label class="form-check-label" for="">Terrace</label><br>
-    <div class="valid-tooltip">Look good</div>
-  <div class="invalid-tooltip">Choose at least one</div>
+    <div class="valid-feedback">Look good</div>
+  <div class="invalid-feedback">Choose at least one</div>
 </div>
 
 

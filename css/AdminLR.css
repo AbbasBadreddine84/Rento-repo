@@ -1,0 +1,305 @@
+.login {
+  min-height: calc(100vh - 65px - 70px);
+}
+.login .login-form fieldset:not(:first-child) {
+  display: none;
+}
+
+
+
+
+
+#navbar{
+  background-color: #005fa6;
+}
+
+
+.rento-logo{
+margin-left: 40px;
+float: left;
+color: #f7f7f7;
+font-size: 60px;
+text-align: center;
+}
+.rento-logo:hover{
+  color: orange;
+}
+
+
+#admin-reg-col{
+  margin-left: 30%;
+  margin-top: 5%;
+}
+
+#customer-reg-col{
+  margin-left: 30%;
+  margin-top: 5%;
+}
+
+#customer-registration{
+  transform: scale(3);
+  margin-top: 3%;  
+}
+
+#admin-registration{
+  transform: scale(3);
+  margin-top: 3%;
+  
+}
+
+#registration-choice{
+  font-size: 35px;
+  color: navy;
+  margin-left: 15px;
+}
+
+#registration-choice:hover{
+color: orange;
+}
+#user-reg-col{
+margin-top: 20px;
+}
+
+
+@media screen and (max-width: 500px) {
+  #admin-registration{
+    margin-left: 30%;
+  }
+}
+@media screen and (max-width: 500px) {
+
+  #customer-registration{
+   margin-left: 30%;
+  }
+}
+
+#firstname-lastname{
+  display: inline-flex !important;
+}
+#firstname{
+  margin-right: 10px;
+  width: 95%;
+}
+#lastname{
+  margin-left: 10px;
+  width: 95%;
+
+}
+
+#country-phonenumber{
+  display: inline-flex !important;
+
+}
+#country{
+  margin-right: 10px;
+  width: 95%;
+}
+#phonenumber{
+  margin-left: 10px;
+  width: 95%;
+
+}
+
+
+
+footer {
+  margin: 0;
+  padding: 2rem 0 0;
+  background-color: #f7f7f7;
+}
+
+
+
+.navbar {
+  padding: 1rem;
+}
+
+
+.navbar .logo span {
+  font-size: 100px;
+  font-weight: 900;
+  color: rgb(0, 10, 154);
+  text-decoration: none;
+  text-align: center;
+}
+#footer {
+  background: #005fa6;
+  color: #fff;
+  font-size: 14px;
+}
+
+#footer .footer-newsletter {
+  padding: 50px 0;
+  background: #005fa6;
+  color: #fff;
+}
+#footer .footer-newsletter .container .row {
+  width: 100%;
+}
+
+#footer .footer-newsletter h4 {
+  font-size: 24px;
+  margin: 0 0 20px 0;
+  padding: 0;
+  line-height: 1;
+  font-weight: 600;
+}
+
+#footer .footer-newsletter form {
+  margin-top: 30px;
+  background: #fff;
+  padding: 6px 10px;
+  position: relative;
+  border-radius: 50px;
+}
+
+#footer .footer-newsletter form input[type="email"] {
+  border: none;
+  padding: 8px;
+  width: calc(100% - 140px);
+}
+
+#footer .footer-newsletter form input[type="submit"] {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  border: 0;
+  background: none;
+  font-size: 16px;
+  padding: 0 30px;
+  margin: 3px;
+  background: #e96b56;
+  color: #fff;
+  transition: 0.3s;
+  border-radius: 50px;
+}
+
+#footer .footer-newsletter form input[type="submit"]:hover {
+  background: #e6573f;
+}
+
+#footer .footer-top {
+  background: #005fa6;
+  padding: 60px 0 30px 0;
+}
+
+#footer .footer-top .footer-info {
+  margin-bottom: 30px;
+}
+
+#footer .footer-top .footer-info h3 {
+  font-size: 18px;
+  margin: 0 0 20px 0;
+  padding: 2px 0 2px 0;
+  line-height: 1;
+  font-weight: 700;
+  color: #fff;
+}
+
+#footer .footer-top .footer-info p {
+  font-size: 14px;
+  line-height: 24px;
+  margin-bottom: 0;
+  font-family: "Raleway", sans-serif;
+  color: #fff;
+}
+
+#footer .footer-top .social-links a {
+  font-size: 18px;
+  display: inline-block;
+  background: #fff;
+  color: #e96b56;
+  line-height: 1;
+  padding: 8px 0;
+  margin-right: 4px;
+  border-radius: 50%;
+  text-align: center;
+  width: 36px;
+  height: 36px;
+  transition: 0.3s;
+}
+
+#footer .footer-top .social-links a:hover {
+  background: #e96b56;
+  color: #fff;
+  text-decoration: none;
+}
+
+#footer .footer-top h4 {
+  font-size: 16px;
+  font-weight: bold;
+  color: #fff;
+  text-transform: uppercase;
+  position: relative;
+  padding-bottom: 12px;
+}
+
+#footer .footer-top .footer-links {
+  margin-bottom: 30px;
+}
+
+#footer .footer-top .footer-links ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+#footer .footer-top .footer-links h4 {
+  color: #fff;
+}
+
+#footer .footer-top .footer-links ul i {
+  padding-right: 2px;
+  color: #ec7f6d;
+  font-size: 18px;
+  line-height: 1;
+}
+
+#footer .footer-top .footer-links ul li {
+  padding: 10px 0;
+  display: flex;
+  align-items: center;
+}
+
+#footer .footer-top .footer-links ul li:first-child {
+  padding-top: 0;
+}
+
+#footer .footer-top .footer-links ul a {
+  color: #fff;
+  transition: 0.3s;
+  display: inline-block;
+  line-height: 1;
+}
+
+#footer .footer-top .footer-links ul a:hover {
+  color: #e96b56;
+}
+
+#footer .footer-top .footer-contact {
+  margin-bottom: 30px;
+}
+#footer .footer-top .footer-contact h4 {
+  color: #fff;
+}
+
+#footer .footer-top .footer-contact p {
+  line-height: 26px;
+  color: #fff;
+}
+
+#footer .copyright {
+  text-align: center;
+  padding-top: 30px;
+}
+#footer .copyright a {
+  text-decoration: none;
+  color: #4dadf6;
+}
+
+#footer .container {
+  margin: auto;
+}
+
+
+
