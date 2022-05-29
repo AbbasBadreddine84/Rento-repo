@@ -1,0 +1,731 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="Rental.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+    integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+  <!-- JavaScript Bundle with Popper -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+    crossorigin="anonymous"></script>
+  <script src="https://kit.fontawesome.com/211228167f.js" crossorigin="anonymous"></script>
+  <script src="Rental.js"></script>
+</head>
+
+<body>
+
+
+  <!-- navbar -->
+  <div class="container-lg position-relative p-0">
+
+    <nav class="navbar navbar-expand-lg navbar-light px-4 px-lg-5 py-3 py-lg-0">
+      <a href="../Landing_page/LandingPage.html" class="navbar-brand p-0">
+        <img src="Resources/Rento-logo.png" alt="Logo">
+      </a>
+      <button class="navbar-toggler collapsed d-flex d-lg-none flex-column justify-content-around" type="button"
+        data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-expanded="false" aria-controls="navbarNav"
+        aria-label="Toggle-navigation">
+        <span class="toggler-icon top-bar"></span>
+        <span class="toggler-icon mid-bar"></span>
+        <span class="toggler-icon bot-bar"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <div class="navbar-nav ms-auto py-0" id="navbar-items">
+          <a href="../Home_page/home.html" class="nav-item nav-link active">Home</a>
+          <a href="../About-page/About.html" class="nav-item nav-link">About</a>
+          <a href="../Rental-page/Rental.html" class="nav-item nav-link">Apartments</a>
+          <a href="../Description-page/Description.html" class="nav-item nav-link">List a property</a>
+        </div>
+        <a href="signIn.html" class="btn btn-primary text-light rounded-pill py-2 px-4 m-3 ">Sign in</a>
+      </div>
+    </nav>
+  </div>
+
+  <!-- navbar ENDS-->
+
+
+
+
+  <Div class="container">
+    <br>
+    <!-- Row2 Strat -->
+
+
+
+    <div class="row">
+
+      <div class="col-l-3 col-xl-3 col-xxl-3 col-sm-12 col-xs-12 d-none d-xl-block d-xxl-none filters-title ">
+        <p>Filters </p>
+      </div>
+
+      <div class="d-block d-sm-none">
+        <div class="col-5 col-xs-12">
+          <button type="button" class="btn btn-primary filters-buttom" data-bs-toggle="modal" data-bs-target="#myModal">
+            Filters
+          </button>
+
+
+          <!-- The Modal -->
+          <div class="modal" id="myModal">
+            <div class="modal-dialog modal-fullscreen-sm-down">
+              <div class="modal-content">
+
+                <!-- Modal Header -->
+                <div class="modal-header">
+                  <h4 class="modal-title">Filters</h4>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+
+                <!-- Modal body -->
+                <div class="modal-body">
+                  <br>
+                  <button type="button" class="btn btn-link">Clear all</button>
+                  <br>
+
+                  <form action="">
+                    <div>
+                      <h2 id="acc-type">Appartment for :</h2>
+                      <input type="radio" id="type" name="type" value="type">
+                      <label for="type">&ensp;rent</label><br>
+                      <input type="radio" id="type" name="type" value="type">
+                      <label for="type">&ensp;sale</label><br>
+                      <br>
+                    </div>
+
+                    <p id="acc-type">Type of accomodation</p>
+
+                    <form action="">
+                      <input type="radio" id="all" name="all" value="all">
+                      <label for="all">&ensp;All</label><br>
+
+                      <input type="radio" id="Apartmentt" name="all" value="all">
+                      <label for="Apartment">&ensp;Apartment</label><br>
+
+                      <input type="radio" id="Villa" name="all" value="all">
+                      <label for="Villa">&ensp;Villa</label><br>
+                    </form>
+                    <br>
+
+
+                  </form>
+                  <p id="acc-type">Number of rooms</p>
+                  <form action="">
+                    <input type="checkbox" id="sw" name="sw" value="1">
+                    &emsp;
+                    <input type="checkbox" id="sw" name="sw" value="1">
+                    &emsp;
+                    <input type="checkbox" id="sw" name="sw" value="1">
+                    &emsp;
+                    <input type="checkbox" id="sw" name="sw" value="1">
+                    &emsp;
+                    <input type="checkbox" id="sw" name="sw" value="1">
+                  </form>
+                  <br>
+                  <p id="acc-type">Main features</p>
+                  <form action="">
+                    <input type="checkbox" id="sw" name="sw" value="swimming pool">
+                    <label for=""> &ensp;swimming pool</label><br><br>
+                    <input type="checkbox" id="sw" name="sw" value="Closed Garage">
+                    <label for=""> &ensp;Closed Garage</label><br><br>
+                    <input type="checkbox" id="sw" name="sw" value="Heating">
+                    <label for=""> &ensp;Heating</label><br><br>
+                    <input type="checkbox" id="sw" name="sw" value="parking">
+                    <label for=""> &ensp;parking</label><br><br>
+                    <input type="checkbox" id="sw" name="sw" value="Internet">
+                    <label for=""> &ensp;Internet</label><br><br>
+                    <input type="checkbox" id="sw" name="sw" value="Fenced Garden">
+                    <label for=""> &ensp;Fenced Garden</label><br><br>
+                  </form>
+                  <br>
+                  <p id="acc-type">Reveiws</p>
+                  <form action="" class="rate">
+                    <input type="radio" id="star5" name="rate" value="5" /><label for="star5" title="text">5
+                      stars</label>
+                    <input type="radio" id="star4" name="rate" value="4" />
+                    <label for="star4" title="text">4 stars</label>
+                    <input type="radio" id="star3" name="rate" value="3" />
+                    <label for="star3" title="text">3 stars</label>
+                    <input type="radio" id="star2" name="rate" value="2" />
+                    <label for="star2" title="text">2 stars</label>
+                    <input type="radio" id="star1" name="rate" value="1" />
+                    <label for="star1" title="text">1 star</label>
+                  </form>
+                  <br><br><br>
+                  <p id="acc-type">Prices</p>
+                  <input type="range" id="prices-range" name="prices" step="20" vol="20" min="20" max="200"
+                    oninput="this.nextElementSibling.value = this.value">
+                  <output>20</output>
+                </div>
+
+                <!-- Modal footer -->
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Apply Filters</button>
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+
+      <div class="col- col-sm-6 col-xs-6 d-none d-xl-block d-xxl-block">
+        <label for="text" style="font-size: small;"> sort by:</label><br>
+        <select class="form-select sm" id="sort_by" onchange="sortingList_price()">
+          <option value="1">Number of People</option>
+          <option value="low_to_high">Price:low to high</option>
+          <option value="High_to_low">Price:Hight to low</option>
+        </select>
+      </div>
+
+
+    </div>
+    <!-- Row2 ENDS -->
+
+
+    <!-- Row3 Strat -->
+
+    <div class="row">
+      <div class="col-3 d-none d-xl-block d-xxl-block filters">
+        <div style="margin-left: 20px;">
+          <br>
+          <button type="button" class="btn btn-link" id="btnClear" > Clear all</button>
+          <br>
+
+          <form action="" id="filters-form">
+
+            <h2 id="acc-type">Appartment for :</h2>
+
+            <input type="radio" id="type1" name="type" value="type">
+            <label for="type1">&ensp;rent</label><br>
+            <input type="radio" id="type2" name="type" value="type">
+            <label for="type2">&ensp;sale</label><br>
+            <br>
+
+            <p id="acc-type">Type of accomodation</p>
+
+           
+
+            <input type="radio" id="Apartment" >
+            <label for="Apartment">&ensp;Apartment</label><br>
+
+            <input type="radio" id="Villa" >
+            <label for="Villa">&ensp;Villa</label><br>
+
+            <br>
+
+
+
+            <p id="acc-type">Numbber of Bedrooms </p>
+            <input type="range" id="bedroom-range" name="prices" step="1"  min="1" max="6" 
+            oninput="sortingroomNumbers(this.value)">
+            <output id="output">4</output>
+
+            <br>
+
+            <p id="acc-type">Main features</p>
+            <input type="checkbox" id="sw1" name="sw" value="swimming pool">
+            <label for=""> &ensp;swimming pool</label><br><br>
+            <input type="checkbox" id="sw2" name="sw" value="Closed Garage">
+            <label for=""> &ensp;Closed Garage</label><br><br>
+            <input type="checkbox" id="sw3" name="sw" value="Heating">
+            <label for=""> &ensp;Heating</label><br><br>
+            <input type="checkbox" id="sw4" name="sw" value="parking">
+            <label for=""> &ensp;parking</label><br><br>
+            <input type="checkbox" id="sw5" name="sw" value="Internet">
+            <label for=""> &ensp;Internet</label><br><br>
+            <input type="checkbox" id="sw6" name="sw" value="Fenced Garden">
+            <label for=""> &ensp;Fenced Garden</label><br><br>
+            <br>
+            <p id="acc-type">Reveiws</p>
+            <div class="rate">
+              <input type="radio" id="star5" name="rate" value="5" /><label for="star5" title="text">5
+                stars</label>
+              <input type="radio" id="star4" name="rate" value="4" />
+              <label for="star4" title="text">4 stars</label>
+              <input type="radio" id="star3" name="rate" value="3" />
+              <label for="star3" title="text">3 stars</label>
+              <input type="radio" id="star2" name="rate" value="2" />
+              <label for="star2" title="text">2 stars</label>
+              <input type="radio" id="star1" name="rate" value="1" />
+              <label for="star1" title="text">1 star</label>
+            </div>
+
+            <br><br><br>
+            <p id="acc-type">Distances</p>
+            <br>
+            <p id="acc-type">Super Market</p>
+            <input type="range" id="vol" name="vol" min="0" max="5">
+            <p id="acc-type">Town</p>
+            <input type="range" id="vol" name="vol" min="0" max="5">
+            <br>
+            <p id="acc-type">Cafe</p>
+            <input type="range" id="vol" name="vol" min="0" max="5">
+            <br>
+            <p id="acc-type">Hospital</p>
+            <input type="range" id="vol" name="vol" min="0" max="5">
+
+            <p id="acc-type">Park</p>
+            <input type="range" id="vol" name="vol" min="0" max="5">
+            <p id="acc-type">Air Port</p>
+            <input type="range" id="vol" name="vol" min="0" max="5">
+          </form>
+
+        </div>
+
+      </div>
+
+
+
+      <div class="col-l-9 col-xl-9 col-sm-12 col-xs-12">
+        <ul class="unordered-list-listing">
+
+          <li id="li-cards">
+            <div class="card mb-3">
+              <div class="row no-gutters">
+
+                <div class="col-md-5 col-sm-12 col-xs-12 card-left-sec">
+                  <div class="card-main-pic">
+                    <img src="Resources/main.jpg" alt="" class="img-fluid  mx-auto d-block rounded">
+                  </div>
+                  <div class="flex-container-2">
+                    <div class="card-secondary-pic">
+                      <img src="Resources/left.jpg" alt="" class="img-fluid mx-auto d-block rounded">
+                    </div>
+                    <div class="card-secondary-pic">
+                      <img src="Resources/middle.jpg" alt="" class="img-fluid mx-auto d-block rounded">
+                    </div>
+                    <div class="card-secondary-pic">
+                      <img src="Resources/right.jpg" alt="" class="img-fluid  mx-auto d-block rounded">
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-7 col-sm-12 col-xs-12 p-1 card-right-sec">
+                  <div class="card-body pt-0 mb-0 ">
+                    <h5 class="card-title">RENTO APT</h5>
+                    <p id="loc-text"><i class="fa-solid fa-location-dot"></i> Villacha - House </p>
+                    <p class="card-text">The <span class="span-house-name">house in Vila Chã </span> has <span
+                        id="bedrooms">2</span>
+                      bedrooms and has capacity for 4 people. The
+                      house is 174 m². The house is...</p>
+                    <P class="card-pricing">(00$ / night) </P>
+                  </div>
+                  <div class="card-logo">
+                    <div class="logo-flex-box">
+
+                      <div class="logo1" style="flex-grow: 1">
+                        <img src="Resources/park.png" alt="" class="img-fluid mx-auto d-block rounded">
+
+                      </div>
+                      <div class="logo2" style="flex-grow: 1">
+                        <img src="Resources/pool.png" alt="" class="img-fluid mx-auto d-block rounded">
+
+                      </div>
+                      <div class="logo3" style="flex-grow: 1">
+                        <img src="Resources/area.png" alt="" class="img-fluid mx-auto d-block rounded">
+
+                      </div>
+                      <div class="logo4" style="flex-grow: 1">
+                        <img src="Resources/parking.png" alt="" class="img-fluid mx-auto d-block rounded">
+
+                      </div>
+                      <div class="logo5" style="flex-grow: 2">
+                        <p class="card-price"
+                          style="vertical-align: middle; padding-top: 10%;padding-left: 10%;font-weight: bold;font-size: large;">
+                          $<span id="price">1150</span><br> /weak</p>
+                      </div>
+                      <div class="logo6" style="flex-grow: 2">
+                        <button type="button" class="btn btn-primary info-buttom"
+                          onClick="location.href='../Description-page/description.html'">+ Info</button>
+
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </li>
+
+
+
+
+
+
+
+
+
+          <li id="li-cards">
+            <div class="card mb-3">
+              <div class="row no-gutters">
+
+                <div class="col-md-5 col-sm-12 col-xs-12 card-left-sec">
+                  <div class="card-main-pic">
+                    <img src="Resources/main.jpg" alt="" class="img-fluid  mx-auto d-block rounded">
+                  </div>
+                  <div class="flex-container-2">
+                    <div class="card-secondary-pic">
+                      <img src="Resources/left.jpg" alt="" class="img-fluid mx-auto d-block rounded">
+                    </div>
+                    <div class="card-secondary-pic">
+                      <img src="Resources/middle.jpg" alt="" class="img-fluid mx-auto d-block rounded">
+                    </div>
+                    <div class="card-secondary-pic">
+                      <img src="Resources/right.jpg" alt="" class="img-fluid  mx-auto d-block rounded">
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-7 col-sm-12 col-xs-12 p-1 card-right-sec">
+                  <div class="card-body pt-0 mb-0 ">
+                    <h5 class="card-title">RENTO APT</h5>
+                    <p id="loc-text"><i class="fa-solid fa-location-dot"></i> Villacha - House </p>
+                    <p class="card-text">The <span class="span-house-name">house in Vila Chã </span> has <span
+                        id="bedrooms">1</span>
+                      bedrooms and has capacity for 4 people. The
+                      house is 174 m². The house is...</p>
+                    <P class="card-pricing">(00$ / night) </P>
+                  </div>
+                  <div class="card-logo">
+                    <div class="logo-flex-box">
+
+                      <div class="logo1" style="flex-grow: 1">
+                        <img src="Resources/park.png" alt="" class="img-fluid mx-auto d-block rounded">
+
+                      </div>
+                      <div class="logo2" style="flex-grow: 1">
+                        <img src="Resources/pool.png" alt="" class="img-fluid mx-auto d-block rounded">
+
+                      </div>
+                      <div class="logo3" style="flex-grow: 1">
+                        <img src="Resources/area.png" alt="" class="img-fluid mx-auto d-block rounded">
+
+                      </div>
+                      <div class="logo4" style="flex-grow: 1">
+                        <img src="Resources/parking.png" alt="" class="img-fluid mx-auto d-block rounded">
+
+                      </div>
+                      <div class="logo5" style="flex-grow: 2">
+                        <p class="card-price"
+                          style="vertical-align: middle; padding-top: 10%;padding-left: 10%;font-weight: bold;font-size: large;">
+                          $<span id="price">1350</span><br> /weak</p>
+                      </div>
+                      <div class="logo6" style="flex-grow: 2">
+                        <button type="button" class="btn btn-primary info-buttom"
+                          onClick="location.href='../Description-page/description.html'">+ Info</button>
+
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+          <li id="li-cards">
+            <div class="card mb-3">
+              <div class="row no-gutters">
+
+                <div class="col-md-5 col-sm-12 col-xs-12 card-left-sec">
+                  <div class="card-main-pic">
+                    <img src="Resources/main.jpg" alt="" class="img-fluid  mx-auto d-block rounded">
+                  </div>
+                  <div class="flex-container-2">
+                    <div class="card-secondary-pic">
+                      <img src="Resources/left.jpg" alt="" class="img-fluid mx-auto d-block rounded">
+                    </div>
+                    <div class="card-secondary-pic">
+                      <img src="Resources/middle.jpg" alt="" class="img-fluid mx-auto d-block rounded">
+                    </div>
+                    <div class="card-secondary-pic">
+                      <img src="Resources/right.jpg" alt="" class="img-fluid  mx-auto d-block rounded">
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-7 col-sm-12 col-xs-12 p-1 card-right-sec">
+                  <div class="card-body pt-0 mb-0 ">
+                    <h5 class="card-title">RENTO APT</h5>
+                    <p id="loc-text"><i class="fa-solid fa-location-dot"></i> Villacha - House </p>
+                    <p class="card-text">The <span class="span-house-name">house in Vila Chã </span> has <span
+                        id="bedrooms">4</span>
+                      bedrooms and has capacity for 4 people. The
+                      house is 174 m². The house is...</p>
+                    <P class="card-pricing">(00$ / night) </P>
+                  </div>
+                  <div class="card-logo">
+                    <div class="logo-flex-box">
+
+                      <div class="logo1" style="flex-grow: 1">
+                        <img src="Resources/park.png" alt="" class="img-fluid mx-auto d-block rounded">
+
+                      </div>
+                      <div class="logo2" style="flex-grow: 1">
+                        <img src="Resources/pool.png" alt="" class="img-fluid mx-auto d-block rounded">
+
+                      </div>
+                      <div class="logo3" style="flex-grow: 1">
+                        <img src="Resources/area.png" alt="" class="img-fluid mx-auto d-block rounded">
+
+                      </div>
+                      <div class="logo4" style="flex-grow: 1">
+                        <img src="Resources/parking.png" alt="" class="img-fluid mx-auto d-block rounded">
+
+                      </div>
+                      <div class="logo5" style="flex-grow: 2">
+                        <p class="card-price"
+                          style="vertical-align: middle; padding-top: 10%;padding-left: 10%;font-weight: bold;font-size: large;">
+                          $<span id="price">1000</span><br> /weak</p>
+                      </div>
+                      <div class="logo6" style="flex-grow: 2">
+                        <button type="button" class="btn btn-primary info-buttom"
+                          onClick="location.href='../Description-page/description.html'">+ Info</button>
+
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </li>
+
+          <li id="li-cards">
+            <div class="card mb-3">
+              <div class="row no-gutters">
+
+                <div class="col-md-5 col-sm-12 col-xs-12 card-left-sec">
+                  <div class="card-main-pic">
+                    <img src="Resources/main.jpg" alt="" class="img-fluid  mx-auto d-block rounded">
+                  </div>
+                  <div class="flex-container-2">
+                    <div class="card-secondary-pic">
+                      <img src="Resources/left.jpg" alt="" class="img-fluid mx-auto d-block rounded">
+                    </div>
+                    <div class="card-secondary-pic">
+                      <img src="Resources/middle.jpg" alt="" class="img-fluid mx-auto d-block rounded">
+                    </div>
+                    <div class="card-secondary-pic">
+                      <img src="Resources/right.jpg" alt="" class="img-fluid  mx-auto d-block rounded">
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-7 col-sm-12 col-xs-12 p-1 card-right-sec">
+                  <div class="card-body pt-0 mb-0 ">
+                    <h5 class="card-title">RENTO APT</h5>
+                    <p id="loc-text"><i class="fa-solid fa-location-dot"></i> Villacha - House </p>
+                    <p class="card-text">The <span class="span-house-name">house in Vila Chã </span> has <span
+                        id="bedrooms">1</span>
+                      bedrooms and has capacity for 4 people. The
+                      house is 174 m². The house is...</p>
+                    <P class="card-pricing">(00$ / night) </P>
+                  </div>
+                  <div class="card-logo">
+                    <div class="logo-flex-box">
+
+                      <div class="logo1" style="flex-grow: 1">
+                        <img src="Resources/park.png" alt="" class="img-fluid mx-auto d-block rounded">
+
+                      </div>
+                      <div class="logo2" style="flex-grow: 1">
+                        <img src="Resources/pool.png" alt="" class="img-fluid mx-auto d-block rounded">
+
+                      </div>
+                      <div class="logo3" style="flex-grow: 1">
+                        <img src="Resources/area.png" alt="" class="img-fluid mx-auto d-block rounded">
+
+                      </div>
+                      <div class="logo4" style="flex-grow: 1">
+                        <img src="Resources/parking.png" alt="" class="img-fluid mx-auto d-block rounded">
+
+                      </div>
+                      <div class="logo5" style="flex-grow: 2">
+                        <p class="card-price"
+                          style="vertical-align: middle; padding-top: 10%;padding-left: 10%;font-weight: bold;font-size: large;">
+                          $<span id="price">900</span> <br> /weak</p>
+                      </div>
+                      <div class="logo6" style="flex-grow: 2">
+                        <button type="button" class="btn btn-primary info-buttom"
+                          onClick="location.href='../Description-page/description.html'">+ Info</button>
+
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </li>
+
+          <li id="li-cards">
+            <div class="card mb-3">
+              <div class="row no-gutters">
+
+                <div class="col-md-5 col-sm-12 col-xs-12 card-left-sec">
+                  <div class="card-main-pic">
+                    <img src="Resources/main.jpg" alt="" class="img-fluid  mx-auto d-block rounded">
+                  </div>
+                  <div class="flex-container-2">
+                    <div class="card-secondary-pic">
+                      <img src="Resources/left.jpg" alt="" class="img-fluid mx-auto d-block rounded">
+                    </div>
+                    <div class="card-secondary-pic">
+                      <img src="Resources/middle.jpg" alt="" class="img-fluid mx-auto d-block rounded">
+                    </div>
+                    <div class="card-secondary-pic">
+                      <img src="Resources/right.jpg" alt="" class="img-fluid  mx-auto d-block rounded">
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-7 col-sm-12 col-xs-12 p-1 card-right-sec">
+                  <div class="card-body pt-0 mb-0 ">
+                    <h5 class="card-title">RENTO APT</h5>
+                    <p id="loc-text"><i class="fa-solid fa-location-dot"></i> Villacha - House </p>
+                    <p class="card-text">The <span class="span-house-name">house in Vila Chã </span> has <span
+                        id="bedrooms">3</span>
+                      bedrooms and has capacity for 4 people. The
+                      house is 174 m². The house is...</p>
+                    <P class="card-pricing">(00$ / night) </P>
+                  </div>
+                  <div class="card-logo">
+                    <div class="logo-flex-box">
+
+                      <div class="logo1" style="flex-grow: 1">
+                        <img src="Resources/park.png" alt="" class="img-fluid mx-auto d-block rounded">
+
+                      </div>
+                      <div class="logo2" style="flex-grow: 1">
+                        <img src="Resources/pool.png" alt="" class="img-fluid mx-auto d-block rounded">
+
+                      </div>
+                      <div class="logo3" style="flex-grow: 1">
+                        <img src="Resources/area.png" alt="" class="img-fluid mx-auto d-block rounded">
+
+                      </div>
+                      <div class="logo4" style="flex-grow: 1">
+                        <img src="Resources/parking.png" alt="" class="img-fluid mx-auto d-block rounded">
+
+                      </div>
+                      <div class="logo5" style="flex-grow: 2">
+                        <p class="card-price"
+                          style="vertical-align: middle; padding-top: 10%;padding-left: 10%;font-weight: bold;font-size: large;">
+                          $<span id="price">2350</span> <br> /weak</p>
+                      </div>
+                      <div class="logo6" style="flex-grow: 2">
+                        <button type="button" class="btn btn-primary info-buttom"
+                          onClick="location.href='../Description-page/description.html'">+ Info</button>
+
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Row3 ENDS -->
+
+
+    <!-- Footer -->
+
+    <footer id="footer">
+      <div class="footer-newsletter">
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-6">
+              <h4>Our Newsletter</h4>
+              <p>Subscribe to our newsletter to check our latest news and offers</p>
+            </div>
+            <div class="col-lg-6">
+              <form action="" method="post"> <input type="email" name="email" placeholder="enter your email here"><input
+                  type="submit" value="Subscribe"> </form>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="footer-top">
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-3 col-md-6 footer-links">
+              <h4>Useful Links</h4>
+              <ul>
+                <li><i class="bx bx-chevron-right"></i> <a href="home.html">Home</a></li>
+                <li><i class="bx bx-chevron-right"></i> <a href="about.html">About us</a></li>
+                <li><i class="bx bx-chevron-right"></i> <a href="rental.html">Apartments</a></li>
+                <li><i class="bx bx-chevron-right"></i> <a href="termsOfService.html">Terms of service</a></li>
+                <li><i class="bx bx-chevron-right"></i> <a href="privacyPolicy.html">Privacy policy</a></li>
+              </ul>
+            </div>
+            <div class="col-lg-3 col-md-6 footer-links">
+              <h4>Quick links</h4>
+              <ul>
+                <li><i class="bx bx-chevron-right"></i> <a href="#">Villa</a></li>
+                <li><i class="bx bx-chevron-right"></i> <a href="#">Apartment</a></li>
+                <li><i class="bx bx-chevron-right"></i> <a href="#">Tokyo</a></li>
+                <li><i class="bx bx-chevron-right"></i> <a href="#">Lebanon</a></li>
+                <li><i class="bx bx-chevron-right"></i> <a href="listing.html">List a property</a></li>
+              </ul>
+            </div>
+            <div class="col-lg-3 col-md-6 footer-contact">
+              <h4>Contact Us</h4>
+              <p> A108 Adam Street <br> New York, NY 535022<br> United States <br><br> <strong>Phone:</strong> +1 5589
+                55488 55<br> <strong>Email:</strong> Travolta@example.com<br> </p>
+            </div>
+            <div class="col-lg-3 col-md-6 footer-info">
+              <h3>About Rento</h3>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt placeat iste culpa repellat velit
+                ducimus repudiandae asperiores aperiam quis officia.</p>
+              <div class="social-links mt-3"> <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a> <a href="#"
+                  class="facebook"><i class="bx bxl-facebook"></i></a> <a href="#" class="instagram"><i
+                    class="bx bxl-instagram"></i></a> <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="container">
+        <div class="copyright"> © Copyright <strong><span>Rento</span></strong>. All Rights Reserved Designed by <a
+            href="about.html">Rento</a> </div>
+        <div class="credits"> </div>
+      </div>
+    </footer>
+  </Div>
+
+  <script src="Rental.js"></script>
+</body>
+
+</html>
