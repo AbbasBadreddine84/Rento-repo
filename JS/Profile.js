@@ -1,5 +1,5 @@
 document
-  .getElementById("usernameProfile")
+  .getElementById("username")
   .addEventListener("blur", validateusername);
 
 document.getElementById("password").addEventListener("blur", validatepassword);
@@ -32,19 +32,19 @@ document.getElementById("DateOfbirth").addEventListener("change", validateMonth)
 
 const reSpaces = /^\S*$/;
 function validateusername() {
-  const usernameProfile = document.getElementById("usernameProfile");
-  if (usernameProfile.value == "") {
-    usernameProfile.classList.remove("is-valid");
-    usernameProfile.classList.add("is-invalid");
+  const username = document.getElementById("username");
+  if (username.value == "") {
+    username.classList.remove("is-valid");
+    username.classList.add("is-invalid");
     return false;
   }
-  if (reSpaces.test(usernameProfile.value)) {
-    usernameProfile.classList.remove("is-invalid");
-    usernameProfile.classList.add("is-valid");
+  if (reSpaces.test(username.value)) {
+    username.classList.remove("is-invalid");
+    username.classList.add("is-valid");
     return true;
   } else {
-    usernameProfile.classList.remove("is-valid");
-    usernameProfile.classList.add("is-invalid");
+    username.classList.remove("is-valid");
+    username.classList.add("is-invalid");
     return false;
   }
 }
@@ -191,6 +191,7 @@ function validateMonth() {
       "submit",
       function (event) {
         if (
+
           !form.checkValidity()||
           !validateusername() ||
           !validatepassword() ||
@@ -201,18 +202,25 @@ function validateMonth() {
           !validatePhoneNumber() ||
           !validateaddress() ||
           !validateNationality()
+          
         ) {
+          Swal.fire({
+            icon: "error",
+            title: "Oops...",
+            text: "Some field still missing or invalid!",
+          });
           event.preventDefault();
           event.stopPropagation();
         } else {
+
           form.classList.add("was-validated");
+       
         }
+        
       },
       false
     );
   });
 })();
-
-
 
 

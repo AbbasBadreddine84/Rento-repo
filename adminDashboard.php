@@ -1,6 +1,7 @@
 <?php
 include("connection.php");
 include("test.php");
+
 if (!isset($_SESSION['login_admin'])) {
 
   header("Location: Login.php");
@@ -37,11 +38,8 @@ if (!isset($_SESSION['login_admin'])) {
       <div class="sidebar-heading text-center py-4 fs-4 fw-bold border-bottom border-end">
         <i class=""></i><span class="text-white">Rento</span><br>
         <span class="fw-bold text-white" id="spanT">A home for every renter</span>
-        <img src="<?php
-        require "connection.php";
-        $sql="Select * FROM admin WHERE id= "
-        ?>" class="rounded-circle mt-5" id="profile" alt=""><br>
-        <span class="mt-2 text-white fs-5"><?php echo $FirstName ." ".$LastName ?></span>
+        <img src="<?php print 'img/' . $imageInput ?>" class="rounded-circle mt-5" id="profile" alt=""><br>
+        <span class="mt-2 text-white fs-5"><?php print $FirstName . " " . $LastName ?></span>
 
       </div>
       <!-- content -->
@@ -127,9 +125,11 @@ if (!isset($_SESSION['login_admin'])) {
           <ul class="navbar-nav ms-auto mb-lg-0">
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle fw-bold" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                <i class="fas fa-user me-2"></i>
+                <i class="fas fa-user me-2"></i><?php print $FirstName ?>
+
               </a>
               <ul class="dropdown-menu progress-bar-animated" aria-labelledby="navbarDropdown">
+
                 <li><a class="dropdown-item" href="Profile.php"><i class="fas fa-home-user"></i> Profile</a></li>
                 <li><a class="dropdown-item" href="logout.php"><i class="fas fa-sign-out"></i>Logout</a></li>
               </ul>

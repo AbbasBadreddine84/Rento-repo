@@ -18,9 +18,9 @@ while($row = $result->fetch_assoc()) {
     $email = $row["email"];
     $password = $row["password"];
     $region = $row["region"];
+    $address=$row['address'];
+    $DateOfBirth = $row['DateOfBirth'];
     $phonenumber =$row["phonenumber"];
-    $image = $row["image"];
-
-
+    $imageInput = $row["image"];
 
 }

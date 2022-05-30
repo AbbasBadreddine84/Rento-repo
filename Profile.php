@@ -1,6 +1,8 @@
 <?php
 include("connection.php");
 include("test.php");
+include("profileupdate.php");
+
 if (!isset($_SESSION['login_admin'])) {
 
   header("Location: Login.php");
@@ -23,7 +25,7 @@ if (!isset($_SESSION['login_admin'])) {
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
   <link rel="stylesheet" href="css/Profile.css">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" />
-
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <link rel="stylesheet" href="mdb-bootstrap/css/mdb.min.css" />
 </head>
 
@@ -36,7 +38,7 @@ if (!isset($_SESSION['login_admin'])) {
       <div class="sidebar-heading text-center py-4 fs-4 fw-bold border-bottom border-end">
         <i class=""></i><span class="text-white">Rento</span><br>
         <span class="fw-bold text-white" id="spanT">A home for every renter</span>
-        <img src="img/download.png" class="rounded-circle mt-5" id="profile" alt=""><br>
+        <img src="<?php print 'img/' . $imageInput ?>" class="rounded-circle mt-5" id="profile" alt=""><br>
         <span class="mt-2 text-white fs-5">Name</span>
 
       </div>
@@ -123,10 +125,10 @@ if (!isset($_SESSION['login_admin'])) {
           <ul class="navbar-nav ms-auto mb-lg-0">
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle fw-bold" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                <i class="fas fa-user me-2"></i>Name
+                <i class="fas fa-user me-2"></i><?php print $FirstName?>
               </a>
               <ul class="dropdown-menu progress-bar-animated" aria-labelledby="navbarDropdown">
-                <li><a class="dropdown-item" href="Profile.html"><i class="fas fa-home-user"></i> Profile</a></li>
+                <li><a class="dropdown-item" href="Profile.php"><i class="fas fa-home-user"></i> Profile</a></li>
                 <li><a class="dropdown-item" href="logout.php"><i class="fas fa-sign-out"></i>Logout</a></li>
               </ul>
             </li>
@@ -142,35 +144,38 @@ if (!isset($_SESSION['login_admin'])) {
             <div class="row">
               <div class="col-sm-6">
                 <div class="header">
-                  <form id="form" class="card hover-shadow needs-validation" novalidate>
-                    <h2>
-                      <strong class="text-primary ms-2 fs-3">Account</strong><br>
-                    </h2>
-                    <ul class="ul">
-                      <li><i class="fas fa-user fs-6"></i> <label class="fs-6 ms-2"><?php
-                                                                                    echo $FirstName
-                                                                                    ?></label>
-                      </li>
-                      <li> <i class="fas fa-location fs-6"></i><label class="fs-6 ms-2"><?php echo $region ?></label></li>
-                      <li> <i class="fas fa-mobile fs-6"></i><label class="fs-6 ms-2"><?php echo $phonenumber ?></label></li>
-                      <li><i class="fas fa-envelope fs-6"></i><label class="ms-2 fs-6"><?php echo $email ?></label></li>
-                    </ul>
+
+                  <h2>
+                    <strong class="text-primary ms-2 fs-3">Account</strong><br>
+                  </h2>
+                  <ul class="ul">
+                    <li><i class="fas fa-user fs-6"></i><label class="fs-6 ms-2"><?php print $FirstName ?></label></li>
+                    <li> <i class="fas fa-location fs-6"></i><label class="fs-6 ms-2"><?php print $region ?></label></li>
+                    <li> <i class="fas fa-mobile fs-6"></i><label class="fs-6 ms-2"><?php print $phonenumber ?></label></li>
+                    <li><i class="fas fa-envelope fs-6"></i><label class="ms-2 fs-6"><?php print $email ?></label></li>
+                  </ul>
                 </div>
               </div>
               <div class="col-sm-2"></div>
               <div class="col-sm-4">
-                <div class="image1">
-                  <img src="" alt="" id="frame" class="rounded-circle img-fluid">
-                </div>
+                <form id="form" method="post" action="" enctype="multipart/form-data" class="card hover-shadow needs-validation" novalidate>
+                  <div class="image1">
+                    <img src="" alt="" id="frame" class="rounded-circle img-fluid">
+                  </div>
               </div>
             </div>
             <div class="row">
               <div class="col-sm-6">
                 <div class="span1">
                   <i class="fas fa-image"></i><span class="mt-5 ms-2">Upload Image</span>
-                  <input type="file" id="imageInput" class="form-check form-control imageInput mt-4">
+                  <input type="file" name="file" id="imageInput" class="form-check form-control imageInput mt-4">
                 </div>
               </div>
+              <!-- <div class="col-sm-3"></div>
+              <div class="col-sm-3">
+                <button class="btn btn-primary me-md-2 btn-Submit" name="upload" id="submit" type="submit">Upload</button>
+              </div> -->
+
             </div>
           </div>
         </div>
@@ -187,7 +192,8 @@ if (!isset($_SESSION['login_admin'])) {
               <div class="top">
                 <a href=""><i class="fas fa-user"></i></a>
                 <div class="form-group form-floating">
-                  <input type="text" class="form-check form-control inputForm" value="<?php echo $username ?>" name="usernameProfile" id="usernameProfile" aria-label="Floating label select example_1" required>
+                  <input type="hidden" id="AID" name="AID" />
+                  <input type="text" class="form-check form-control inputForm" value="<?php echo $username ?>" name="username" id="username" aria-label="Floating label select example_1" required>
 
                   <div class="valid-feedback">
                     Looks Good!
@@ -196,7 +202,7 @@ if (!isset($_SESSION['login_admin'])) {
                     username cannot be blank or have space
                   </div>
 
-                  <label for="usernameProfile">Username</label>
+                  <label for="username">Username</label>
                 </div>
 
               </div>
@@ -270,7 +276,7 @@ if (!isset($_SESSION['login_admin'])) {
             <div class="col-lg-4 col-md-4 col-sm-12 mt-4">
               <a href=""><i class="fas fa-calendar"></i></a>
               <div class="form-group form-floating">
-                <input type="date" class="form-check form-control inputForm" name="DateOfbirth" id="DateOfbirth" aria-label="Floating label select example_5" required>
+                <input type="date" class="form-check form-control inputForm" name="DateOfBirth" value="<?php echo $DateOfBirth  ?>" id="DateOfbirth" aria-label="Floating label select example_5" required>
                 <div class="valid-feedback">
                   Looks Good!
                 </div>
@@ -304,7 +310,7 @@ if (!isset($_SESSION['login_admin'])) {
             <div class="col-lg-4 col-md-4 col-sm-12 mt-4">
               <a href=""><i class="fas fa-location"></i></a>
               <div class="form-group form-floating">
-                <input type="text" class="form-check form-control inputForm" name="address" id="address" aria-label="Floating label select example_7" required>
+                <input type="text" class="form-check form-control inputForm" name="address" value="<?php echo $address ?>" id="address" aria-label="Floating label select example_7" required>
                 <div class="valid-feedback">
                   Looks Good!
                 </div>
@@ -320,7 +326,7 @@ if (!isset($_SESSION['login_admin'])) {
             <div class="col-lg-4 col-md-4 col-sm-12 mt-4">
               <a href=""><i class="fas fa-flag"></i></a>
               <div class="form-group form-floating">
-                <input type="text" class="form-check form-control inputForm" name="Nationality" value="<?php echo $region ?>" id="Nationality" aria-label="Floating label select example_8" required>
+                <input type="text" class="form-check form-control inputForm" name="region" value="<?php echo $region ?>" id="Nationality" aria-label="Floating label select example_8" required>
                 <div class="valid-feedback">
                   Looks Good!
                 </div>
@@ -338,23 +344,24 @@ if (!isset($_SESSION['login_admin'])) {
 
           <div class="row clearfix mt-4 mb-2">
             <div class="d-grid gap-2 d-md-flex justify-content-sm-end">
-              <button class="btn btn-primary me-md-2 btn-Submit" type="submit">Submit</button>
+              <button class="btn btn-primary me-md-2 btn-Submit" name="submit" id="submit" type="submit">Submit</button>
             </div>
+            <div id="message"></div>
           </div>
-          </form>
-        </div>
 
+        </div>
+        </form>
       </div>
     </div>
   </div>
 
 
-  <script src="JS/Profile.js"></script>
+  <script src="./JS/Profile.js"></script>
   <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous">
   </script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous">
   </script>
-
+  <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
   <script type="text/javascript" src="mdb-bootstrap/js/mdb.min.js"></script>
   <script type="text/javascript"></script>
   <script>
@@ -363,6 +370,8 @@ if (!isset($_SESSION['login_admin'])) {
 
     toggleButton.onclick = function() {
       element.classList.toggle("toggled");
+
+
     };
   </script>
 </body>

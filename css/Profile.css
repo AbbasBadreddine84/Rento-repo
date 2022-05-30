@@ -137,3 +137,9 @@ li{
 border-radius: 35px !important;
 }
 
+.hideinput{
+    border: none;
+background-color: transparent;
+resize: none;
+outline: none;
+}
