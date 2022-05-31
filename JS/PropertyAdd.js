@@ -157,16 +157,17 @@ function validatepsquare() {
 }
 
 function validatepaddress() {
-  const paddress = document.getElementById("paddress");
-  if (paddress.value === "" || paddress.value == null) {
-    paddress.classList.add("is-invalid");
-    paddress.classList.remove("is-valid");
-    return false;
-  } else {
-    paddress.classList.add("is-valid");
-    paddress.classList.remove("is-invalid");
-    return true;
-  }
+ const paddress = document.getElementById("paddress");
+
+ if (paddress.value) {
+   paddress.classList.add("is-valid");
+   paddress.classList.remove("is-invalid");
+   return true;
+ } else {
+   paddress.classList.remove("is-valid");
+   paddress.classList.add("is-invalid");
+   return false;
+ }
 }
 
 function validatepbedroom() {
@@ -293,6 +294,11 @@ function validateMonth() {
           !validateplivingromm ||
           !validatepbathroom
         ) {
+     Swal.fire({
+       icon: "error",
+       title: "Oops...",
+       text: "Some field still missing or invalid!",
+     });
           event.preventDefault();
           event.stopPropagation();
         } else {

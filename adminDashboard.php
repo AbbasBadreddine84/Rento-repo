@@ -57,7 +57,7 @@ if (!isset($_SESSION['login_admin'])) {
             <a href="PropertyList.html" class="text-reset"><i class="fas fa-arrow-circle-right me-1"></i> <span>Property List</span></a>
           </li>
           <li class="list-group-item py-1 list-group-item-2 bg-primary text-white text-center">
-            <a href="PropertyAdd.html" class="text-reset"><i class="fas fa-arrow-circle-right me-1"></i> <span>Add Property</span></a>
+            <a href="PropertyAdd.php" class="text-reset"><i class="fas fa-arrow-circle-right me-1"></i> <span>Add Property</span></a>
           </li>
 
           <li class="list-group-item py-1 list-group-item-2 bg-primary text-white text-center" id="propdet">
