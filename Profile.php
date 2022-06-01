@@ -39,7 +39,7 @@ if (!isset($_SESSION['login_admin'])) {
         <i class=""></i><span class="text-white">Rento</span><br>
         <span class="fw-bold text-white" id="spanT">A home for every renter</span>
         <img src="<?php print 'img/' . $imageInput ?>" class="rounded-circle mt-5" id="profile" alt=""><br>
-        <span class="mt-2 text-white fs-5">Name</span>
+        <span class="mt-2 text-white fs-5"><?php print $FirstName . " " . $LastName ?></span>
 
       </div>
       <!-- content -->
@@ -54,14 +54,14 @@ if (!isset($_SESSION['login_admin'])) {
         <!-- Collapsed content -->
         <ul id="property" class="collapse show list-group hover-shadow bg-primary list-group-flush">
           <li class="list-group-item list-group-item-2 py-1 bg-primary text-white text-center" id="proplist">
-            <a href="PropertyList.html" class="text-reset"><i class="fas fa-arrow-circle-right me-1"></i> <span>Property List</span></a>
+            <a href="PropertyList.php" class="text-reset"><i class="fas fa-arrow-circle-right me-1"></i> <span>Property List</span></a>
           </li>
           <li class="list-group-item py-1 list-group-item-2 bg-primary text-white text-center">
-            <a href="PropertyAdd.html" class="text-reset"><i class="fas fa-arrow-circle-right me-1"></i> <span>Add Property</span></a>
+            <a href="PropertyAdd.php" class="text-reset"><i class="fas fa-arrow-circle-right me-1"></i> <span>Add Property</span></a>
           </li>
 
           <li class="list-group-item py-1 list-group-item-2 bg-primary text-white text-center" id="propdet">
-            <a href="PropertyDetail.html" class="text-reset"><i class="fas fa-arrow-circle-right me-1"></i> <span>Property Details<span></a>
+            <a href="PropertyDetail.php" class="text-reset"><i class="fas fa-arrow-circle-right me-1"></i> <span>Property Details<span></a>
           </li>
         </ul>
 
@@ -71,10 +71,10 @@ if (!isset($_SESSION['login_admin'])) {
         <!-- Collapsed content -->
         <ul id="propertyCategory" class="collapse hover-shadow show list-group list-group-flush">
           <li class="list-group-item list-group-item-2 py-1 bg-primary text-white text-center" id="propdVilla">
-            <a href="PropertyCVilla.html" class="text-reset"><i class="fas fa-arrow-circle-right me-1"></i> <span>Villa</span></a>
+            <a href="PropertyCVilla.php" class="text-reset"><i class="fas fa-arrow-circle-right me-1"></i> <span>Villa</span></a>
           </li>
           <li class="list-group-item list-group-item-2 py-1 bg-primary text-white text-center" id="propApp">
-            <a href="PropertyCAp.html" class="text-reset"><i class="fas fa-arrow-circle-right me-1"></i> <span>Apartment</span></a>
+            <a href="PropertyCAp.php" class="text-reset"><i class="fas fa-arrow-circle-right me-1"></i> <span>Apartment</span></a>
           </li>
 
         </ul>
@@ -85,10 +85,10 @@ if (!isset($_SESSION['login_admin'])) {
         <!-- Collapsed content -->
         <ul id="Customers" class="collapse show hover-shadow list-group list-group-flush">
           <li class="list-group-item list-group-item-2 py-1 bg-primary text-white text-center" id="tenants">
-            <a href="TenantsView.html" class="text-reset"><i class="fas fa-arrow-circle-right me-1"></i> <span>Tenants</span></a>
+            <a href="TenantsView.php" class="text-reset"><i class="fas fa-arrow-circle-right me-1"></i> <span>Tenants</span></a>
           </li>
           <li class="list-group-item list-group-item-2 py-1 bg-primary text-white text-center" id="buyer">
-            <a href="BuyerView.html" class="text-reset"><i class="fas fa-arrow-circle-right me-1"></i> <span>Buyer</span></a>
+            <a href="BuyerView.php" class="text-reset"><i class="fas fa-arrow-circle-right me-1"></i> <span>Buyer</span></a>
           </li>
 
         </ul>
@@ -99,16 +99,15 @@ if (!isset($_SESSION['login_admin'])) {
         <!-- Collapsed content -->
         <ul id="Profit" class="collapse show hover-shadow list-group list-group-flush">
           <li class="list-group-item list-group-item-2 py-1 bg-primary text-white text-center" id="Ptenants">
-            <a href="TenantProfit.html" class="text-reset"><i class="fas fa-arrow-circle-right me-1"></i> <span>Tenants</span></a>
+            <a href="TenantProfit.php" class="text-reset"><i class="fas fa-arrow-circle-right me-1"></i> <span>Tenants</span></a>
           </li>
           <li class="list-group-item list-group-item-2 py-1 bg-primary text-white text-center" id="Pbuyer">
-            <a href="BuyerProfit.html" class="text-reset"><i class="fas fa-arrow-circle-right me-1"></i> <span>Buyer</span></a>
+            <a href="BuyerProfit.php" class="text-reset"><i class="fas fa-arrow-circle-right me-1"></i> <span>Buyer</span></a>
           </li>
         </ul>
       </div>
     </div>
     <!-- sidebar end -->
-
 
     <div id="page-content-wrapper">
       <nav class="navbar navbar-expand-lg navbar-light bg-light py-4 px-4">
@@ -125,9 +124,11 @@ if (!isset($_SESSION['login_admin'])) {
           <ul class="navbar-nav ms-auto mb-lg-0">
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle fw-bold" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                <i class="fas fa-user me-2"></i><?php print $FirstName?>
+                <i class="fas fa-user me-2"></i><?php print $FirstName ?>
+
               </a>
               <ul class="dropdown-menu progress-bar-animated" aria-labelledby="navbarDropdown">
+
                 <li><a class="dropdown-item" href="Profile.php"><i class="fas fa-home-user"></i> Profile</a></li>
                 <li><a class="dropdown-item" href="logout.php"><i class="fas fa-sign-out"></i>Logout</a></li>
               </ul>

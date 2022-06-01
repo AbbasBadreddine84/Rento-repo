@@ -10,7 +10,6 @@ if (!isset($_SESSION['login_admin'])) {
 
 ?>
 
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -23,8 +22,9 @@ if (!isset($_SESSION['login_admin'])) {
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
-  <link rel="stylesheet" href="css/adminDashboard.css">
+  <link rel="stylesheet" href="css/BuyerProfit.css">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" />
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
 
   <link rel="stylesheet" href="mdb-bootstrap/css/mdb.min.css" />
 </head>
@@ -34,7 +34,7 @@ if (!isset($_SESSION['login_admin'])) {
   <div class="d-flex" id="wrapper">
 
     <div class="bg-primary" id="sidebar-wrapper">
-      <!-- header -->
+
       <div class="sidebar-heading text-center py-4 fs-4 fw-bold border-bottom border-end">
         <i class=""></i><span class="text-white">Rento</span><br>
         <span class="fw-bold text-white" id="spanT">A home for every renter</span>
@@ -114,7 +114,7 @@ if (!isset($_SESSION['login_admin'])) {
       <nav class="navbar navbar-expand-lg navbar-light bg-light py-4 px-4">
         <div class="d-flex align-items-center">
           <i class="fas fa-align-left  fs-4 me-3" id="menu-toggle"></i>
-          <h2 class="fs-4 m-0">Home</h2>
+          <h2 class="fs-4 m-0">Buyer Profit</h2>
         </div>
 
         <button class="navbar-toggler collapsed" type="button" data-mdb-toggle="collapse" data-mdb-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -139,97 +139,111 @@ if (!isset($_SESSION['login_admin'])) {
       </nav>
 
 
-      <div class="container-fluid px-5">
-        <div class="row">
-          <div class="col-lg-4 col-md-4 col-sm-12 ">
-            <div class="card card-1 rounded-pill g-4 mt-3 bg-primary">
-              <div class="card-body d-flex align-items-center">
-                <div class="me-auto text-white">
-                  <h2 class="text-white">100</h2>
-                  <span class="tittle">Property For Rent</span>
-                </div>
-                <i class="logo fas fa-home fa-2x"></i></a>
-              </div>
-            </div>
+
+
+
+      <div class="container-fluid px-4">
+        <section>
+          <div class="table-responsive mt-5 col-lg-12">
+            <table class="table table-borderless table-sm table-hover table-striped caption-top" id="table">
+              <caption class="text-black fw-bolder"><label class="List">List of Property</label>
+                <label class="Search">End Date:<input type="date" id="SearchInput2" class="form-control form-control-sm input-search" data-date-split-input="true">
+                </label>
+                <label class="Search">Start Date:<input type="date" id="SearchInput1" class="form-control form-control-sm input-search" data-date-split-input="true">
+                </label>
+              </caption>
+              <thead class="table-primary">
+                <tr>
+
+                  <th scope="col" class="center">Property ID</th>
+                  <th scope="col" class="centerName">Buyer Name </th>
+                  <th scope="col" class="center">Date of Selling</th>
+                  <th scope="col" class="centerName">Invoice</th>
+                  <th scope="col" class="centerName">Amount </th>
+                  <th scope="col" class="centerName">Action</th>
+                </tr>
+              </thead>
+              <tbody>
+
+                <tr>
+                  <th scope="row" class="center">1</th>
+                  <td class="center">Sara</td>
+                  <td class="center">9/23/2023</td>
+                  <td class="center">4322334</td>
+                  <td class="center">10000$</td>
+                  <td class="center">
+                    <a class="btn btn-tbl-delete btn-xs" role="button" onclick="deleteR(this)"><i class="fa fa-trash"></i>
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row" class="center">2</th>
+                  <td class="center">Mike</td>
+                  <td class="center">12/23/2022</td>
+                  <td class="center">545252</td>
+                  <td class="center">10000$</td>
+                  <td class="center">
+                    <a class="btn btn-tbl-delete btn-xs" role="button" onclick="deleteR(this)"><i class="fa fa-trash"></i>
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row" class="center">3</th>
+                  <td class="center">John</td>
+                  <td class="center">6/25/2020</td>
+                  <td class="center">648329</td>
+                  <td class="center">10000$</td>
+                  <td class="center">
+                    <a class="btn btn-tbl-delete btn-xs" role="button" onclick="deleteR(this)"><i class="fa fa-trash"></i>
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row" class="center">4</th>
+                  <td class="center">Alex</td>
+                  <td class="center">6/22/2021</td>
+                  <td class="center">58658558</td>
+                  <td class="center">10000$</td>
+                  <td class="center">
+                    <a class="btn btn-tbl-delete btn-xs" role="button" onclick="deleteR(this)"><i class="fa fa-trash"></i>
+                  </td>
+                </tr>
+
+
+
+              </tbody>
+
+
+            </table>
           </div>
 
-          <div class="col-lg-4 col-md-4 col-sm-12">
-            <div class="card card-1 rounded-pill g-4 mt-3 bg-warning">
-              <div class="card-body d-flex align-items-center">
-                <div class="me-auto text-white">
-                  <h2 class="text-white">50</h2>
-                  <span class="tittle">Number of Tenants</span>
-                </div>
-                <i class="logo fas fa-users fa-2x"></i></a>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-4 col-md-4 col-sm-12">
-            <div class="card card-1 rounded-pill g-4 mt-3 bg-primary">
-              <div class="card-body d-flex align-items-center">
-                <div class="me-auto text-white">
-                  <h2 class="text-white">52</h2>
-                  <span class="tittle">Property For Sale</span>
-                </div>
-                <i class="logo fas fa-home fa-2x"></i></a>
-              </div>
-            </div>
-          </div>
 
+        </section>
+        <hr>
 
-
+        <div class="date">
+          <strong class="fs-5 text-primary">Date:</strong><label id="dateT" class=" fs-5" for=""></label>
         </div>
-        <div class="row">
-          <div class="col-lg-4 col-md-4 col-sm-12">
-            <div class="card card-1 rounded-pill g-4 mt-3 bg-warning">
-              <div class="card-body d-flex align-items-center">
-                <div class="me-auto text-white">
-                  <h2 class="text-white">29</h2>
-                  <span class="tittle">Number of Buyers</span>
-                </div>
-                <i class="logo fas fa-users fa-2x"></i></a>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-4 col-sm-12">
-            <div class="card card-1 rounded-pill g-4 mt-3 bg-success">
-              <div class="card-body d-flex align-items-center">
-                <div class="me-auto text-white">
-                  <h2 class="text-white">80000<i class="fas fa-dollar"></i></h2>
-                  <span class="tittle">Total Income For Sale</span>
-                </div>
-                <i class="logo fas fa-bank fa-2x"></i></a>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-4 col-md-4 col-sm-12">
-            <div class="card card-1 rounded-pill g-4 mt-3 bg-success">
-              <div class="card-body d-flex align-items-center">
-                <div class="me-auto text-white">
-                  <h2 class="text-white">70000<i class="fas fa-dollar"></i></h2>
-                  <span class="tittle">Total Income For Rent</span>
-                </div>
-                <i class="logo fas fa-bank fa-2x"></i></a>
-              </div>
-            </div>
-          </div>
-
-
-
+        <div class="total-footer">
+          <strong class="mb-0 fs-5 text-primary">TAX:</strong><label id="VATN" class=" fs-5" for=""></label><br>
+          <strong class="mb-0 fs-5 text-primary">SubTotal:</strong><label id="Subtotal" class=" fs-5" for=""></label><br>
+          <strong class="mb-0 fs-5 text-primary">Pre-Tax:</strong><label id="VAT" class=" fs-5" for=""></label><br>
+          <strong class="mb-0 fs-5 text-primary">Total:</strong><label class=" fs-5" for="" id="total"></label>
         </div>
-
-
+        <hr>
+        <div class="total-footer">
+          <a href="" class="btn btn-danger btn-round">Print</a>
+        </div>
 
       </div>
 
     </div>
   </div>
 
-
-  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
-
+  <script src="./JS/BuyerProfit.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous">
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous">
+  </script>
+  <link rel="stylesheet" href="https://cdn.datatables.net/1.10.20/css/jquery.dataTables.min.css">
   <script type="text/javascript" src="mdb-bootstrap/js/mdb.min.js"></script>
   <script type="text/javascript"></script>
   <script>
@@ -240,6 +254,7 @@ if (!isset($_SESSION['login_admin'])) {
       element.classList.toggle("toggled");
     };
   </script>
+
 </body>
 
 </html>

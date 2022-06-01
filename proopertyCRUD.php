@@ -4,8 +4,7 @@ $login_admin = $_SESSION['login_admin'];
 require "connection.php";
 
 if (isset($_POST['submit'])) {
-  move_uploaded_file($_FILES['file']['tmp_name'], "/img/appartment" . $_FILES['file']['name']);
-
+  move_uploaded_file($_FILES['file']['tmp_name'], "img/" . $_FILES['file']['name']);
 
   $Pname = mysqli_real_escape_string($con, $_POST['Pname']);
   $AdminId = mysqli_real_escape_string($con, $_POST['paddress']);
@@ -13,7 +12,7 @@ if (isset($_POST['submit'])) {
   $yearbuilt = mysqli_real_escape_string($con, $_POST['yearbuilt']);
   $Description = mysqli_real_escape_string($con, $_POST['Description']);
   $PropertyType = mysqli_real_escape_string($con, $_POST['PropertyType']);
-  $PropertyFor = mysqli_real_escape_string($con, $_POST['PropertyFor']);
+  $PropertyFor = $_POST['PropertyFor'];
   $Bedrooms = mysqli_real_escape_string($con, $_POST['Bedrooms']);
   $LivingRooms = mysqli_real_escape_string($con, $_POST['LivingRooms']);
   $Bathrooms = mysqli_real_escape_string($con, $_POST['Bathrooms']);
