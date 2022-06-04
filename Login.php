@@ -15,6 +15,8 @@ include("customerlogin.php");
     <title>Rento</title>
     <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/bootswatch/4.5.3/litera/bootstrap.min.css'>
     <link rel="stylesheet" href="css/AdminLR.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
 
 </head>
 
@@ -81,7 +83,7 @@ include("customerlogin.php");
                                     </a>
                                 </p>
 
-                                <div id="alert" class="alert alert-primary" role="alert">
+                                <div id="alert" class="alert alert-primary" name="alert" role="alert">
                                     <?php
 
                                     echo $error
@@ -166,7 +168,7 @@ include("customerlogin.php");
 
     <!-- partial -->
     <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js'></script>
-    <script src="JS/login.js">
+    <script src="./JS/login.js">
 
 
     </script>

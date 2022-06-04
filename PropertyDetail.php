@@ -1,7 +1,7 @@
 <?php
 include("connection.php");
 include("test.php");
-
+include("deletepropery.php");
 if (!isset($_SESSION['login_admin'])) {
 
   header("Location: Login.php");
@@ -255,19 +255,35 @@ if (!isset($_SESSION['login_admin'])) {
                 </tr>
               </thead>
               <tbody>
-                <tr>
-                  <th scope="row" class="center">1</th>
-                  <td class="center">BeirutVilla</td>
-                  <td class="user-circle-img center"><img src="img/images (1).jpg" alt></td>
-                  <td class="center">190,000$</td>
-                  <td class="center">4/25/2021</td>
-                  <td class="center">Lebanon</td>
-                  <td class="center"><a href="" class="btn btn_status btn-light btn-xs" role="button"><label class="text-success" for="">For Sale</label></a></td>
-                  <td class="center"><a href="" class="btn btn-tbl-edit btn-xs" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="fa fa-pencil"></i></a>
-                    <a class="btn btn-tbl-delete btn-xs" role="button" onclick="deleteR(this)"><i class="fa fa-trash"></i>
-                  </td>
-                </tr>
-                <tr>
+                <?php
+                require 'connection.php';
+                $query = "SELECT * FROM `admin`,`property` WHERE
+           username='" . $_SESSION['login_admin'] . "' 
+           AND admin.AID=property.AdminId";
+                $result = mysqli_query($con, $query);
+                while ($row = mysqli_fetch_array($result)) {
+                ?>
+                  <tr>
+
+                    <th scope="row" class="center"><?php print $row['PropertyID'] ?></th>
+                    <td class="center"><?php print $row['Pname'] ?></td>
+                    <td class="user-circle-img center"><img src="<?php print 'img/' . $row['Pimage'] ?>" alt></td>
+                    <td class="center"><?php print $row['Price'] ?>$</td>
+                    <td class="center"><?php print $row['yearbuilt'] ?></td>
+                    <td class="center"><?php print $row['address'] ?></td>
+                    <td class="center"><a href="" class="btn btn_status btn-light btn-xs" role="button"><label class="text-success" for=""><?php print $row['PropertyFor'] ?></label></a></td>
+                    <form action="" method="post">
+                      <td class="center"><a href="" class="btn btn-tbl-edit btn-xs" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="fa fa-pencil"></i></a>
+                        <input type="hidden" name="PropertyID" value="<?php print $row['PropertyID'] ?>">
+                        <button class="btn btn-tbl-delete btn-xs" type="submit" name="delete"><i class="fa fa-trash"></i></button>
+
+                      </td>
+                    </form>
+                  </tr>
+                <?php
+                }
+                ?>
+                <!-- <tr>
                   <th scope="row" class="center">2</th>
                   <td class="center">TokyoVilla</td>
                   <td class="user-circle-img center"><img src="img/download4.jpg" alt></td>
@@ -302,7 +318,7 @@ if (!isset($_SESSION['login_admin'])) {
                   <td class="center"><a href="" class="btn btn-tbl-edit btn-xs" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="fa fa-pencil"></i></a>
                     <a class="btn btn-tbl-delete btn-xs" role="button" onclick="deleteR(this)"><i class="fa fa-trash"></i>
                   </td>
-                </tr>
+                </tr> -->
               </tbody>
             </table>
           </div>

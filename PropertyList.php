@@ -212,57 +212,67 @@ if (!isset($_SESSION['login_admin'])) {
             <br>
           </div>
           <div class="col-lg-12">
-            <div class="card property_list hover-shadow">
-              <div class="body">
-                <div class="row">
-                  <div class="col-lg-4 col-md-6">
-                    <div class="property_image">
-                      <img src="/img/images (1).jpg" class="img-thumbnail img-fluid image-class" alt="img">
-                      <span class="badge badge_Sale">For Sale</span>
-                    </div>
-                  </div>
-                  <div class="col-lg-8 col-md-6">
-                    <div class="property-content">
-                      <div class="detail">
-                        <h5 class="text-success fs-5 mt-0 mb-0">$390,0000</h5>
-                        <h3 class="mt-1">
-                          <a href="#" class="text-black fs-5">Villa</a>
-                        </h3>
-                        <h4 class="mt-0">
-                          <a href="#" class="text-primary fs-5">Japan</a>
-                        </h4>
-                        <p class="text-muted mb-0">
-                          In the Westminster Borough district of London, close to Madame Tussaud's, 6-bedroom house on Marble Arch has a garden, free WiFi and a washing machine.
-
-
-                        </p>
+            <?php
+            require 'connection.php';
+            $query = "SELECT * FROM `admin`,`property` WHERE
+           username='" . $_SESSION['login_admin'] . "' 
+           AND admin.AID=property.AdminId";
+            $result = mysqli_query($con, $query);
+            while ($row = mysqli_fetch_array($result)) {
+            ?>
+              <div class="card property_list hover-shadow g-1">
+                <div class="body">
+                  <div class="row">
+                    <div class="col-lg-4 col-md-6">
+                      <div class="property_image">
+                        <img src="<?php print 'img/' . $row['Pimage'] ?>" class="img-thumbnail img-fluid image-class" alt="img">
+                        <span class="badge badge_Sale">For Sale</span>
                       </div>
-                      <div class="property-icon mt-3 ms-1">
-                        <a href="#" title="Square Feet"><i class="fas fa-bed "></i>
-                          <span class="ms-2 mb-1">Bedroom: 5</span>
-                        </a>
-                        <a href="#" title="Square Feet"><i class="fa-solid fa-couch "></i>
-                          <span class="ms-2 mb-1">Living Room: 8</span>
-                        </a>
-                        <a href="#" title="Square Feet"><i class="fas fa-bath "></i>
-                          <span class="ms-2 mb-1">Bathroom: 3</span>
-                        </a>
-                        <a href="#" title="Square Feet"><i class="fas fa-utensils"></i>
-                          <span class="ms-2 mb-1">kitchen: 3</span>
-                        </a>
-                        <a href="#" title="Square Feet"><i class="fas fa-building"></i>
-                          <span class="ms-2 mb-1">Square:800</span>
-                        </a>
+                    </div>
+                    <div class="col-lg-8 col-md-6">
+                      <div class="property-content">
+                        <div class="detail">
+                          <h5 class="text-success fs-5 mt-0 mb-0">$<?php print $row['Price'] ?></h5>
+                          <h3 class="mt-1">
+                            <a href="#" class="text-black fs-5"><?php print $row['PropertyType'] ?></a>
+                          </h3>
+                          <h4 class="mt-0">
+                            <a href="#" class="text-primary fs-5"><?php print $row['Location'] ?></a>
+                          </h4>
+                          <p class="text-muted mb-0">
+                            <?php print $row['Description'] ?>
+
+                          </p>
+                        </div>
+                        <div class="property-icon mt-3 ms-1">
+                          <a href="#" title="Square Feet"><i class="fas fa-bed "></i>
+                            <span class="ms-2 mb-1">Bedroom: <?php print $row['Bedrooms'] ?></span>
+                          </a>
+                          <a href="#" title="Square Feet"><i class="fa-solid fa-couch "></i>
+                            <span class="ms-2 mb-1">Living Room: <?php print $row['LivingRooms'] ?></span>
+                          </a>
+                          <a href="#" title="Square Feet"><i class="fas fa-bath "></i>
+                            <span class="ms-2 mb-1">Bathroom: <?php print $row['Bathrooms'] ?></span>
+                          </a>
+                          <a href="#" title="Square Feet"><i class="fas fa-utensils"></i>
+                            <span class="ms-2 mb-1">kitchen: <?php print $row['Kitchens'] ?></span>
+                          </a>
+                          <a href="#" title="Square Feet"><i class="fas fa-building"></i>
+                            <span class="ms-2 mb-1">Square:<?php print $row['Areas'] ?></span>
+                          </a>
+                        </div>
                       </div>
                     </div>
                   </div>
                 </div>
               </div>
-            </div>
+            <?php
+            }
+            ?>
             <br>
             <br>
 
-            <div class="card property_list hover-shadow">
+            <!-- <div class="card property_list hover-shadow">
               <div class="body">
                 <div class="row">
                   <div class="col-lg-4 col-md-6">
@@ -307,12 +317,12 @@ if (!isset($_SESSION['login_admin'])) {
                   </div>
                 </div>
               </div>
-            </div>
+            </div> -->
 
             <br>
             <br>
 
-            <div class="card property_list hover-shadow">
+            <!-- <div class="card property_list hover-shadow">
               <div class="body">
                 <div class="row">
                   <div class="col-lg-4 col-md-6">
@@ -357,11 +367,11 @@ if (!isset($_SESSION['login_admin'])) {
                   </div>
                 </div>
               </div>
-            </div>
+            </div> -->
             <br>
             <br>
 
-            <div class="card property_list hover-shadow">
+            <!-- <div class="card property_list hover-shadow">
               <div class="body">
                 <div class="row">
                   <div class="col-lg-4 col-md-6">
@@ -405,16 +415,11 @@ if (!isset($_SESSION['login_admin'])) {
                     </div>
                   </div>
                 </div>
-              </div>
-            </div>
-
-            <br>
-            <br>
-
-
+              </div> -->
           </div>
 
-
+          <br>
+          <br>
 
 
         </div>
@@ -422,14 +427,19 @@ if (!isset($_SESSION['login_admin'])) {
 
 
 
-
-
       </div>
+
+
+
+
+
+
     </div>
+  </div>
   </div>
 
 
-  <script src="./JS/app.js"></script>
+
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
   <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
   <script type="text/javascript" src="mdb-bootstrap/js/mdb.min.js"></script>

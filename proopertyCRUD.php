@@ -23,7 +23,7 @@ if (isset($_POST['submit'])) {
   $hasCarParking = $_POST['hasCarParking'];
   $hasBalcony = $_POST['hasBalcony'];
   $hasTerrace = $_POST['hasTerrace'];
-  $imageInput = $_FILES['file']['name'];
+  $image = $_FILES['file']['name'];
   // $checkboxAll = mysqli_real_escape_string($con,$_POST['checkboxAll']);
   $Price = mysqli_real_escape_string($con, $_POST['Price']);
 
@@ -56,7 +56,7 @@ if (isset($_POST['submit'])) {
      '$hasCarParking',
      '$hasTerrace',
     '$Price',
-    '$imageInput'
+    '$image'
     )";
   mysqli_query($con, $sql3);
 }

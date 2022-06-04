@@ -67,10 +67,7 @@ function sortName(n) {
 
 
 
-function deleteR(r) {
-  var i = r.parentNode.parentNode.rowIndex;
-  document.getElementById("Table").deleteRow(i);
-}
+
 
 
 
